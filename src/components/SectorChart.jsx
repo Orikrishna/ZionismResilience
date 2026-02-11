@@ -1,0 +1,68 @@
+import ReactApexChart from 'react-apexcharts'
+
+export default function SectorChart({ plants }) {
+  const counts = {}
+  plants.forEach((p) => {
+    const sector = p.sector || 'אחר'
+    counts[sector] = (counts[sector] || 0) + 1
+  })
+
+  const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1])
+  const categories = sorted.map(([s]) => s)
+  const data = sorted.map(([, c]) => c)
+
+  const options = {
+    chart: {
+      type: 'bar',
+      toolbar: { show: false },
+      fontFamily: 'Heebo, sans-serif',
+      animations: { enabled: true, speed: 600 },
+    },
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        borderRadius: 6,
+        columnWidth: '55%',
+        distributed: true,
+      },
+    },
+    colors: [
+      '#C4714A', '#E8A87C', '#4A7C6F', '#7A6E9E',
+      '#4A6E9E', '#7A9E4A', '#3D2B1F', '#B8A99A',
+    ],
+    dataLabels: {
+      enabled: true,
+      style: { fontFamily: 'Heebo, sans-serif', fontSize: '13px', fontWeight: 700, colors: ['#fff'] },
+      formatter: (val) => val,
+    },
+    xaxis: {
+      categories,
+      labels: {
+        style: { fontFamily: 'Heebo, sans-serif', colors: '#1A1008', fontSize: '12px' },
+        rotate: -30,
+        trim: true,
+      },
+    },
+    yaxis: {
+      labels: {
+        style: { fontFamily: 'Heebo, sans-serif', colors: '#8A7968' },
+        formatter: (v) => Math.round(v),
+      },
+      tickAmount: 4,
+    },
+    legend: { show: false },
+    tooltip: {
+      style: { fontFamily: 'Heebo, sans-serif' },
+      y: { formatter: (val) => `${val} מפעלים` },
+    },
+    grid: { borderColor: '#F2D4B8', yaxis: { lines: { show: true } }, xaxis: { lines: { show: false } } },
+  }
+
+  return (
+    <div className="bg-card rounded-card shadow-card p-6">
+      <h2 className="text-lg font-bold text-text-main mb-1">פילוח לפי ענף</h2>
+      <p className="text-sm text-text-muted mb-4">מספר מפעלים לפי תחום תעשייה</p>
+      <ReactApexChart type="bar" series={[{ name: 'מפעלים', data }]} options={options} height={260} />
+    </div>
+  )
+}
