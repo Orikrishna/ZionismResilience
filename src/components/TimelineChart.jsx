@@ -33,21 +33,23 @@ export default function TimelineChart({ timeline }) {
   })
 
   const series = [
-    { name: 'הנהלה', data: allMonths.map((k) => getVal(k, 'mgmt')) },
-    { name: 'מנהלים ביניים', data: allMonths.map((k) => getVal(k, 'midMgmt')) },
-    { name: 'עובדים', data: allMonths.map((k) => getVal(k, 'workers')) },
+    { name: 'הנהלה', data: allMonths.map((k) => getVal(k, 'mgmt')).reverse() },
+    { name: 'מנהלים ביניים', data: allMonths.map((k) => getVal(k, 'midMgmt')).reverse() },
+    { name: 'עובדים', data: allMonths.map((k) => getVal(k, 'workers')).reverse() },
   ]
 
   // Milestone annotations
+  const reversedCategories = categories.slice().reverse()
   const milestoneAnnotations = Object.entries(MILESTONES).map(([key, label]) => {
     const idx = allMonths.indexOf(key)
     if (idx === -1) return null
+    const reversedIdx = allMonths.length - 1 - idx
     return {
-      x: categories[idx],
-      borderColor: '#C4714A',
+      x: reversedCategories[reversedIdx],
+      borderColor: '#5D87FF',
       label: {
         style: {
-          background: '#C4714A',
+          background: '#5D87FF',
           color: '#fff',
           fontFamily: 'Heebo, sans-serif',
           fontSize: '11px',
@@ -72,24 +74,25 @@ export default function TimelineChart({ timeline }) {
       type: 'gradient',
       gradient: { opacityFrom: 0.6, opacityTo: 0.1, shadeIntensity: 1 },
     },
-    colors: ['#3D2B1F', '#C4714A', '#E8A87C'],
+    colors: ['#2A3547', '#5D87FF', '#49BEFF'],
     dataLabels: { enabled: false },
     xaxis: {
-      categories,
+      categories: reversedCategories,
       tickAmount: 8,
       labels: {
-        style: { fontFamily: 'Heebo, sans-serif', colors: '#8A7968', fontSize: '12px' },
+        style: { fontFamily: 'Heebo, sans-serif', colors: '#7C8FAC', fontSize: '12px' },
         rotate: -30,
       },
     },
     yaxis: {
+      opposite: true,
       labels: {
-        style: { fontFamily: 'Heebo, sans-serif', colors: '#8A7968', fontSize: '12px' },
+        style: { fontFamily: 'Heebo, sans-serif', colors: '#7C8FAC', fontSize: '12px' },
         formatter: (v) => Math.round(v),
       },
       title: {
-        text: 'ממוצע סדנאות חודשיות',
-        style: { fontFamily: 'Heebo, sans-serif', color: '#8A7968', fontSize: '12px' },
+        text: 'סדנאות חודשיות',
+        style: { fontFamily: 'Heebo, sans-serif', color: '#7C8FAC', fontSize: '12px' },
       },
     },
     legend: {
@@ -103,7 +106,7 @@ export default function TimelineChart({ timeline }) {
       style: { fontFamily: 'Heebo, sans-serif' },
       y: { formatter: (val) => `${val} סדנאות` },
     },
-    grid: { borderColor: '#F2D4B8' },
+    grid: { borderColor: '#D5E3F7' },
   }
 
   return (

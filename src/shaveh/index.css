@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -15,9 +15,9 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #ECF2F8;
-  font-family: 'Heebo', sans-serif;
-  color: #2A3547;
+  background-color: #f9f2f3;
+  font-family: 'Noto Sans Hebrew', sans-serif;
+  color: #454342;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -25,7 +25,7 @@ body {
 /* ApexCharts font override */
 .apexcharts-text,
 .apexcharts-legend-text {
-  font-family: 'Heebo', sans-serif !important;
+  font-family: 'Noto Sans Hebrew', sans-serif !important;
 }
 
 /* ApexCharts RTL fixes */
@@ -46,9 +46,6 @@ body {
 .apexcharts-yaxis-label {
   text-anchor: end !important;
 }
-.depth-chart-rtl .apexcharts-yaxis-label {
-  text-anchor: start !important;
-}
 
 /* Scrollbar styling */
 ::-webkit-scrollbar {
@@ -58,9 +55,9 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #B8C9DE;
+  background: #c4b5b7;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #7C8FAC;
+  background: #948c89;
 }

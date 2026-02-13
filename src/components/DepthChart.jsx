@@ -6,18 +6,19 @@ export default function DepthChart({ plants }) {
 
   const categories = sorted.map((p) => p.name)
 
+  // Use negative values so bars grow right-to-left in RTL layout
   const series = [
     {
       name: 'הנהלה',
-      data: sorted.map((p) => p.mgmtParticipants),
+      data: sorted.map((p) => -p.mgmtParticipants),
     },
     {
       name: 'מנהלים ביניים',
-      data: sorted.map((p) => p.midMgmtParticipants),
+      data: sorted.map((p) => -p.midMgmtParticipants),
     },
     {
       name: 'עובדים',
-      data: sorted.map((p) => p.workerParticipants),
+      data: sorted.map((p) => -p.workerParticipants),
     },
   ]
 
@@ -33,21 +34,25 @@ export default function DepthChart({ plants }) {
       bar: {
         horizontal: true,
         borderRadius: 4,
+        barHeight: '70%',
         dataLabels: { total: { enabled: false } },
       },
     },
-    colors: ['#3D2B1F', '#C4714A', '#E8A87C'],
+    colors: ['#2A3547', '#5D87FF', '#49BEFF'],
     dataLabels: { enabled: false },
     xaxis: {
       categories,
       labels: {
-        style: { fontFamily: 'Heebo, sans-serif', colors: '#8A7968', fontSize: '12px' },
+        style: { fontFamily: 'Heebo, sans-serif', colors: '#7C8FAC', fontSize: '12px' },
+        formatter: (val) => Math.abs(Math.round(val)),
       },
     },
     yaxis: {
+      opposite: true,
       labels: {
-        style: { fontFamily: 'Heebo, sans-serif', colors: '#1A1008', fontSize: '13px', fontWeight: 600 },
-        align: 'right',
+        style: { fontFamily: 'Heebo, sans-serif', colors: '#2A3547', fontSize: '13px', fontWeight: 600 },
+        maxWidth: 200,
+        align: 'left',
       },
     },
     legend: {
@@ -59,10 +64,10 @@ export default function DepthChart({ plants }) {
     },
     tooltip: {
       style: { fontFamily: 'Heebo, sans-serif' },
-      y: { formatter: (val) => `${val} משתתפים` },
+      y: { formatter: (val) => `${Math.abs(val)} משתתפים` },
     },
     grid: {
-      borderColor: '#F2D4B8',
+      borderColor: '#D5E3F7',
       xaxis: { lines: { show: true } },
       yaxis: { lines: { show: false } },
     },
@@ -72,12 +77,12 @@ export default function DepthChart({ plants }) {
     <div className="bg-card rounded-card shadow-card p-6">
       <h2 className="text-lg font-bold text-text-main mb-1">עומק ההתערבות לפי מפעל</h2>
       <p className="text-sm text-text-muted mb-4">פילוח משתתפים לפי שכבה ארגונית</p>
-      <ReactApexChart
+      <div className="depth-chart-rtl"><ReactApexChart
         type="bar"
         series={series}
         options={options}
         height={sorted.length * 36 + 60}
-      />
+      /></div>
     </div>
   )
 }

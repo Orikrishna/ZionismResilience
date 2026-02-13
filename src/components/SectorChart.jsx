@@ -27,8 +27,8 @@ export default function SectorChart({ plants }) {
       },
     },
     colors: [
-      '#C4714A', '#E8A87C', '#4A7C6F', '#7A6E9E',
-      '#4A6E9E', '#7A9E4A', '#3D2B1F', '#B8A99A',
+      '#5D87FF', '#49BEFF', '#13DEB9', '#FA896B',
+      '#7A6E9E', '#FFAE1F', '#2A3547', '#A1B4CE',
     ],
     dataLabels: {
       enabled: true,
@@ -38,14 +38,15 @@ export default function SectorChart({ plants }) {
     xaxis: {
       categories,
       labels: {
-        style: { fontFamily: 'Heebo, sans-serif', colors: '#1A1008', fontSize: '12px' },
+        style: { fontFamily: 'Heebo, sans-serif', colors: '#2A3547', fontSize: '12px' },
         rotate: -30,
         trim: true,
       },
     },
     yaxis: {
+      opposite: true,
       labels: {
-        style: { fontFamily: 'Heebo, sans-serif', colors: '#8A7968' },
+        style: { fontFamily: 'Heebo, sans-serif', colors: '#7C8FAC' },
         formatter: (v) => Math.round(v),
       },
       tickAmount: 4,
@@ -55,7 +56,7 @@ export default function SectorChart({ plants }) {
       style: { fontFamily: 'Heebo, sans-serif' },
       y: { formatter: (val) => `${val} מפעלים` },
     },
-    grid: { borderColor: '#F2D4B8', yaxis: { lines: { show: true } }, xaxis: { lines: { show: false } } },
+    grid: { borderColor: '#D5E3F7', yaxis: { lines: { show: true } }, xaxis: { lines: { show: false } } },
   }
 
   return (

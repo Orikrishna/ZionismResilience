@@ -1,11 +1,11 @@
 import ReactApexChart from 'react-apexcharts'
 
 const GEO_COLORS = {
-  'עוטף עזה': '#C4714A',
+  'עוטף עזה': '#FA896B',
   'גליל עליון': '#4A7C6F',
-  'חוף אשקלון': '#4A6E9E',
+  'חוף אשקלון': '#5D87FF',
   'רמת הגולן': '#7A6E9E',
-  'גליל מערבי': '#7A9E4A',
+  'גליל מערבי': '#13DEB9',
 }
 
 export default function GeoDonut({ plants }) {
@@ -16,7 +16,7 @@ export default function GeoDonut({ plants }) {
 
   const labels = Object.keys(counts)
   const series = labels.map((l) => counts[l])
-  const colors = labels.map((l) => GEO_COLORS[l] || '#C4714A')
+  const colors = labels.map((l) => GEO_COLORS[l] || '#5D87FF')
 
   const options = {
     chart: {
@@ -35,7 +35,7 @@ export default function GeoDonut({ plants }) {
     dataLabels: {
       enabled: true,
       style: { fontFamily: 'Heebo, sans-serif', fontSize: '13px' },
-      formatter: (val, opts) => `${opts.w.globals.series[opts.seriesIndex]} מפעלים`,
+      formatter: (val, opts) => `${opts.w.globals.series[opts.seriesIndex]}`,
     },
     plotOptions: {
       pie: {
@@ -48,14 +48,14 @@ export default function GeoDonut({ plants }) {
               label: 'סה״כ מפעלים',
               fontSize: '13px',
               fontFamily: 'Heebo, sans-serif',
-              color: '#8A7968',
+              color: '#7C8FAC',
               formatter: () => plants.length,
             },
             value: {
               fontFamily: 'Heebo, sans-serif',
               fontSize: '28px',
               fontWeight: 700,
-              color: '#1A1008',
+              color: '#2A3547',
             },
           },
         },
@@ -65,7 +65,7 @@ export default function GeoDonut({ plants }) {
       style: { fontFamily: 'Heebo, sans-serif' },
       y: { formatter: (val) => `${val} מפעלים` },
     },
-    stroke: { width: 2, colors: ['#F4F1EB'] },
+    stroke: { width: 2, colors: ['#ECF2F8'] },
   }
 
   return (

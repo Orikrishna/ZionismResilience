@@ -6,6 +6,7 @@ import DepthChart from './components/DepthChart'
 import GeoDonut from './components/GeoDonut'
 import TimelineChart from './components/TimelineChart'
 import SectorChart from './components/SectorChart'
+import GeoMap from './components/GeoMap'
 
 const GEO_COLORS = {
   'עוטף עזה': 'bg-geo-gaza-bg text-geo-gaza',
@@ -53,7 +54,7 @@ export default function App() {
           <h1 className="text-xl font-bold text-text-main">דשבורד חוסן תעשייה קיבוצית</h1>
           <p className="text-sm text-text-muted">דצמבר 2023 – נובמבר 2025</p>
         </div>
-        <span className="text-sm font-semibold text-accent">ציונות 2000</span>
+        <img src={`${import.meta.env.BASE_URL}zionism2000-logo.jpg`} alt="ציונות 2000" className="h-12 object-contain" />
       </header>
 
       <main className="max-w-7xl mx-auto px-6 py-8 space-y-8">
@@ -97,6 +98,9 @@ export default function App() {
 
         {/* Depth chart — full width */}
         <DepthChart plants={filtered} />
+
+        {/* Geographic map */}
+        <GeoMap plants={filtered} />
 
         {/* Plants grid */}
         <div className="bg-card rounded-card shadow-card p-6">
