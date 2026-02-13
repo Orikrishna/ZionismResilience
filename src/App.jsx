@@ -100,7 +100,7 @@ export default function App() {
         <DepthChart plants={filtered} />
 
         {/* Geographic map */}
-        <GeoMap plants={filtered} />
+        {/* <GeoMap plants={filtered} /> */}
 
         {/* Plants grid */}
         <div className="bg-card rounded-card shadow-card p-6">
