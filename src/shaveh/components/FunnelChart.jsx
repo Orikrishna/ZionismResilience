@@ -3,8 +3,8 @@ import { motion } from 'framer-motion'
 const STAGES = [
   { key: 'emailSent', label: 'מייל נשלח' },
   { key: 'meetingHeld', label: 'פגישה התקיימה' },
-  { key: 'formSent', label: 'טופס נשלח' },
-  { key: 'formSigned', label: 'טופס נחתם' },
+  { key: 'agreementSent', label: 'הסכם נשלח' },
+  { key: 'agreementSigned', label: 'הסכם חתום' },
   { key: 'paid', label: 'שולם' },
 ]
 

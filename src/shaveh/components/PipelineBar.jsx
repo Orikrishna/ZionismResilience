@@ -2,8 +2,8 @@ import ReactApexChart from 'react-apexcharts'
 
 const PIPELINE_STAGES = [
   { key: 'paid', label: 'שולם' },
-  { key: 'formSigned', label: 'טופס נחתם' },
-  { key: 'formSent', label: 'טופס נשלח' },
+  { key: 'agreementSigned', label: 'הסכם חתום' },
+  { key: 'agreementSent', label: 'הסכם נשלח' },
   { key: 'meetingHeld', label: 'פגישה' },
   { key: 'emailSent', label: 'מייל' },
 ]
@@ -12,8 +12,8 @@ export default function PipelineBar({ companies }) {
   // Count companies at each HIGHEST stage
   const stageCounts = {
     paid: 0,
-    formSigned: 0,
-    formSent: 0,
+    agreementSigned: 0,
+    agreementSent: 0,
     meetingHeld: 0,
     emailSent: 0,
     none: 0,
@@ -21,8 +21,8 @@ export default function PipelineBar({ companies }) {
 
   companies.forEach((c) => {
     if (c.paid) stageCounts.paid++
-    else if (c.formSigned) stageCounts.formSigned++
-    else if (c.formSent) stageCounts.formSent++
+    else if (c.agreementSigned) stageCounts.agreementSigned++
+    else if (c.agreementSent) stageCounts.agreementSent++
     else if (c.meetingHeld) stageCounts.meetingHeld++
     else if (c.emailSent) stageCounts.emailSent++
     else stageCounts.none++
