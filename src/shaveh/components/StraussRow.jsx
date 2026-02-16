@@ -1,4 +1,23 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
+
+const BASE = import.meta.env.BASE_URL
+
+function StraussLogo({ companyId }) {
+  const [hidden, setHidden] = useState(false)
+  if (hidden) return null
+  return (
+    <img
+      src={`${BASE}logos/${companyId}.png`}
+      alt=""
+      width={32}
+      height={32}
+      className="object-contain rounded-lg shrink-0"
+      onError={() => setHidden(true)}
+      loading="lazy"
+    />
+  )
+}
 
 const STRAUSS_IDS = [
   'strauss_sweets',
@@ -55,8 +74,11 @@ export default function StraussRow({ companies }) {
                   : 'border-sh-pink-light bg-sh-pink-light/20'
               }`}
             >
-              <div className="text-sm font-bold text-sh-text mb-1">
-                {company.name.replace('שטראוס ', '')}
+              <div className="flex items-center gap-2 mb-1">
+                <StraussLogo companyId={company.id} />
+                <div className="text-sm font-bold text-sh-text">
+                  {company.name.replace('שטראוס ', '')}
+                </div>
               </div>
               <div className={`text-xs px-2 py-0.5 rounded-pill inline-block mb-2 ${
                 isActive

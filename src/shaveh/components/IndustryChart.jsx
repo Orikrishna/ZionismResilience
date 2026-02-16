@@ -22,7 +22,7 @@ export default function IndustryChart({ companies }) {
   // Sort by count descending
   const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1])
   const categories = sorted.map(([k]) => k)
-  const values = sorted.map(([, v]) => v)
+  const values = sorted.map(([, v]) => -v)
   const colors = categories.map(c => INDUSTRY_COLORS[c] || '#948c89')
 
   // Also compute join rate per industry
@@ -51,6 +51,7 @@ export default function IndustryChart({ companies }) {
     colors,
     dataLabels: {
       enabled: true,
+      formatter: (val) => Math.abs(val),
       style: {
         fontFamily: 'Noto Sans Hebrew, sans-serif',
         fontSize: '12px',
@@ -60,27 +61,31 @@ export default function IndustryChart({ companies }) {
     },
     xaxis: {
       categories,
+      max: 0,
       labels: {
+        formatter: (val) => Math.abs(val),
         style: { fontFamily: 'Noto Sans Hebrew, sans-serif', fontSize: '12px' },
       },
     },
     yaxis: {
       opposite: true,
       labels: {
+        maxWidth: 200,
         style: {
           fontFamily: 'Noto Sans Hebrew, sans-serif',
           fontSize: '12px',
           fontWeight: 500,
+          cssClass: 'apexcharts-yaxis-label-shaveh',
         },
       },
     },
     legend: { show: false },
-    grid: { borderColor: '#f0e8e9', xaxis: { lines: { show: true } }, yaxis: { lines: { show: false } } },
+    grid: { borderColor: '#f0e8e9', padding: { right: 20 }, xaxis: { lines: { show: true } }, yaxis: { lines: { show: false } } },
     tooltip: {
       style: { fontFamily: 'Noto Sans Hebrew, sans-serif' },
       custom: ({ dataPointIndex }) => {
         const cat = categories[dataPointIndex]
-        const total = values[dataPointIndex]
+        const total = Math.abs(values[dataPointIndex])
         const joined = joinCounts[cat] || 0
         const rate = total > 0 ? Math.round((joined / total) * 100) : 0
         return `<div style="padding:8px 12px;font-family:Noto Sans Hebrew;direction:rtl">

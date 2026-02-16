@@ -69,15 +69,22 @@ export default function PipelineBar({ companies }) {
     yaxis: {
       opposite: true,
       labels: {
+        maxWidth: 200,
         style: {
           fontFamily: 'Noto Sans Hebrew, sans-serif',
           fontSize: '13px',
           fontWeight: 500,
+          cssClass: 'apexcharts-yaxis-label-shaveh',
         },
       },
     },
     legend: { show: false },
-    grid: { borderColor: '#f0e8e9', xaxis: { lines: { show: true } }, yaxis: { lines: { show: false } } },
+    grid: {
+      borderColor: '#f0e8e9',
+      padding: { right: 30 },
+      xaxis: { lines: { show: true } },
+      yaxis: { lines: { show: false } },
+    },
     tooltip: {
       style: { fontFamily: 'Noto Sans Hebrew, sans-serif' },
       y: { formatter: (val) => `${Math.abs(val)} חברות` },

@@ -20,6 +20,24 @@ import ReferralChart from './components/ReferralChart'
 import ExtraKpis from './components/ExtraKpis'
 import UndecidedList from './components/UndecidedList'
 
+const BASE = import.meta.env.BASE_URL
+
+function CompanyLogo({ companyId, size = 32, className = '' }) {
+  const [hidden, setHidden] = useState(false)
+  if (hidden) return null
+  return (
+    <img
+      src={`${BASE}logos/${companyId}.png`}
+      alt=""
+      width={size}
+      height={size}
+      className={`object-contain rounded-lg shrink-0 ${className}`}
+      onError={() => setHidden(true)}
+      loading="lazy"
+    />
+  )
+}
+
 const STATUS_STYLES = {
   'כן': 'bg-sh-green-light text-sh-green',
   'לא': 'bg-sh-pink-light text-sh-pink',
@@ -197,7 +215,10 @@ export default function App() {
                   className="border border-sh-pink-light rounded-xl p-4 hover:shadow-card-hover transition-shadow cursor-pointer"
                 >
                   <div className="flex items-start justify-between mb-1">
-                    <div className="font-bold text-sh-text">{c.name}</div>
+                    <div className="flex items-center gap-2 min-w-0">
+                      <CompanyLogo companyId={c.id} size={32} />
+                      <div className="font-bold text-sh-text truncate">{c.name}</div>
+                    </div>
                     <span className={`text-xs px-2 py-0.5 rounded-pill font-medium whitespace-nowrap ${STATUS_STYLES[c.status] || 'bg-gray-100 text-sh-text-muted'}`}>
                       {c.status || '—'}
                     </span>
@@ -247,7 +268,7 @@ export default function App() {
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'spring', stiffness: 320, damping: 32 }}
-              className="fixed top-0 right-0 h-full w-full max-w-lg bg-sh-card shadow-2xl z-50 overflow-y-auto p-8"
+              className="fixed top-0 left-0 h-full w-full max-w-lg bg-sh-card shadow-2xl z-50 overflow-y-auto p-8"
               dir="rtl"
             >
               <button
@@ -256,7 +277,10 @@ export default function App() {
               >
                 ✕
               </button>
-              <h2 className="text-2xl font-black text-sh-text mb-1">{selectedCompany.name}</h2>
+              <div className="flex items-center gap-3 mb-1">
+                <CompanyLogo companyId={selectedCompany.id} size={48} />
+                <h2 className="text-2xl font-black text-sh-text">{selectedCompany.name}</h2>
+              </div>
 
               {/* Status + metadata badges */}
               <div className="flex gap-2 flex-wrap mb-6 mt-3">
