@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { BarChart3, RefreshCw, Building2 } from 'lucide-react'
 import data from './data/companies.json'
 
 // Existing widgets
@@ -10,6 +11,7 @@ import PipelineBar from './components/PipelineBar'
 
 // New v2 widgets
 import SearchBar from './components/SearchBar'
+import FilterDropdown from './components/FilterDropdown'
 import IndustryChart from './components/IndustryChart'
 import CompanySizeChart from './components/CompanySizeChart'
 import BottleneckCard from './components/BottleneckCard'
@@ -85,16 +87,63 @@ function stepsCompleted(company) {
 export default function App() {
   const { companies } = data
   const [selectedCompany, setSelectedCompany] = useState(null)
-  const [filterStatus, setFilterStatus] = useState('הכל')
+  const [activeTab, setActiveTab] = useState(0)
+
+  // Independent per-tab filter state
+  const [tab1Status, setTab1Status] = useState('הכל')
+  const [tab1Industry, setTab1Industry] = useState('הכל')
+  const [tab1Size, setTab1Size] = useState('הכל')
+
+  const [tab2Status, setTab2Status] = useState('הכל')
+  const [tab2Industry, setTab2Industry] = useState('הכל')
+  const [tab2Size, setTab2Size] = useState('הכל')
+
+  const [tab3Status, setTab3Status] = useState('הכל')
+  const [tab3Industry, setTab3Industry] = useState('הכל')
+  const [tab3Size, setTab3Size] = useState('הכל')
   const [searchQuery, setSearchQuery] = useState('')
+
+  const TABS = [
+    { label: 'ריכוז מידע', id: 'general', Icon: BarChart3 },
+    { label: 'שלבי התהליך', id: 'phases', Icon: RefreshCw },
+    { label: 'פירוט החברות', id: 'companies', Icon: Building2 },
+  ]
 
   const statusOptions = ['הכל', 'כן', 'לא', 'טרם הוחלט']
 
-  const filtered = useMemo(() => {
-    let result = companies
-    if (filterStatus !== 'הכל') {
-      result = result.filter(c => c.status === filterStatus)
-    }
+  // Unique filter options from data
+  const industryOptions = useMemo(() => {
+    const set = new Set(companies.map(c => c.industry).filter(Boolean))
+    return ['הכל', ...Array.from(set).sort()]
+  }, [companies])
+
+  const sizeOptions = useMemo(() => {
+    const order = ['קטנה', 'בינונית', 'גדולה', 'גלובלית']
+    const set = new Set(companies.map(c => c.companySize).filter(Boolean))
+    return ['הכל', ...order.filter(s => set.has(s))]
+  }, [companies])
+
+  // Helper: apply status + industry + size filters
+  function applyFilters(list, status, industry, size) {
+    let result = list
+    if (status !== 'הכל') result = result.filter(c => c.status === status)
+    if (industry !== 'הכל') result = result.filter(c => c.industry === industry)
+    if (size !== 'הכל') result = result.filter(c => c.companySize === size)
+    return result
+  }
+
+  const filteredTab1 = useMemo(
+    () => applyFilters(companies, tab1Status, tab1Industry, tab1Size),
+    [companies, tab1Status, tab1Industry, tab1Size]
+  )
+
+  const filteredTab2 = useMemo(
+    () => applyFilters(companies, tab2Status, tab2Industry, tab2Size),
+    [companies, tab2Status, tab2Industry, tab2Size]
+  )
+
+  const filteredTab3 = useMemo(() => {
+    let result = applyFilters(companies, tab3Status, tab3Industry, tab3Size)
     if (searchQuery.trim()) {
       const q = searchQuery.trim().toLowerCase()
       result = result.filter(c =>
@@ -105,14 +154,19 @@ export default function App() {
       )
     }
     return result
-  }, [companies, filterStatus, searchQuery])
+  }, [companies, tab3Status, tab3Industry, tab3Size, searchQuery])
 
-  const totalCompanies = companies.length
-  const joined = companies.filter(c => c.paid).length
-  const meetings = companies.filter(c => c.meetingHeld).length
-  const agreementsSigned = companies.filter(c => c.agreementSigned).length
-  const emailsSent = companies.filter(c => c.emailSent).length
+  // KPIs computed from Tab 1 filtered data
+  const totalCompanies = filteredTab1.length
+  const joined = filteredTab1.filter(c => c.paid).length
+  const meetings = filteredTab1.filter(c => c.meetingHeld).length
+  const agreementsSigned = filteredTab1.filter(c => c.agreementSigned).length
+  const emailsSent = filteredTab1.filter(c => c.emailSent).length
   const conversionRate = emailsSent > 0 ? ((joined / emailsSent) * 100).toFixed(1) : '0'
+
+  const tab1HasFilters = tab1Status !== 'הכל' || tab1Industry !== 'הכל' || tab1Size !== 'הכל'
+  const tab2HasFilters = tab2Status !== 'הכל' || tab2Industry !== 'הכל' || tab2Size !== 'הכל'
+  const tab3HasFilters = tab3Status !== 'הכל' || tab3Industry !== 'הכל' || tab3Size !== 'הכל' || searchQuery
 
   return (
     <div className="min-h-screen bg-sh-bg font-noto" dir="rtl">
@@ -125,7 +179,52 @@ export default function App() {
         <img src={`${import.meta.env.BASE_URL}zionism2000-logo.jpg`} alt="ציונות 2000" className="h-12 object-contain" />
       </header>
 
-      <main className="max-w-7xl mx-auto px-6 py-8 space-y-8">
+      {/* Tab bar */}
+      <div className="max-w-7xl mx-auto px-6 mt-6 mb-2">
+        <div className="flex gap-1 bg-sh-pink-light/40 rounded-2xl p-1.5 shadow-sm border border-sh-pink-light/50">
+          {TABS.map((tab, i) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(i)}
+              className={`flex-1 px-6 py-3 rounded-xl text-base font-bold transition-all flex items-center justify-center gap-2.5 ${
+                activeTab === i
+                  ? 'bg-sh-card shadow-card text-sh-text'
+                  : 'text-sh-text-muted hover:text-sh-text hover:bg-sh-card/50'
+              }`}
+            >
+              <span className={`w-8 h-8 rounded-full flex items-center justify-center ${
+                activeTab === i ? 'bg-sh-pink-light/60' : 'bg-sh-pink-light/30'
+              }`}>
+                <tab.Icon size={16} strokeWidth={2.2} className={activeTab === i ? 'text-sh-pink' : 'text-sh-text-light'} />
+              </span>
+              {tab.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <main className="max-w-7xl mx-auto px-6 py-6 space-y-8">
+
+        {/* ══════ Tab 1: ריכוז מידע ══════ */}
+        {activeTab === 0 && <>
+
+        {/* Tab 1 filters */}
+        <div className="flex items-center gap-2 flex-wrap">
+          <FilterDropdown label="סטטוס" value={tab1Status} options={statusOptions} onChange={setTab1Status} />
+          <FilterDropdown label="ענף" value={tab1Industry} options={industryOptions} onChange={setTab1Industry} />
+          <FilterDropdown label="גודל" value={tab1Size} options={sizeOptions} onChange={setTab1Size} />
+          {tab1HasFilters && (
+            <button
+              onClick={() => { setTab1Status('הכל'); setTab1Industry('הכל'); setTab1Size('הכל') }}
+              className="text-sm text-sh-pink underline"
+            >
+              נקה הכל
+            </button>
+          )}
+          {tab1HasFilters && (
+            <span className="text-xs text-sh-text-light mr-auto">{filteredTab1.length} מתוך {companies.length} חברות</span>
+          )}
+        </div>
 
         {/* ── Section 1: KPI Cards ── */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -139,63 +238,86 @@ export default function App() {
         {/* ── Section 2: Funnel + Bottleneck ── */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2">
-            <FunnelChart companies={companies} />
+            <FunnelChart companies={filteredTab1} />
           </div>
-          <BottleneckCard companies={companies} />
+          <BottleneckCard companies={filteredTab1} />
         </div>
 
         {/* ── Section 3: Donut + Pipeline + Pyramid ── */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <StatusDonut companies={companies} />
-          <PipelineBar companies={companies} />
-          <EngagementPyramid companies={companies} />
+          <StatusDonut companies={filteredTab1} />
+          <PipelineBar companies={filteredTab1} />
+          <EngagementPyramid companies={filteredTab1} />
         </div>
 
         {/* ── Section 4: Extra KPIs ── */}
-        <ExtraKpis companies={companies} />
+        <ExtraKpis companies={filteredTab1} />
 
         {/* ── Section 5: Industry + Size + Referral ── */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <IndustryChart companies={companies} />
-          <CompanySizeChart companies={companies} />
-          <ReferralChart companies={companies} />
+          <IndustryChart companies={filteredTab1} />
+          <CompanySizeChart companies={filteredTab1} />
+          <ReferralChart companies={filteredTab1} />
         </div>
 
         {/* ── Section 6: Strauss Case Study ── */}
-        <StraussRow companies={companies} />
+        <StraussRow companies={filteredTab1} />
+
+        </>}
+
+        {/* ══════ Tab 2: שלבי התהליך ══════ */}
+        {activeTab === 1 && <>
+
+        {/* Tab 2 filters */}
+        <div className="flex items-center gap-2 flex-wrap">
+          <FilterDropdown label="סטטוס" value={tab2Status} options={statusOptions} onChange={setTab2Status} />
+          <FilterDropdown label="ענף" value={tab2Industry} options={industryOptions} onChange={setTab2Industry} />
+          <FilterDropdown label="גודל" value={tab2Size} options={sizeOptions} onChange={setTab2Size} />
+          {tab2HasFilters && (
+            <button
+              onClick={() => { setTab2Status('הכל'); setTab2Industry('הכל'); setTab2Size('הכל') }}
+              className="text-sm text-sh-pink underline"
+            >
+              נקה הכל
+            </button>
+          )}
+          {tab2HasFilters && (
+            <span className="text-xs text-sh-text-light mr-auto">{filteredTab2.length} מתוך {companies.length} חברות</span>
+          )}
+        </div>
 
         {/* ── Section 7: Process Tracker (23 steps) ── */}
-        <ProcessTracker companies={companies} />
+        <ProcessTracker companies={filteredTab2} />
 
         {/* ── Section 8: "They didn't say no" ── */}
-        <UndecidedList companies={companies} />
+        <UndecidedList companies={filteredTab2} />
+
+        </>}
+
+        {/* ══════ Tab 3: פירוט החברות ══════ */}
+        {activeTab === 2 && <>
 
         {/* ── Section 9: Company Grid with Search + Filter ── */}
         <div className="bg-sh-card rounded-card-sh shadow-card p-6">
           <h2 className="text-lg font-bold text-sh-text mb-4">
-            חברות ({filtered.length}{filtered.length !== companies.length ? ` מתוך ${companies.length}` : ''})
+            חברות ({filteredTab3.length}{filteredTab3.length !== companies.length ? ` מתוך ${companies.length}` : ''})
           </h2>
 
-          {/* Search + Filter bar */}
-          <div className="flex flex-col sm:flex-row gap-3 mb-4">
-            <div className="flex-1">
+          {/* Filters bar */}
+          <div className="flex flex-col sm:flex-row gap-3 mb-4 items-start sm:items-center flex-wrap">
+            <div className="flex-1 min-w-[200px]">
               <SearchBar value={searchQuery} onChange={setSearchQuery} />
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-sh-text-muted">סטטוס:</span>
-              <select
-                value={filterStatus}
-                onChange={(e) => setFilterStatus(e.target.value)}
-                className="text-sm bg-sh-card border border-sh-pink-light rounded-pill px-3 py-1.5 text-sh-text focus:outline-none focus:border-sh-pink"
-              >
-                {statusOptions.map(o => <option key={o} value={o}>{o}</option>)}
-              </select>
-              {(filterStatus !== 'הכל' || searchQuery) && (
+            <div className="flex gap-2 items-center flex-wrap">
+              <FilterDropdown label="סטטוס" value={tab3Status} options={statusOptions} onChange={setTab3Status} />
+              <FilterDropdown label="ענף" value={tab3Industry} options={industryOptions} onChange={setTab3Industry} />
+              <FilterDropdown label="גודל" value={tab3Size} options={sizeOptions} onChange={setTab3Size} />
+              {tab3HasFilters && (
                 <button
-                  onClick={() => { setFilterStatus('הכל'); setSearchQuery('') }}
+                  onClick={() => { setSearchQuery(''); setTab3Status('הכל'); setTab3Industry('הכל'); setTab3Size('הכל') }}
                   className="text-sm text-sh-pink underline"
                 >
-                  נקה
+                  נקה הכל
                 </button>
               )}
             </div>
@@ -203,7 +325,7 @@ export default function App() {
 
           <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             <AnimatePresence>
-              {filtered.map((c) => (
+              {filteredTab3.map((c) => (
                 <motion.div
                   key={c.id}
                   layout
@@ -250,7 +372,21 @@ export default function App() {
             </AnimatePresence>
           </motion.div>
         </div>
+
+        </>}
       </main>
+
+      {/* Footer */}
+      <footer className="mt-12 border-t border-sh-pink-light/50 bg-sh-card/60">
+        <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+          <div className="text-sm text-sh-text-muted">
+            דשבורד שווה פיתוח · ציונות 2000
+          </div>
+          <div className="text-xs text-sh-text-light">
+            עודכן לאחרונה: פברואר 2026
+          </div>
+        </div>
+      </footer>
 
       {/* Drill-down drawer */}
       <AnimatePresence>

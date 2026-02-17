@@ -1,0 +1,690 @@
+{
+  "dizengoff_center": {
+    "name": "דיזינגוף סנטר",
+    "domain": "dizengoffcenter.co.il",
+    "candidates": [],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%93%D7%99%D7%96%D7%99%D7%A0%D7%92%D7%95%D7%A3%20%D7%A1%D7%A0%D7%98%D7%A8%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "israir": {
+    "name": "ישראייר",
+    "domain": "israirairlines.com",
+    "candidates": [],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%99%D7%A9%D7%A8%D7%90%D7%99%D7%99%D7%A8%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "nisko": {
+    "name": "ניסקו",
+    "domain": "nisko.co.il",
+    "candidates": [],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%A0%D7%99%D7%A1%D7%A7%D7%95%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "migdal": {
+    "name": "מגדל",
+    "domain": "migdal.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%9E%D7%92%D7%93%D7%9C%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "strauss_sweets": {
+    "name": "שטראוס מתוקים",
+    "domain": "strauss-group.com",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      },
+      {
+        "filename": "apple-touch.png",
+        "source": "apple-touch-icon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%A9%D7%98%D7%A8%D7%90%D7%95%D7%A1%20%D7%9E%D7%AA%D7%95%D7%A7%D7%99%D7%9D%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "tnuva_mama_of": {
+    "name": "תנובה - מאמא עוף",
+    "domain": "tnuva.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%AA%D7%A0%D7%95%D7%91%D7%94%20-%20%D7%9E%D7%90%D7%9E%D7%90%20%D7%A2%D7%95%D7%A3%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "tnuva_dairy": {
+    "name": "תנובה - מוצרי חלב",
+    "domain": "tnuva.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%AA%D7%A0%D7%95%D7%91%D7%94%20-%20%D7%9E%D7%95%D7%A6%D7%A8%D7%99%20%D7%97%D7%9C%D7%91%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "bank_leumi": {
+    "name": "בנק לאומי",
+    "domain": "leumi.co.il",
+    "candidates": [],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%91%D7%A0%D7%A7%20%D7%9C%D7%90%D7%95%D7%9E%D7%99%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "hamashbir": {
+    "name": "המשביר לצרכן",
+    "domain": "hamashbir.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%94%D7%9E%D7%A9%D7%91%D7%99%D7%A8%20%D7%9C%D7%A6%D7%A8%D7%9B%D7%9F%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "kimberly_clark": {
+    "name": "קימברלי קלארק",
+    "domain": "kimberly-clark.com",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%A7%D7%99%D7%9E%D7%91%D7%A8%D7%9C%D7%99%20%D7%A7%D7%9C%D7%90%D7%A8%D7%A7%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "newpan": {
+    "name": "ניופאן",
+    "domain": "newpan.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%A0%D7%99%D7%95%D7%A4%D7%90%D7%9F%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "partner": {
+    "name": "פרטנר",
+    "domain": "partner.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%A4%D7%A8%D7%98%D7%A0%D7%A8%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "mega_sport": {
+    "name": "מגה ספורט",
+    "domain": "megasport.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%9E%D7%92%D7%94%20%D7%A1%D7%A4%D7%95%D7%A8%D7%98%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "teva_nutrilon": {
+    "name": "טבע - נוטרילון",
+    "domain": "teva.co.il",
+    "candidates": [],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%98%D7%91%D7%A2%20-%20%D7%A0%D7%95%D7%98%D7%A8%D7%99%D7%9C%D7%95%D7%9F%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "procter_and_gamble": {
+    "name": "פרוקטר אנד גמבל",
+    "domain": "pg.com",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      },
+      {
+        "filename": "apple-touch.png",
+        "source": "apple-touch-icon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%A4%D7%A8%D7%95%D7%A7%D7%98%D7%A8%20%D7%90%D7%A0%D7%93%20%D7%92%D7%9E%D7%91%D7%9C%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "similac": {
+    "name": "סימילאק",
+    "domain": "similac.com",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      },
+      {
+        "filename": "apple-touch.png",
+        "source": "apple-touch-icon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%A1%D7%99%D7%9E%D7%99%D7%9C%D7%90%D7%A7%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "osem_snacks": {
+    "name": "אוסם - חטיפים",
+    "domain": "osem.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%90%D7%95%D7%A1%D7%9D%20-%20%D7%97%D7%98%D7%99%D7%A4%D7%99%D7%9D%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "osem_savory": {
+    "name": "אוסם - מאפה מלוח",
+    "domain": "osem.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%90%D7%95%D7%A1%D7%9D%20-%20%D7%9E%D7%90%D7%A4%D7%94%20%D7%9E%D7%9C%D7%95%D7%97%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "nestle_ice_cream": {
+    "name": "גלידות נסטלה",
+    "domain": "nestle.co.il",
+    "candidates": [],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%92%D7%9C%D7%99%D7%93%D7%95%D7%AA%20%D7%A0%D7%A1%D7%98%D7%9C%D7%94%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "sodastream": {
+    "name": "סודה סטרים",
+    "domain": "sodastream.com",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%A1%D7%95%D7%93%D7%94%20%D7%A1%D7%98%D7%A8%D7%99%D7%9D%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "bezeq_store": {
+    "name": "בזק סטור",
+    "domain": "bezeq.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%91%D7%96%D7%A7%20%D7%A1%D7%98%D7%95%D7%A8%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "strauss_tami4": {
+    "name": "שטראוס תמי4",
+    "domain": "tami4.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%A9%D7%98%D7%A8%D7%90%D7%95%D7%A1%20%D7%AA%D7%9E%D7%994%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "ichilov_hospital": {
+    "name": "בית חולים איכילוב",
+    "domain": "tasmc.org.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%91%D7%99%D7%AA%20%D7%97%D7%95%D7%9C%D7%99%D7%9D%20%D7%90%D7%99%D7%9B%D7%99%D7%9C%D7%95%D7%91%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "nintendo": {
+    "name": "נינטנדו",
+    "domain": "nintendo.com",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%A0%D7%99%D7%A0%D7%98%D7%A0%D7%93%D7%95%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "hyundai": {
+    "name": "יונדאי",
+    "domain": "hyundai.co.il",
+    "candidates": [],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%99%D7%95%D7%A0%D7%93%D7%90%D7%99%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "wissotzky": {
+    "name": "ויסוצקי",
+    "domain": "wissotzky.com",
+    "candidates": [],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%95%D7%99%D7%A1%D7%95%D7%A6%D7%A7%D7%99%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "muller_tara": {
+    "name": "מולר יוגורט של טרה",
+    "domain": "tara.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%9E%D7%95%D7%9C%D7%A8%20%D7%99%D7%95%D7%92%D7%95%D7%A8%D7%98%20%D7%A9%D7%9C%20%D7%98%D7%A8%D7%94%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "astrazeneca": {
+    "name": "אסטרזניקה",
+    "domain": "astrazeneca.com",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%90%D7%A1%D7%98%D7%A8%D7%96%D7%A0%D7%99%D7%A7%D7%94%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "delta": {
+    "name": "דלתא",
+    "domain": "deltagalil.com",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%93%D7%9C%D7%AA%D7%90%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "golf": {
+    "name": "גולף",
+    "domain": "golf.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%92%D7%95%D7%9C%D7%A3%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "align": {
+    "name": "אליין",
+    "domain": "aligntech.com",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%90%D7%9C%D7%99%D7%99%D7%9F%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "unilever": {
+    "name": "יוניליוור",
+    "domain": "unilever.com",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%99%D7%95%D7%A0%D7%99%D7%9C%D7%99%D7%95%D7%95%D7%A8%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "max": {
+    "name": "MAX",
+    "domain": "max.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=MAX%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "netafim": {
+    "name": "נטפים",
+    "domain": "netafim.com",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%A0%D7%98%D7%A4%D7%99%D7%9D%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "powercard": {
+    "name": "POWERCARD",
+    "domain": "powercard.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=POWERCARD%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "be_unique": {
+    "name": "בי יוניק",
+    "domain": null,
+    "candidates": [],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%91%D7%99%20%D7%99%D7%95%D7%A0%D7%99%D7%A7%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "yotvata": {
+    "name": "יטבתה",
+    "domain": "yotvata.co.il",
+    "candidates": [],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%99%D7%98%D7%91%D7%AA%D7%94%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "harel": {
+    "name": "הראל",
+    "domain": "harel-group.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%94%D7%A8%D7%90%D7%9C%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "beverages_company": {
+    "name": "החברה למשקאות",
+    "domain": null,
+    "candidates": [],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%94%D7%97%D7%91%D7%A8%D7%94%20%D7%9C%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "tzomet_sfarim": {
+    "name": "צומת ספרים",
+    "domain": "booknet.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%A6%D7%95%D7%9E%D7%AA%20%D7%A1%D7%A4%D7%A8%D7%99%D7%9D%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "brill_group": {
+    "name": "קבוצת בריל",
+    "domain": "brill.co.il",
+    "candidates": [],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%A7%D7%91%D7%95%D7%A6%D7%AA%20%D7%91%D7%A8%D7%99%D7%9C%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "maccabi": {
+    "name": "מכבי",
+    "domain": "maccabi4u.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%9E%D7%9B%D7%91%D7%99%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "toys_r_us": {
+    "name": "טויס אר אס",
+    "domain": "toysrus.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%98%D7%95%D7%99%D7%A1%20%D7%90%D7%A8%20%D7%90%D7%A1%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "azrieli_mall": {
+    "name": "קניון עזריאלי",
+    "domain": "azrieli.com",
+    "candidates": [
+      {
+        "filename": "apple-touch.png",
+        "source": "apple-touch-icon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%A7%D7%A0%D7%99%D7%95%D7%9F%20%D7%A2%D7%96%D7%A8%D7%99%D7%90%D7%9C%D7%99%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "solel_boneh": {
+    "name": "סולל בונה",
+    "domain": "solel-boneh.co.il",
+    "candidates": [],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%A1%D7%95%D7%9C%D7%9C%20%D7%91%D7%95%D7%A0%D7%94%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "bruria_center": {
+    "name": "ברוריה בסנטר",
+    "domain": null,
+    "candidates": [],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%91%D7%A8%D7%95%D7%A8%D7%99%D7%94%20%D7%91%D7%A1%D7%A0%D7%98%D7%A8%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "adult_store_center": {
+    "name": "חנות אביזרי מין בסנטר",
+    "domain": null,
+    "candidates": [],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%97%D7%A0%D7%95%D7%AA%20%D7%90%D7%91%D7%99%D7%96%D7%A8%D7%99%20%D7%9E%D7%99%D7%9F%20%D7%91%D7%A1%D7%A0%D7%98%D7%A8%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "rambam_hospital": {
+    "name": "בי\"ח רמבם",
+    "domain": "rambam.org.il",
+    "candidates": [],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%91%D7%99%22%D7%97%20%D7%A8%D7%9E%D7%91%D7%9D%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "clalit_smile": {
+    "name": "כללית סמייל",
+    "domain": "clalit-smile.co.il",
+    "candidates": [],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%9B%D7%9C%D7%9C%D7%99%D7%AA%20%D7%A1%D7%9E%D7%99%D7%99%D7%9C%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "beilinson": {
+    "name": "בלינסון",
+    "domain": "rabin.org.il",
+    "candidates": [],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%91%D7%9C%D7%99%D7%A0%D7%A1%D7%95%D7%9F%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "strauss_food": {
+    "name": "שטראוס חטיבת האוכל",
+    "domain": "strauss-group.com",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      },
+      {
+        "filename": "apple-touch.png",
+        "source": "apple-touch-icon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%A9%D7%98%D7%A8%D7%90%D7%95%D7%A1%20%D7%97%D7%98%D7%99%D7%91%D7%AA%20%D7%94%D7%90%D7%95%D7%9B%D7%9C%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "aroma_dizengoff": {
+    "name": "ארומה דיזינגוף סנטר",
+    "domain": "aroma.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%90%D7%A8%D7%95%D7%9E%D7%94%20%D7%93%D7%99%D7%96%D7%99%D7%A0%D7%92%D7%95%D7%A3%20%D7%A1%D7%A0%D7%98%D7%A8%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "durex": {
+    "name": "דורקס",
+    "domain": "durex.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%93%D7%95%D7%A8%D7%A7%D7%A1%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "moovit": {
+    "name": "MOOVIT",
+    "domain": "moovit.com",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=MOOVIT%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "riseup": {
+    "name": "RISEUP",
+    "domain": "riseup.co.il",
+    "candidates": [],
+    "googleSearchUrl": "https://www.google.com/search?q=RISEUP%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "tommy_and_anike": {
+    "name": "TOMMY&ANIKE",
+    "domain": null,
+    "candidates": [],
+    "googleSearchUrl": "https://www.google.com/search?q=TOMMY%26ANIKE%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "righthear": {
+    "name": "RIGTHHEAR",
+    "domain": "right-hear.com",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=RIGTHHEAR%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "wix": {
+    "name": "WIX",
+    "domain": "wix.com",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=WIX%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "strauss_coffee": {
+    "name": "שטראוס קפה",
+    "domain": "strauss-group.com",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      },
+      {
+        "filename": "apple-touch.png",
+        "source": "apple-touch-icon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%A9%D7%98%D7%A8%D7%90%D7%95%D7%A1%20%D7%A7%D7%A4%D7%94%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "ituran": {
+    "name": "איתוראן",
+    "domain": "ituran.com",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%90%D7%99%D7%AA%D7%95%D7%A8%D7%90%D7%9F%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "madison": {
+    "name": "מדיסון",
+    "domain": "madison.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%9E%D7%93%D7%99%D7%A1%D7%95%D7%9F%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "k_health": {
+    "name": "K Health",
+    "domain": "khealth.com",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=K%20Health%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "el_al": {
+    "name": "אלעל",
+    "domain": "elal.com",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%90%D7%9C%D7%A2%D7%9C%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "studio_0304": {
+    "name": "סטודיו 0304",
+    "domain": null,
+    "candidates": [],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%A1%D7%98%D7%95%D7%93%D7%99%D7%95%200304%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "atvisor_ai": {
+    "name": "atvisor.ai",
+    "domain": "atvisor.ai",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=atvisor.ai%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "lego": {
+    "name": "לגו",
+    "domain": "lego.com",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      },
+      {
+        "filename": "apple-touch.png",
+        "source": "apple-touch-icon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%9C%D7%92%D7%95%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "strauss_salty": {
+    "name": "שטראוס מלוחים",
+    "domain": "strauss-group.com",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      },
+      {
+        "filename": "apple-touch.png",
+        "source": "apple-touch-icon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%A9%D7%98%D7%A8%D7%90%D7%95%D7%A1%20%D7%9E%D7%9C%D7%95%D7%97%D7%99%D7%9D%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "phoenix": {
+    "name": "הפניקס",
+    "domain": "fnx.co.il",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=%D7%94%D7%A4%D7%A0%D7%99%D7%A7%D7%A1%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "hommz": {
+    "name": "HOMMZ",
+    "domain": "hommz.co.il",
+    "candidates": [],
+    "googleSearchUrl": "https://www.google.com/search?q=HOMMZ%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  },
+  "jansport": {
+    "name": "JanSport",
+    "domain": "jansport.com",
+    "candidates": [
+      {
+        "filename": "favicon.png",
+        "source": "google-favicon"
+      }
+    ],
+    "googleSearchUrl": "https://www.google.com/search?q=JanSport%20logo%20%D7%9C%D7%95%D7%92%D7%95&tbm=isch"
+  }
+}
