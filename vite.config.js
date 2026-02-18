@@ -277,7 +277,6 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         'worth-it': resolve(__dirname, 'worth-it.html'),
-        'admin-logo': resolve(__dirname, 'admin-logo.html'),
       },
     },
   },
