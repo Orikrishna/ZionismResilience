@@ -1,0 +1,4536 @@
+{
+  "companies": [
+    {
+      "id": "dizengoff_center",
+      "name": "דיזינגוף סנטר",
+      "companySize": "בינונית",
+      "industry": "קמעונאות",
+      "referralSource1": "כנס",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": true,
+      "agreementSigned": true,
+      "paid": true,
+      "status": "כן",
+      "recruitmentStatus": "הצטרפו ושילמו",
+      "notes": "נשלחו תאריכים לסיורים. סיור ראשון תואם 9.5.",
+      "requirements": "התאמת חוויית הקנייה לאנשים עם מוגבלות",
+      "process": {
+        "learning": {
+          "industryReview": "כן",
+          "surveyDesign": "כן",
+          "participantRecruitment": "כן",
+          "barrierMapping": "כן",
+          "surveyDistribution": "כן",
+          "responseCollection": "כן",
+          "expertRecruitment": "כן",
+          "recommendationsReport": "כן",
+          "userTesting": "כן",
+          "socialPartnerRecruitment": "כן",
+          "developmentRecommendations": "כן"
+        },
+        "development": {
+          "presentRecommendations": "כן",
+          "productDecision": "כן",
+          "ganttCreation": "כן",
+          "processCompletion": "כן",
+          "solutionValidation": "בתהליך",
+          "productImplementation": "בתהליך"
+        },
+        "marketing": {
+          "influencerSharing": "כן",
+          "digitalMarketing": "כן",
+          "pressReleaseDraft": "לא",
+          "pressReleaseApproval": "לא",
+          "websiteUpdate": "לא",
+          "exposureData": "לא"
+        }
+      },
+      "outcomes": {
+        "hasProduct": true,
+        "productDescription": "מדריך להקרנות מותאמות",
+        "satisfaction": "שיתוף פעולה מעולה",
+        "mediaExposure": "כתבה בגלובס"
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": true,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": true
+      }
+    },
+    {
+      "id": "israir",
+      "name": "ישראייר",
+      "companySize": null,
+      "industry": "תעופה/תיירות",
+      "referralSource1": "המלצה/שותף",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "פגישה התקיימה, ממתינים",
+      "notes": "שיחת סגירה - האם ירצו להמשיך/מה עם השיווק. ורד מול אשרת. אחרי החג",
+      "requirements": "נגישות טיסות ושירותי תעופה",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "nisko",
+      "name": "ניסקו",
+      "companySize": "בינונית",
+      "industry": "תעשייה",
+      "referralSource1": "כנס",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "פגישה התקיימה, ממתינים",
+      "notes": "הדרכת חשמלאים ב16.3.22. התקיימה שיחה עם ורד וקובי - יבדקו אצלם וישיבו בהמשך",
+      "requirements": "נגישות מוצרי בית",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "migdal",
+      "name": "מגדל",
+      "companySize": "גדולה",
+      "industry": "פיננסים",
+      "referralSource1": "קשרים אישיים",
+      "referralSource2": "וובינר",
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": true,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "כן",
+      "recruitmentStatus": "נשלח הסכם",
+      "notes": "ממתינים לחתימה על ההסכם",
+      "requirements": "נגישות שירותים פיננסיים דיגיטליים",
+      "process": {
+        "learning": {
+          "industryReview": "כן",
+          "surveyDesign": "כן",
+          "participantRecruitment": "כן",
+          "barrierMapping": "כן",
+          "surveyDistribution": "כן",
+          "responseCollection": "בתהליך",
+          "expertRecruitment": "לא",
+          "recommendationsReport": "לא",
+          "userTesting": "לא",
+          "socialPartnerRecruitment": "לא",
+          "developmentRecommendations": "לא"
+        },
+        "development": {
+          "presentRecommendations": "לא",
+          "productDecision": "לא",
+          "ganttCreation": "לא",
+          "processCompletion": "לא",
+          "solutionValidation": "לא",
+          "productImplementation": "לא"
+        },
+        "marketing": {
+          "influencerSharing": "לא",
+          "digitalMarketing": "לא",
+          "pressReleaseDraft": "לא",
+          "pressReleaseApproval": "לא",
+          "websiteUpdate": "לא",
+          "exposureData": "לא"
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": true,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": true,
+        "conferenceAugust": true
+      }
+    },
+    {
+      "id": "strauss_sweets",
+      "name": "שטראוס מתוקים",
+      "companySize": "גדולה",
+      "industry": "מזון",
+      "referralSource1": "פותח דלתות",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": true,
+      "agreementSigned": true,
+      "paid": true,
+      "status": "כן",
+      "recruitmentStatus": "הצטרפו ושילמו",
+      "notes": "תהליך הושלם בהצלחה, ממשיכים לשלב הבא",
+      "requirements": "נגישות אריזות לאנשים עם לקויות ראייה",
+      "process": {
+        "learning": {
+          "industryReview": "כן",
+          "surveyDesign": "כן",
+          "participantRecruitment": "כן",
+          "barrierMapping": "כן",
+          "surveyDistribution": "כן",
+          "responseCollection": "כן",
+          "expertRecruitment": "כן",
+          "recommendationsReport": "כן",
+          "userTesting": "כן",
+          "socialPartnerRecruitment": "כן",
+          "developmentRecommendations": "כן"
+        },
+        "development": {
+          "presentRecommendations": "כן",
+          "productDecision": "כן",
+          "ganttCreation": "כן",
+          "processCompletion": "כן",
+          "solutionValidation": "כן",
+          "productImplementation": "כן"
+        },
+        "marketing": {
+          "influencerSharing": "כן",
+          "digitalMarketing": "כן",
+          "pressReleaseDraft": "כן",
+          "pressReleaseApproval": "כן",
+          "websiteUpdate": "בתהליך",
+          "exposureData": "בתהליך"
+        }
+      },
+      "outcomes": {
+        "hasProduct": true,
+        "productDescription": "אריזת חטיפים מותאמת נגישות",
+        "satisfaction": "מרוצים מאוד מהתהליך",
+        "mediaExposure": "כתבה ב-ynet"
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": true,
+        "conferenceAugust": true
+      }
+    },
+    {
+      "id": "tnuva_mama_of",
+      "name": "תנובה - מאמא עוף",
+      "companySize": "גדולה",
+      "industry": "מזון",
+      "referralSource1": "המלצה/שותף",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "פגישה התקיימה, ממתינים",
+      "notes": "ורד בקשר עם איש הקשר, ממתינים לתשובה",
+      "requirements": "נגישות מוצרי עוף",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "tnuva_dairy",
+      "name": "תנובה - מוצרי חלב",
+      "companySize": "גדולה",
+      "industry": "מזון",
+      "referralSource1": "פותח דלתות",
+      "referralSource2": "כנס",
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": true,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "כן",
+      "recruitmentStatus": "נשלח הסכם",
+      "notes": "צוות מוצר בודק התאמה",
+      "requirements": "נגישות אריזות מוצרי חלב",
+      "process": {
+        "learning": {
+          "industryReview": "כן",
+          "surveyDesign": "כן",
+          "participantRecruitment": "כן",
+          "barrierMapping": "כן",
+          "surveyDistribution": "כן",
+          "responseCollection": "כן",
+          "expertRecruitment": "לא",
+          "recommendationsReport": "לא",
+          "userTesting": "לא",
+          "socialPartnerRecruitment": "לא",
+          "developmentRecommendations": "לא"
+        },
+        "development": {
+          "presentRecommendations": "לא",
+          "productDecision": "לא",
+          "ganttCreation": "לא",
+          "processCompletion": "לא",
+          "solutionValidation": "לא",
+          "productImplementation": "לא"
+        },
+        "marketing": {
+          "influencerSharing": "לא",
+          "digitalMarketing": "לא",
+          "pressReleaseDraft": "לא",
+          "pressReleaseApproval": "לא",
+          "websiteUpdate": "לא",
+          "exposureData": "לא"
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": true,
+        "conferenceJune": false,
+        "conferenceApril": true,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "bank_leumi",
+      "name": "בנק לאומי",
+      "companySize": "גדולה",
+      "industry": "פיננסים",
+      "referralSource1": "פנייה ישירה",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "נשלח מייל, ממתינים",
+      "notes": "",
+      "requirements": "נגישות שירותים בנקאיים",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "hamashbir",
+      "name": "המשביר לצרכן",
+      "companySize": "קטנה",
+      "industry": "אחר",
+      "referralSource1": "פותח דלתות",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "לא",
+      "recruitmentStatus": "סירבו",
+      "notes": "",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "kimberly_clark",
+      "name": "קימברלי קלארק",
+      "companySize": "גלובלית",
+      "industry": "תעשייה",
+      "referralSource1": "וובינר",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": true,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "נשלח הסכם, ממתינים",
+      "notes": "ממתינים לתשובה מהמטה הגלובלי",
+      "requirements": "נגישות מוצרי היגיינה",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "newpan",
+      "name": "ניופאן",
+      "companySize": "בינונית",
+      "industry": "תעשייה",
+      "referralSource1": "המלצה/שותף",
+      "referralSource2": "פותח דלתות",
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "נשלח מייל, ממתינים",
+      "notes": "",
+      "requirements": "נגישות מוצרי היגיינה",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "partner",
+      "name": "פרטנר",
+      "companySize": "גדולה",
+      "industry": "אחר",
+      "referralSource1": "פותח דלתות",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "לא",
+      "recruitmentStatus": "סירבו",
+      "notes": "",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": true,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "mega_sport",
+      "name": "מגה ספורט",
+      "companySize": "בינונית",
+      "industry": "תעשייה",
+      "referralSource1": "המלצה/שותף",
+      "referralSource2": "פנייה ישירה",
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "נשלח מייל, ממתינים",
+      "notes": "",
+      "requirements": "נגישות ציוד ספורט",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": true,
+        "conferenceMay": true,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "teva_nutrilon",
+      "name": "טבע - נוטרילון",
+      "companySize": "גדולה",
+      "industry": "בריאות",
+      "referralSource1": "פותח דלתות",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "נשלח מייל, ממתינים",
+      "notes": "",
+      "requirements": "נגישות מוצרי תינוקות",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": true,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "procter_and_gamble",
+      "name": "פרוקטר אנד גמבל",
+      "companySize": "גלובלית",
+      "industry": "תעשייה",
+      "referralSource1": "פותח דלתות",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "פגישה התקיימה, ממתינים",
+      "notes": "פגישת היכרות התקיימה, ממתינים להמשך",
+      "requirements": "נגישות מוצרי צריכה",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": true
+      }
+    },
+    {
+      "id": "similac",
+      "name": "סימילאק",
+      "companySize": "בינונית",
+      "industry": "מזון",
+      "referralSource1": "וובינר",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "לא",
+      "recruitmentStatus": "סירבו",
+      "notes": "",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "osem_snacks",
+      "name": "אוסם - חטיפים",
+      "companySize": "גדולה",
+      "industry": "מזון",
+      "referralSource1": "כנס",
+      "referralSource2": "פותח דלתות",
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "נשלח מייל, ממתינים",
+      "notes": "",
+      "requirements": "נגישות אריזות חטיפים",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "osem_savory",
+      "name": "אוסם - מאפה מלוח",
+      "companySize": "גדולה",
+      "industry": "מזון",
+      "referralSource1": "כנס",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "נשלח מייל, ממתינים",
+      "notes": "",
+      "requirements": "נגישות אריזות מאפה מלוח",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "nestle_ice_cream",
+      "name": "גלידות נסטלה",
+      "companySize": "גלובלית",
+      "industry": "מזון",
+      "referralSource1": "פותח דלתות",
+      "referralSource2": "כנס",
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "נשלח מייל, ממתינים",
+      "notes": "",
+      "requirements": "נגישות אריזות גלידה",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": true,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": true,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "sodastream",
+      "name": "סודה סטרים",
+      "companySize": "גדולה",
+      "industry": "מזון",
+      "referralSource1": "המלצה/שותף",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "לא",
+      "recruitmentStatus": "סירבו",
+      "notes": "לא מעוניינים כרגע, אולי בעתיד",
+      "requirements": "נגישות מכשירי סודה",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "bezeq_store",
+      "name": "בזק סטור",
+      "companySize": "גדולה",
+      "industry": "אחר",
+      "referralSource1": "פורום/קהילה",
+      "referralSource2": "כנס",
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "לא",
+      "recruitmentStatus": "סירבו",
+      "notes": "",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "strauss_tami4",
+      "name": "שטראוס תמי4",
+      "companySize": "גדולה",
+      "industry": "מזון",
+      "referralSource1": "פנייה ישירה",
+      "referralSource2": "פותח דלתות",
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": true,
+      "agreementSigned": false,
+      "paid": true,
+      "status": "כן",
+      "recruitmentStatus": "הצטרפו ושילמו",
+      "notes": "דיון פנימי על המשך התהליך",
+      "requirements": "נגישות מכשירי מים לאנשים עם מוגבלות פיזית",
+      "process": {
+        "learning": {
+          "industryReview": "כן",
+          "surveyDesign": "כן",
+          "participantRecruitment": "כן",
+          "barrierMapping": "כן",
+          "surveyDistribution": "כן",
+          "responseCollection": "כן",
+          "expertRecruitment": "כן",
+          "recommendationsReport": "כן",
+          "userTesting": "בתהליך",
+          "socialPartnerRecruitment": "בתהליך",
+          "developmentRecommendations": "בתהליך"
+        },
+        "development": {
+          "presentRecommendations": "כן",
+          "productDecision": "כן",
+          "ganttCreation": "לא",
+          "processCompletion": "לא",
+          "solutionValidation": "לא",
+          "productImplementation": "לא"
+        },
+        "marketing": {
+          "influencerSharing": "לא",
+          "digitalMarketing": "לא",
+          "pressReleaseDraft": "לא",
+          "pressReleaseApproval": "לא",
+          "websiteUpdate": "לא",
+          "exposureData": "לא"
+        }
+      },
+      "outcomes": {
+        "hasProduct": false,
+        "productDescription": "מכשיר מים מותאם",
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": true,
+        "conferenceJune": false,
+        "conferenceApril": true,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "ichilov_hospital",
+      "name": "בית חולים איכילוב",
+      "companySize": "גדולה",
+      "industry": "בריאות",
+      "referralSource1": "פנייה ישירה",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": true,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "נשלח הסכם, ממתינים",
+      "notes": "ממתינים לאישור הנהלת בית החולים",
+      "requirements": "נגישות שירותי בית חולים",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": true,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "nintendo",
+      "name": "נינטנדו",
+      "companySize": "גלובלית",
+      "industry": "תעשייה",
+      "referralSource1": "אחר",
+      "referralSource2": "כנס",
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "לא",
+      "recruitmentStatus": "סירבו",
+      "notes": "",
+      "requirements": "נגישות משחקי וידאו",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": true,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "hyundai",
+      "name": "יונדאי",
+      "companySize": "גלובלית",
+      "industry": "אחר",
+      "referralSource1": "וובינר",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "פגישה התקיימה, ממתינים",
+      "notes": "פגישה התקיימה, ממתינים לתשובה",
+      "requirements": "נגישות רכבים",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": true
+      }
+    },
+    {
+      "id": "wissotzky",
+      "name": "ויסוצקי",
+      "companySize": "בינונית",
+      "industry": "מזון",
+      "referralSource1": null,
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": false,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "טרם יצרנו קשר",
+      "notes": "",
+      "requirements": "נגישות אריזות תה",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": null,
+        "conferenceMay": null,
+        "conferenceJune": null,
+        "conferenceApril": null,
+        "conferenceAugust": null
+      }
+    },
+    {
+      "id": "muller_tara",
+      "name": "מולר יוגורט של טרה",
+      "companySize": "בינונית",
+      "industry": "מזון",
+      "referralSource1": null,
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": false,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "טרם יצרנו קשר",
+      "notes": "",
+      "requirements": "נגישות אריזות יוגורט",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": null,
+        "conferenceMay": null,
+        "conferenceJune": null,
+        "conferenceApril": null,
+        "conferenceAugust": null
+      }
+    },
+    {
+      "id": "astrazeneca",
+      "name": "אסטרזניקה",
+      "companySize": "גלובלית",
+      "industry": "בריאות",
+      "referralSource1": "המלצה/שותף",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": true,
+      "agreementSigned": true,
+      "paid": true,
+      "status": "כן",
+      "recruitmentStatus": "הצטרפו ושילמו",
+      "notes": "תהליך דגל - הושלם במלואו",
+      "requirements": "נגישות שירותי בריאות ומידע רפואי",
+      "process": {
+        "learning": {
+          "industryReview": "כן",
+          "surveyDesign": "כן",
+          "participantRecruitment": "כן",
+          "barrierMapping": "כן",
+          "surveyDistribution": "כן",
+          "responseCollection": "כן",
+          "expertRecruitment": "כן",
+          "recommendationsReport": "כן",
+          "userTesting": "כן",
+          "socialPartnerRecruitment": "כן",
+          "developmentRecommendations": "כן"
+        },
+        "development": {
+          "presentRecommendations": "כן",
+          "productDecision": "כן",
+          "ganttCreation": "כן",
+          "processCompletion": "כן",
+          "solutionValidation": "כן",
+          "productImplementation": "כן"
+        },
+        "marketing": {
+          "influencerSharing": "כן",
+          "digitalMarketing": "כן",
+          "pressReleaseDraft": "כן",
+          "pressReleaseApproval": "כן",
+          "websiteUpdate": "כן",
+          "exposureData": "כן"
+        }
+      },
+      "outcomes": {
+        "hasProduct": true,
+        "productDescription": "שירות ייעוץ רפואי נגיש",
+        "satisfaction": "שינה את הגישה שלנו לנגישות",
+        "mediaExposure": "כתבה ב-The Marker, רדיו"
+      },
+      "community": {
+        "workshop": true,
+        "conferenceMay": true,
+        "conferenceJune": true,
+        "conferenceApril": false,
+        "conferenceAugust": true
+      }
+    },
+    {
+      "id": "delta",
+      "name": "דלתא",
+      "companySize": "גלובלית",
+      "industry": "תעשייה",
+      "referralSource1": "פנייה ישירה",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "לא",
+      "recruitmentStatus": "סירבו",
+      "notes": "",
+      "requirements": "נגישות מוצרי טקסטיל",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "golf",
+      "name": "גולף",
+      "companySize": "בינונית",
+      "industry": "תעשייה",
+      "referralSource1": "פנייה ישירה",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": true,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "כן",
+      "recruitmentStatus": "נשלח הסכם",
+      "notes": "פגישה עם מנכ\"ל נקבעה",
+      "requirements": "נגישות חנויות אופנה",
+      "process": {
+        "learning": {
+          "industryReview": "כן",
+          "surveyDesign": "כן",
+          "participantRecruitment": "כן",
+          "barrierMapping": "כן",
+          "surveyDistribution": "בתהליך",
+          "responseCollection": "לא",
+          "expertRecruitment": "לא",
+          "recommendationsReport": "לא",
+          "userTesting": "לא",
+          "socialPartnerRecruitment": "לא",
+          "developmentRecommendations": "לא"
+        },
+        "development": {
+          "presentRecommendations": "לא",
+          "productDecision": "לא",
+          "ganttCreation": "לא",
+          "processCompletion": "לא",
+          "solutionValidation": "לא",
+          "productImplementation": "לא"
+        },
+        "marketing": {
+          "influencerSharing": "לא",
+          "digitalMarketing": "לא",
+          "pressReleaseDraft": "לא",
+          "pressReleaseApproval": "לא",
+          "websiteUpdate": "לא",
+          "exposureData": "לא"
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": true
+      }
+    },
+    {
+      "id": "align",
+      "name": "אליין",
+      "companySize": "קטנה",
+      "industry": "תעשייה",
+      "referralSource1": "וובינר",
+      "referralSource2": "פנייה ישירה",
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "נשלח מייל, ממתינים",
+      "notes": "",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "unilever",
+      "name": "יוניליוור",
+      "companySize": "גלובלית",
+      "industry": "תעשייה",
+      "referralSource1": "כנס",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "כן",
+      "recruitmentStatus": "פגישה התקיימה",
+      "notes": "מעוניינים, ממתינים לאישור תקציבי",
+      "requirements": "נגישות מוצרי צריכה",
+      "process": {
+        "learning": {
+          "industryReview": "כן",
+          "surveyDesign": "כן",
+          "participantRecruitment": "כן",
+          "barrierMapping": "בתהליך",
+          "surveyDistribution": "לא",
+          "responseCollection": "לא",
+          "expertRecruitment": "לא",
+          "recommendationsReport": "לא",
+          "userTesting": "לא",
+          "socialPartnerRecruitment": "לא",
+          "developmentRecommendations": "לא"
+        },
+        "development": {
+          "presentRecommendations": "לא",
+          "productDecision": "לא",
+          "ganttCreation": "לא",
+          "processCompletion": "לא",
+          "solutionValidation": "לא",
+          "productImplementation": "לא"
+        },
+        "marketing": {
+          "influencerSharing": "לא",
+          "digitalMarketing": "לא",
+          "pressReleaseDraft": "לא",
+          "pressReleaseApproval": "לא",
+          "websiteUpdate": "לא",
+          "exposureData": "לא"
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": true,
+        "conferenceMay": true,
+        "conferenceJune": true,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "max",
+      "name": "MAX",
+      "companySize": "קטנה",
+      "industry": "אחר",
+      "referralSource1": "קשרים אישיים",
+      "referralSource2": "כנס",
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "לא",
+      "recruitmentStatus": "סירבו",
+      "notes": "",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": true,
+        "conferenceMay": true,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "netafim",
+      "name": "נטפים",
+      "companySize": null,
+      "industry": "תעשייה",
+      "referralSource1": "כנס",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "לא",
+      "recruitmentStatus": "סירבו",
+      "notes": "",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "powercard",
+      "name": "POWERCARD",
+      "companySize": "גדולה",
+      "industry": "פיננסים",
+      "referralSource1": "פנייה ישירה",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": true,
+      "agreementSigned": false,
+      "paid": true,
+      "status": "כן",
+      "recruitmentStatus": "הצטרפו ושילמו",
+      "notes": "תהליך למידה מתקדם",
+      "requirements": "נגישות כרטיסי אשראי ואפליקציה",
+      "process": {
+        "learning": {
+          "industryReview": "כן",
+          "surveyDesign": "כן",
+          "participantRecruitment": "כן",
+          "barrierMapping": "כן",
+          "surveyDistribution": "כן",
+          "responseCollection": "כן",
+          "expertRecruitment": "כן",
+          "recommendationsReport": "בתהליך",
+          "userTesting": "בתהליך",
+          "socialPartnerRecruitment": "לא",
+          "developmentRecommendations": "לא"
+        },
+        "development": {
+          "presentRecommendations": "כן",
+          "productDecision": "לא",
+          "ganttCreation": "לא",
+          "processCompletion": "לא",
+          "solutionValidation": "לא",
+          "productImplementation": "לא"
+        },
+        "marketing": {
+          "influencerSharing": "לא",
+          "digitalMarketing": "לא",
+          "pressReleaseDraft": "לא",
+          "pressReleaseApproval": "לא",
+          "websiteUpdate": "לא",
+          "exposureData": "לא"
+        }
+      },
+      "outcomes": {
+        "hasProduct": false,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": true,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "be_unique",
+      "name": "בי יוניק",
+      "companySize": "קטנה",
+      "industry": "אחר",
+      "referralSource1": "המלצה/שותף",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "פגישה התקיימה, ממתינים",
+      "notes": "פגישה התקיימה, מעוניינים אבל ממתינים לתקציב",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": true
+      }
+    },
+    {
+      "id": "yotvata",
+      "name": "יטבתה",
+      "companySize": "בינונית",
+      "industry": "מזון",
+      "referralSource1": "פנייה ישירה",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": true,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "כן",
+      "recruitmentStatus": "נשלח הסכם",
+      "notes": "פגישת מעקב נקבעה",
+      "requirements": "נגישות מוצרי חלב ואריזות",
+      "process": {
+        "learning": {
+          "industryReview": "כן",
+          "surveyDesign": "כן",
+          "participantRecruitment": "כן",
+          "barrierMapping": "כן",
+          "surveyDistribution": "כן",
+          "responseCollection": "בתהליך",
+          "expertRecruitment": "בתהליך",
+          "recommendationsReport": "לא",
+          "userTesting": "לא",
+          "socialPartnerRecruitment": "לא",
+          "developmentRecommendations": "לא"
+        },
+        "development": {
+          "presentRecommendations": "לא",
+          "productDecision": "לא",
+          "ganttCreation": "לא",
+          "processCompletion": "לא",
+          "solutionValidation": "לא",
+          "productImplementation": "לא"
+        },
+        "marketing": {
+          "influencerSharing": "לא",
+          "digitalMarketing": "לא",
+          "pressReleaseDraft": "לא",
+          "pressReleaseApproval": "לא",
+          "websiteUpdate": "לא",
+          "exposureData": "לא"
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": true,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "harel",
+      "name": "הראל",
+      "companySize": "גדולה",
+      "industry": "פיננסים",
+      "referralSource1": null,
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": false,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "טרם יצרנו קשר",
+      "notes": "",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": null,
+        "conferenceMay": null,
+        "conferenceJune": null,
+        "conferenceApril": null,
+        "conferenceAugust": null
+      }
+    },
+    {
+      "id": "beverages_company",
+      "name": "החברה למשקאות",
+      "companySize": "קטנה",
+      "industry": "מזון",
+      "referralSource1": null,
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": false,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "טרם יצרנו קשר",
+      "notes": "",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": null,
+        "conferenceMay": null,
+        "conferenceJune": null,
+        "conferenceApril": null,
+        "conferenceAugust": null
+      }
+    },
+    {
+      "id": "tzomet_sfarim",
+      "name": "צומת ספרים",
+      "companySize": "קטנה",
+      "industry": "קמעונאות",
+      "referralSource1": null,
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": false,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "טרם יצרנו קשר",
+      "notes": "",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": null,
+        "conferenceMay": null,
+        "conferenceJune": null,
+        "conferenceApril": null,
+        "conferenceAugust": null
+      }
+    },
+    {
+      "id": "brill_group",
+      "name": "קבוצת בריל",
+      "companySize": "בינונית",
+      "industry": "תעשייה",
+      "referralSource1": "פורום/קהילה",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": true,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "נשלח הסכם, ממתינים",
+      "notes": "נשלח הסכם, ממתינים לחתימה",
+      "requirements": "נגישות מוצרי אופנה",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "maccabi",
+      "name": "מכבי",
+      "companySize": "גדולה",
+      "industry": "בריאות",
+      "referralSource1": "קשרים אישיים",
+      "referralSource2": "אחר",
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": true,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "נשלח הסכם, ממתינים",
+      "notes": "נשלח הסכם, ממתינים לאישור הנהלה",
+      "requirements": "נגישות שירותי בריאות",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": true,
+        "conferenceAugust": true
+      }
+    },
+    {
+      "id": "toys_r_us",
+      "name": "טויס אר אס",
+      "companySize": "קטנה",
+      "industry": "קמעונאות",
+      "referralSource1": null,
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": false,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "טרם יצרנו קשר",
+      "notes": "",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": null,
+        "conferenceMay": null,
+        "conferenceJune": null,
+        "conferenceApril": null,
+        "conferenceAugust": null
+      }
+    },
+    {
+      "id": "azrieli_mall",
+      "name": "קניון עזריאלי",
+      "companySize": "גדולה",
+      "industry": "שירותים",
+      "referralSource1": "פנייה ישירה",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": true,
+      "agreementSigned": true,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "חתמו, ממתינים לאישור סופי",
+      "notes": "חתמו על ההסכם, ממתינים לתשלום",
+      "requirements": "נגישות מרכז קניות",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": true,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "solel_boneh",
+      "name": "סולל בונה",
+      "companySize": "גדולה",
+      "industry": "שירותים",
+      "referralSource1": "פנייה ישירה",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "פגישה התקיימה, ממתינים",
+      "notes": "פגישה התקיימה, בודקים התאמה",
+      "requirements": "נגישות אתרי בנייה ומשרדים",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "bruria_center",
+      "name": "ברוריה בסנטר",
+      "companySize": "קטנה",
+      "industry": "קמעונאות",
+      "referralSource1": "וובינר",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": true,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "נשלח הסכם, ממתינים",
+      "notes": "נשלח הסכם, ממתינים לתשובה",
+      "requirements": "נגישות חנות בסנטר",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": true,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "adult_store_center",
+      "name": "חנות אביזרי מין בסנטר",
+      "companySize": "קטנה",
+      "industry": "קמעונאות",
+      "referralSource1": "כנס",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "פגישה התקיימה, ממתינים",
+      "notes": "",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "rambam_hospital",
+      "name": "בי\"ח רמבם",
+      "companySize": "גדולה",
+      "industry": "בריאות",
+      "referralSource1": null,
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": false,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "טרם יצרנו קשר",
+      "notes": "",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": null,
+        "conferenceMay": null,
+        "conferenceJune": null,
+        "conferenceApril": null,
+        "conferenceAugust": null
+      }
+    },
+    {
+      "id": "clalit_smile",
+      "name": "כללית סמייל",
+      "companySize": "בינונית",
+      "industry": "בריאות",
+      "referralSource1": "פנייה ישירה",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": true,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "כן",
+      "recruitmentStatus": "נשלח הסכם",
+      "notes": "שיתוף פעולה מבטיח",
+      "requirements": "נגישות שירותי רפואת שיניים",
+      "process": {
+        "learning": {
+          "industryReview": "כן",
+          "surveyDesign": "כן",
+          "participantRecruitment": "כן",
+          "barrierMapping": "כן",
+          "surveyDistribution": "לא",
+          "responseCollection": "לא",
+          "expertRecruitment": "לא",
+          "recommendationsReport": "לא",
+          "userTesting": "לא",
+          "socialPartnerRecruitment": "לא",
+          "developmentRecommendations": "לא"
+        },
+        "development": {
+          "presentRecommendations": "לא",
+          "productDecision": "לא",
+          "ganttCreation": "לא",
+          "processCompletion": "לא",
+          "solutionValidation": "לא",
+          "productImplementation": "לא"
+        },
+        "marketing": {
+          "influencerSharing": "לא",
+          "digitalMarketing": "לא",
+          "pressReleaseDraft": "לא",
+          "pressReleaseApproval": "לא",
+          "websiteUpdate": "לא",
+          "exposureData": "לא"
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": true,
+        "conferenceMay": true,
+        "conferenceJune": true,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "beilinson",
+      "name": "בלינסון",
+      "companySize": "גדולה",
+      "industry": "בריאות",
+      "referralSource1": "קשרים אישיים",
+      "referralSource2": null,
+      "cohort": 1,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "פגישה התקיימה, ממתינים",
+      "notes": "",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": true,
+        "conferenceAugust": true
+      }
+    },
+    {
+      "id": "strauss_food",
+      "name": "שטראוס חטיבת האוכל",
+      "companySize": "גדולה",
+      "industry": "מזון",
+      "referralSource1": "פותח דלתות",
+      "referralSource2": null,
+      "cohort": 2,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": true,
+      "agreementSigned": true,
+      "paid": true,
+      "status": "כן",
+      "recruitmentStatus": "הצטרפו ושילמו",
+      "notes": "ממתינים לאישור סופי מצוות המוצר",
+      "requirements": "שיפור נגישות אריזות מוצרי מזון",
+      "process": {
+        "learning": {
+          "industryReview": "כן",
+          "surveyDesign": "כן",
+          "participantRecruitment": "כן",
+          "barrierMapping": "כן",
+          "surveyDistribution": "כן",
+          "responseCollection": "כן",
+          "expertRecruitment": "כן",
+          "recommendationsReport": "כן",
+          "userTesting": "כן",
+          "socialPartnerRecruitment": "כן",
+          "developmentRecommendations": "כן"
+        },
+        "development": {
+          "presentRecommendations": "כן",
+          "productDecision": "כן",
+          "ganttCreation": "כן",
+          "processCompletion": "כן",
+          "solutionValidation": "כן",
+          "productImplementation": "בתהליך"
+        },
+        "marketing": {
+          "influencerSharing": "כן",
+          "digitalMarketing": "לא",
+          "pressReleaseDraft": "לא",
+          "pressReleaseApproval": "לא",
+          "websiteUpdate": "לא",
+          "exposureData": "לא"
+        }
+      },
+      "outcomes": {
+        "hasProduct": true,
+        "productDescription": "אריזות חומוס מותאמות",
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": true,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "aroma_dizengoff",
+      "name": "ארומה דיזינגוף סנטר",
+      "companySize": "קטנה",
+      "industry": "מזון",
+      "referralSource1": "המלצה/שותף",
+      "referralSource2": null,
+      "cohort": 2,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "כן",
+      "recruitmentStatus": "פגישה התקיימה",
+      "notes": "בשלבים ראשוניים של הלמידה",
+      "requirements": "נגישות בית קפה",
+      "process": {
+        "learning": {
+          "industryReview": "כן",
+          "surveyDesign": "כן",
+          "participantRecruitment": "בתהליך",
+          "barrierMapping": "לא",
+          "surveyDistribution": "לא",
+          "responseCollection": "לא",
+          "expertRecruitment": "לא",
+          "recommendationsReport": "לא",
+          "userTesting": "לא",
+          "socialPartnerRecruitment": "לא",
+          "developmentRecommendations": "לא"
+        },
+        "development": {
+          "presentRecommendations": "לא",
+          "productDecision": "לא",
+          "ganttCreation": "לא",
+          "processCompletion": "לא",
+          "solutionValidation": "לא",
+          "productImplementation": "לא"
+        },
+        "marketing": {
+          "influencerSharing": "לא",
+          "digitalMarketing": "לא",
+          "pressReleaseDraft": "לא",
+          "pressReleaseApproval": "לא",
+          "websiteUpdate": "לא",
+          "exposureData": "לא"
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": true,
+        "conferenceMay": true,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "durex",
+      "name": "דורקס",
+      "companySize": "קטנה",
+      "industry": "תעשייה",
+      "referralSource1": null,
+      "referralSource2": null,
+      "cohort": 2,
+      "emailSent": false,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "לא",
+      "recruitmentStatus": "סירבו",
+      "notes": "",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": null,
+        "conferenceMay": null,
+        "conferenceJune": null,
+        "conferenceApril": null,
+        "conferenceAugust": null
+      }
+    },
+    {
+      "id": "moovit",
+      "name": "MOOVIT",
+      "companySize": "בינונית",
+      "industry": "טכנולוגיה",
+      "referralSource1": "פנייה ישירה",
+      "referralSource2": "קשרים אישיים",
+      "cohort": 2,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "לא",
+      "recruitmentStatus": "סירבו",
+      "notes": "",
+      "requirements": "נגישות אפליקציית תחבורה",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": true,
+        "conferenceMay": true,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "riseup",
+      "name": "RISEUP",
+      "companySize": "בינונית",
+      "industry": "טכנולוגיה",
+      "referralSource1": "המלצה/שותף",
+      "referralSource2": "פותח דלתות",
+      "cohort": 2,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "לא",
+      "recruitmentStatus": "סירבו",
+      "notes": "",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "tommy_and_anike",
+      "name": "TOMMY&ANIKE",
+      "companySize": "קטנה",
+      "industry": "תעשייה",
+      "referralSource1": "קשרים אישיים",
+      "referralSource2": null,
+      "cohort": 2,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "לא",
+      "recruitmentStatus": "סירבו",
+      "notes": "",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "righthear",
+      "name": "RIGTHHEAR",
+      "companySize": "קטנה",
+      "industry": "טכנולוגיה",
+      "referralSource1": "קשרים אישיים",
+      "referralSource2": null,
+      "cohort": 2,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "לא",
+      "recruitmentStatus": "סירבו",
+      "notes": "",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": true
+      }
+    },
+    {
+      "id": "wix",
+      "name": "WIX",
+      "companySize": "גלובלית",
+      "industry": "טכנולוגיה",
+      "referralSource1": "פותח דלתות",
+      "referralSource2": null,
+      "cohort": 2,
+      "emailSent": true,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "לא",
+      "recruitmentStatus": "סירבו",
+      "notes": "",
+      "requirements": "נגישות פלטפורמת בניית אתרים",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": true,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "strauss_coffee",
+      "name": "שטראוס קפה",
+      "companySize": "גדולה",
+      "industry": "מזון",
+      "referralSource1": "קשרים אישיים",
+      "referralSource2": null,
+      "cohort": 2,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "לא",
+      "recruitmentStatus": "סירבו",
+      "notes": "סירבו בשלב זה, אפשר לחזור בעתיד",
+      "requirements": "נגישות מוצרי קפה",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "ituran",
+      "name": "איתוראן",
+      "companySize": "בינונית",
+      "industry": "שירותים",
+      "referralSource1": "כנס",
+      "referralSource2": null,
+      "cohort": 2,
+      "emailSent": true,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "לא",
+      "recruitmentStatus": "סירבו",
+      "notes": "",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "madison",
+      "name": "מדיסון",
+      "companySize": "בינונית",
+      "industry": "שירותים",
+      "referralSource1": "וובינר",
+      "referralSource2": null,
+      "cohort": 2,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "פגישה התקיימה, ממתינים",
+      "notes": "פגישה התקיימה, בודקים אפשרויות",
+      "requirements": "נגישות שירותי מדיה",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": true,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "k_health",
+      "name": "K Health",
+      "companySize": "קטנה",
+      "industry": "טכנולוגיה",
+      "referralSource1": "פנייה ישירה",
+      "referralSource2": null,
+      "cohort": 2,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "פגישה התקיימה, ממתינים",
+      "notes": "פגישה התקיימה, מעוניינים בנגישות אפליקציה",
+      "requirements": "נגישות אפליקציית בריאות",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "el_al",
+      "name": "אלעל",
+      "companySize": "גלובלית",
+      "industry": "תעופה/תיירות",
+      "referralSource1": "פנייה ישירה",
+      "referralSource2": null,
+      "cohort": 2,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "לא",
+      "recruitmentStatus": "סירבו",
+      "notes": "",
+      "requirements": "נגישות שירותי תעופה",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": true,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "studio_0304",
+      "name": "סטודיו 0304",
+      "companySize": "קטנה",
+      "industry": "שירותים",
+      "referralSource1": "המלצה/שותף",
+      "referralSource2": null,
+      "cohort": 2,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "פגישה התקיימה, ממתינים",
+      "notes": "פגישה התקיימה, בודקים",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "atvisor_ai",
+      "name": "atvisor.ai",
+      "companySize": "קטנה",
+      "industry": "טכנולוגיה",
+      "referralSource1": "פנייה ישירה",
+      "referralSource2": "כנס",
+      "cohort": 2,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "לא",
+      "recruitmentStatus": "סירבו",
+      "notes": "",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": true,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "lego",
+      "name": "לגו",
+      "companySize": "גלובלית",
+      "industry": "תעשייה",
+      "referralSource1": "וובינר",
+      "referralSource2": null,
+      "cohort": 2,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "לא",
+      "recruitmentStatus": "סירבו",
+      "notes": "",
+      "requirements": "נגישות משחקי הרכבה",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "strauss_salty",
+      "name": "שטראוס מלוחים",
+      "companySize": "גדולה",
+      "industry": "מזון",
+      "referralSource1": "פותח דלתות",
+      "referralSource2": "פנייה ישירה",
+      "cohort": 2,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": true,
+      "agreementSigned": true,
+      "paid": true,
+      "status": "כן",
+      "recruitmentStatus": "הצטרפו ושילמו",
+      "notes": "פגישת סיכום נקבעה",
+      "requirements": "התאמת אריזות חטיפים מלוחים",
+      "process": {
+        "learning": {
+          "industryReview": "כן",
+          "surveyDesign": "כן",
+          "participantRecruitment": "כן",
+          "barrierMapping": "כן",
+          "surveyDistribution": "כן",
+          "responseCollection": "כן",
+          "expertRecruitment": "כן",
+          "recommendationsReport": "כן",
+          "userTesting": "כן",
+          "socialPartnerRecruitment": "כן",
+          "developmentRecommendations": "כן"
+        },
+        "development": {
+          "presentRecommendations": "כן",
+          "productDecision": "כן",
+          "ganttCreation": "כן",
+          "processCompletion": "כן",
+          "solutionValidation": "כן",
+          "productImplementation": "כן"
+        },
+        "marketing": {
+          "influencerSharing": "כן",
+          "digitalMarketing": "כן",
+          "pressReleaseDraft": "כן",
+          "pressReleaseApproval": "בתהליך",
+          "websiteUpdate": "בתהליך",
+          "exposureData": "בתהליך"
+        }
+      },
+      "outcomes": {
+        "hasProduct": true,
+        "productDescription": "אריזת ביסלי מותאמת",
+        "satisfaction": "תהליך חדשני ומועיל",
+        "mediaExposure": "כתבה בכלכליסט"
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": true,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "phoenix",
+      "name": "הפניקס",
+      "companySize": "גדולה",
+      "industry": "פיננסים",
+      "referralSource1": "קשרים אישיים",
+      "referralSource2": null,
+      "cohort": 2,
+      "emailSent": true,
+      "meetingHeld": true,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "טרם הוחלט",
+      "recruitmentStatus": "פגישה התקיימה, ממתינים",
+      "notes": "פגישה התקיימה, מעוניינים",
+      "requirements": "נגישות שירותי ביטוח",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": true
+      }
+    },
+    {
+      "id": "hommz",
+      "name": "HOMMZ",
+      "companySize": "קטנה",
+      "industry": "שירותים",
+      "referralSource1": "קשרים אישיים",
+      "referralSource2": null,
+      "cohort": 2,
+      "emailSent": true,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "לא",
+      "recruitmentStatus": "סירבו",
+      "notes": "",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": false,
+        "conferenceMay": false,
+        "conferenceJune": false,
+        "conferenceApril": false,
+        "conferenceAugust": false
+      }
+    },
+    {
+      "id": "jansport",
+      "name": "JanSport",
+      "companySize": "קטנה",
+      "industry": "תעשייה",
+      "referralSource1": null,
+      "referralSource2": null,
+      "cohort": 2,
+      "emailSent": false,
+      "meetingHeld": false,
+      "agreementSent": false,
+      "agreementSigned": false,
+      "paid": false,
+      "status": "",
+      "recruitmentStatus": "",
+      "notes": "",
+      "requirements": "",
+      "process": {
+        "learning": {
+          "industryReview": null,
+          "surveyDesign": null,
+          "participantRecruitment": null,
+          "barrierMapping": null,
+          "surveyDistribution": null,
+          "responseCollection": null,
+          "expertRecruitment": null,
+          "recommendationsReport": null,
+          "userTesting": null,
+          "socialPartnerRecruitment": null,
+          "developmentRecommendations": null
+        },
+        "development": {
+          "presentRecommendations": null,
+          "productDecision": null,
+          "ganttCreation": null,
+          "processCompletion": null,
+          "solutionValidation": null,
+          "productImplementation": null
+        },
+        "marketing": {
+          "influencerSharing": null,
+          "digitalMarketing": null,
+          "pressReleaseDraft": null,
+          "pressReleaseApproval": null,
+          "websiteUpdate": null,
+          "exposureData": null
+        }
+      },
+      "outcomes": {
+        "hasProduct": null,
+        "productDescription": null,
+        "satisfaction": null,
+        "mediaExposure": null
+      },
+      "community": {
+        "workshop": null,
+        "conferenceMay": null,
+        "conferenceJune": null,
+        "conferenceApril": null,
+        "conferenceAugust": null
+      }
+    }
+  ],
+  "aggregates": {
+    "funnel": {
+      "total": 70,
+      "emailSent": 61,
+      "meetingHeld": 47,
+      "agreementSent": 18,
+      "agreementSigned": 6,
+      "paid": 7
+    },
+    "statusBreakdown": {
+      "כן": 14,
+      "טרם הוחלט": 34,
+      "לא": 21,
+      "(ריק)": 1
+    },
+    "phases": [
+      {
+        "name": "learning",
+        "displayName": "למידה",
+        "steps": [
+          {
+            "step": "industryReview",
+            "completed": 14,
+            "inProgress": 0,
+            "total": 14
+          },
+          {
+            "step": "surveyDesign",
+            "completed": 14,
+            "inProgress": 0,
+            "total": 14
+          },
+          {
+            "step": "participantRecruitment",
+            "completed": 13,
+            "inProgress": 1,
+            "total": 14
+          },
+          {
+            "step": "barrierMapping",
+            "completed": 12,
+            "inProgress": 1,
+            "total": 14
+          },
+          {
+            "step": "surveyDistribution",
+            "completed": 10,
+            "inProgress": 1,
+            "total": 14
+          },
+          {
+            "step": "responseCollection",
+            "completed": 8,
+            "inProgress": 2,
+            "total": 14
+          },
+          {
+            "step": "expertRecruitment",
+            "completed": 7,
+            "inProgress": 1,
+            "total": 14
+          },
+          {
+            "step": "recommendationsReport",
+            "completed": 6,
+            "inProgress": 1,
+            "total": 14
+          },
+          {
+            "step": "userTesting",
+            "completed": 5,
+            "inProgress": 2,
+            "total": 14
+          },
+          {
+            "step": "socialPartnerRecruitment",
+            "completed": 5,
+            "inProgress": 1,
+            "total": 14
+          },
+          {
+            "step": "developmentRecommendations",
+            "completed": 5,
+            "inProgress": 1,
+            "total": 14
+          }
+        ]
+      },
+      {
+        "name": "development",
+        "displayName": "פיתוח",
+        "steps": [
+          {
+            "step": "presentRecommendations",
+            "completed": 7,
+            "inProgress": 0,
+            "total": 14
+          },
+          {
+            "step": "productDecision",
+            "completed": 6,
+            "inProgress": 0,
+            "total": 14
+          },
+          {
+            "step": "ganttCreation",
+            "completed": 5,
+            "inProgress": 0,
+            "total": 14
+          },
+          {
+            "step": "processCompletion",
+            "completed": 5,
+            "inProgress": 0,
+            "total": 14
+          },
+          {
+            "step": "solutionValidation",
+            "completed": 4,
+            "inProgress": 1,
+            "total": 14
+          },
+          {
+            "step": "productImplementation",
+            "completed": 3,
+            "inProgress": 2,
+            "total": 14
+          }
+        ]
+      },
+      {
+        "name": "marketing",
+        "displayName": "שיווק",
+        "steps": [
+          {
+            "step": "influencerSharing",
+            "completed": 5,
+            "inProgress": 0,
+            "total": 14
+          },
+          {
+            "step": "digitalMarketing",
+            "completed": 4,
+            "inProgress": 0,
+            "total": 14
+          },
+          {
+            "step": "pressReleaseDraft",
+            "completed": 3,
+            "inProgress": 0,
+            "total": 14
+          },
+          {
+            "step": "pressReleaseApproval",
+            "completed": 2,
+            "inProgress": 1,
+            "total": 14
+          },
+          {
+            "step": "websiteUpdate",
+            "completed": 1,
+            "inProgress": 2,
+            "total": 14
+          },
+          {
+            "step": "exposureData",
+            "completed": 1,
+            "inProgress": 2,
+            "total": 14
+          }
+        ]
+      }
+    ],
+    "industryBreakdown": {
+      "קמעונאות": 5,
+      "תעופה/תיירות": 2,
+      "תעשייה": 16,
+      "פיננסים": 5,
+      "מזון": 17,
+      "אחר": 6,
+      "בריאות": 7,
+      "שירותים": 6,
+      "טכנולוגיה": 6
+    },
+    "sizeBreakdown": {
+      "בינונית": 15,
+      "(לא מוגדר)": 2,
+      "גדולה": 24,
+      "קטנה": 18,
+      "גלובלית": 11
+    }
+  }
+}

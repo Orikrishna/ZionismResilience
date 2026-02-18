@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { CompanyLogo } from '../App'
 
 const HEAT_LEVELS = [
   {
@@ -31,10 +32,10 @@ const HEAT_LEVELS = [
   },
 ]
 
-export default function UndecidedList({ companies }) {
+export default function UndecidedList({ companies, onCompanyClick }) {
   const groups = HEAT_LEVELS.map(level => ({
     ...level,
-    companies: companies.filter(level.filter),
+    companies: companies.filter(level.filter).sort((a, b) => a.name.localeCompare(b.name, 'he')),
   })).filter(g => g.companies.length > 0)
 
   const totalUndecided = companies.filter(c => c.status === 'טרם הוחלט').length
@@ -65,9 +66,13 @@ export default function UndecidedList({ companies }) {
               {group.companies.map(c => (
                 <span
                   key={c.id}
-                  className={`text-xs px-3 py-1.5 rounded-lg border ${group.color}`}
+                  onClick={() => onCompanyClick?.(c)}
+                  className={`inline-flex items-center gap-1.5 text-xs px-2.5 h-8 rounded-lg border cursor-pointer hover:shadow-sm transition-shadow ${group.color}`}
                   title={c.requirements || c.notes || ''}
                 >
+                  <span className="w-4 h-4 flex-shrink-0 flex items-center justify-center">
+                    <CompanyLogo companyId={c.id} size={16} className="rounded-sm" />
+                  </span>
                   {c.name}
                 </span>
               ))}

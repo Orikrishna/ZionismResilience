@@ -1,12 +1,24 @@
+import { useState } from 'react'
+import { useTabTheme } from '../ThemeContext'
+
 export default function SearchBar({ value, onChange }) {
+  const [focused, setFocused] = useState(false)
+  const theme = useTabTheme()
+
   return (
     <div className="relative">
       <input
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
         placeholder="חיפוש חברה לפי שם, הערות או מה נדרש..."
-        className="w-full bg-sh-card border border-sh-pink-light rounded-xl px-4 py-3 pr-10 text-sm text-sh-text placeholder:text-sh-text-light focus:outline-none focus:border-sh-pink focus:ring-1 focus:ring-sh-pink/30 transition-colors"
+        className="w-full bg-sh-card rounded-xl px-4 py-3 pr-10 text-sm text-sh-text placeholder:text-sh-text-light focus:outline-none transition-colors"
+        style={{
+          border: `1px solid ${focused ? theme.accent : theme.light}`,
+          boxShadow: focused ? `0 0 0 3px ${theme.accent}4d` : 'none',
+        }}
         dir="rtl"
       />
       <svg

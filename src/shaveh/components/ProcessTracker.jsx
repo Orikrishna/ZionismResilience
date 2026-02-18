@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useTabTheme } from '../ThemeContext'
 
 const STEP_LABELS = {
   // Learning (11)
@@ -42,6 +43,7 @@ const PHASES = [
 ]
 
 export default function ProcessTracker({ companies }) {
+  const theme = useTabTheme()
   const yesCompanies = companies.filter(c => c.status === 'כן')
 
   // Aggregate: for each step, count כן / בתהליך / לא across all "כן" companies
@@ -125,7 +127,7 @@ export default function ProcessTracker({ companies }) {
       </div>
 
       {/* Legend */}
-      <div className="flex gap-4 mt-4 pt-4 border-t border-sh-pink-light">
+      <div className="flex gap-4 mt-4 pt-4" style={{ borderTop: `1px solid ${theme.light}` }}>
         <div className="flex items-center gap-1">
           <div className="w-3 h-3 rounded-sm bg-sh-green" />
           <span className="text-xs text-sh-text-muted">הושלם</span>

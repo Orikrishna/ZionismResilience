@@ -1,21 +1,41 @@
 import ReactApexChart from 'react-apexcharts'
 
+/* ── UI-only industry aggregation (data stays unchanged) ── */
+const INDUSTRY_GROUP = {
+  'קניונים ומרכזים מסחריים': 'קניונים',
+  'מוצרי חשמל': 'חשמל ותקשורת',
+  'חשמל': 'חשמל ותקשורת',
+  'תקשורת': 'חשמל ותקשורת',
+  'בריאות': 'בריאות ותרופות',
+  'תרופות': 'בריאות ותרופות',
+  'פיננסים': 'פיננסים וביטוח',
+  'ביטוח': 'פיננסים וביטוח',
+  'תעופה': 'תחבורה ותיירות',
+  'תחבורה': 'תחבורה ותיירות',
+  'תיירות': 'תחבורה ותיירות',
+  'קולנוע': 'בידור ואופנה',
+  'בתי קפה': 'בידור ואופנה',
+  'אופנה': 'בידור ואופנה',
+}
+
 const INDUSTRY_COLORS = {
-  'מזון': '#70bdb3',
-  'תעשייה': '#e8969f',
-  'בריאות': '#4263aa',
-  'טכנולוגיה': '#e9ab56',
   'קמעונאות': '#d68089',
-  'פיננסים': '#8b6f9e',
+  'קניונים': '#e8969f',
+  'מזון': '#70bdb3',
+  'טכנולוגיה': '#e9ab56',
+  'חשמל ותקשורת': '#c4956a',
+  'בריאות ותרופות': '#4263aa',
+  'פיננסים וביטוח': '#8b6f9e',
   'שירותים': '#5ba3cf',
-  'תעופה/תיירות': '#c4956a',
-  'אחר': '#948c89',
+  'תחבורה ותיירות': '#6ba58a',
+  'בידור ואופנה': '#cf8a5b',
+  'בנייה': '#948c89',
 }
 
 export default function IndustryChart({ companies }) {
   const counts = {}
   companies.forEach((c) => {
-    const ind = c.industry || 'לא מוגדר'
+    const ind = INDUSTRY_GROUP[c.industry] || c.industry || 'לא מוגדר'
     counts[ind] = (counts[ind] || 0) + 1
   })
 
@@ -28,7 +48,7 @@ export default function IndustryChart({ companies }) {
   // Also compute join rate per industry
   const joinCounts = {}
   companies.forEach((c) => {
-    const ind = c.industry || 'לא מוגדר'
+    const ind = INDUSTRY_GROUP[c.industry] || c.industry || 'לא מוגדר'
     if (c.status === 'כן') {
       joinCounts[ind] = (joinCounts[ind] || 0) + 1
     }

@@ -119,6 +119,7 @@ export default function App() {
       } else if (sel.source === 'manual' && sel.directUrl) {
         // Let the server fetch the URL (avoids CORS issues)
         imageData = { remoteUrl: sel.directUrl }
+        if (sel.fallbackUrl) imageData.fallbackUrl = sel.fallbackUrl
       } else {
         imageData = { candidateFile: sel.filename }
       }
@@ -188,7 +189,7 @@ export default function App() {
               {serverOnline ? 'Server online' : 'Server offline'}
             </div>
             <div className="bg-white rounded-lg shadow px-4 py-2 text-center">
-              <div className="text-2xl font-bold text-green-600">{savedCount}</div>
+              <div className="text-2xl font-bold text-green-600">{Math.min(savedCount, allCompanies.length)}</div>
               <div className="text-xs text-gray-500">/ {allCompanies.length} saved</div>
             </div>
           </div>
@@ -206,7 +207,7 @@ export default function App() {
         <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4">
           <div
             className="bg-green-500 h-2.5 rounded-full transition-all duration-300"
-            style={{ width: `${(savedCount / allCompanies.length) * 100}%` }}
+            style={{ width: `${Math.min(100, (savedCount / allCompanies.length) * 100)}%` }}
           />
         </div>
 
@@ -223,7 +224,7 @@ export default function App() {
             {[
               { key: 'all', label: `All (${allCompanies.length})` },
               { key: 'saved', label: `Saved (${savedCount})` },
-              { key: 'unsaved', label: `Unsaved (${allCompanies.length - savedCount})` },
+              { key: 'unsaved', label: `Unsaved (${Math.max(0, allCompanies.length - savedCount)})` },
               { key: 'selected', label: `Ready (${unsavedSelectedCount})` },
             ].map(opt => (
               <button
@@ -296,6 +297,29 @@ function CompanyLogoCard({ company, candidates, selection, isSaved, isSaving, ma
   const [showUrlInput, setShowUrlInput] = useState(false)
   const [urlValue, setUrlValue] = useState('')
   const [urlLoading, setUrlLoading] = useState(false)
+  const [fetchedImages, setFetchedImages] = useState([])
+  const [isFetching, setIsFetching] = useState(false)
+
+  const handleImageFetch = async () => {
+    setIsFetching(true)
+    try {
+      const resp = await fetch(`${API}/image-search`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ companyName: company.name }),
+      })
+      const data = await resp.json()
+      if (data.images && data.images.length > 0) {
+        setFetchedImages(data.images)
+      } else {
+        setFetchedImages([])
+      }
+    } catch (err) {
+      console.error('Image fetch error:', err)
+      setFetchedImages([])
+    }
+    setIsFetching(false)
+  }
 
   const candidateList = candidates?.candidates || []
   const googleUrl = candidates?.googleSearchUrl ||
@@ -310,6 +334,15 @@ function CompanyLogoCard({ company, candidates, selection, isSaved, isSaving, ma
       filename: c.filename,
       source: c.source,
       key: `${c.source}_${c.filename}`,
+    })),
+    ...fetchedImages.map((w, i) => ({
+      src: w.url,
+      filename: w.filename,
+      source: 'manual',
+      directUrl: w.originalUrl || w.url,
+      fallbackUrl: w.url,  // DDG thumbnail - always available as fallback
+      key: `fetched_${i}_${w.filename}`,
+      badge: 'search',
     })),
     ...manualUploads.map((u, i) => ({
       src: u.url,
@@ -408,15 +441,16 @@ function CompanyLogoCard({ company, candidates, selection, isSaved, isSaving, ma
                   const selData = { filename: cand.filename, source: cand.source }
                   if (cand.dataUrl) selData.dataUrl = cand.dataUrl
                   if (cand.directUrl) selData.directUrl = cand.directUrl
+                  if (cand.fallbackUrl) selData.fallbackUrl = cand.fallbackUrl
                   onSelect(company.id, selData)
                 }
               }}
-              className={`w-16 h-16 rounded-lg border-2 overflow-hidden flex items-center justify-center bg-white transition-all ${
+              className={`relative w-16 h-16 rounded-lg border-2 overflow-hidden flex items-center justify-center bg-white transition-all ${
                 isSel
                   ? 'border-blue-500 ring-2 ring-blue-200 scale-105'
                   : 'border-gray-200 hover:border-blue-300'
               }`}
-              title={`${cand.source} — click to ${isSel ? 'deselect' : 'select'}`}
+              title={`${cand.badge || cand.source} — click to ${isSel ? 'deselect' : 'select'}`}
             >
               <img
                 src={cand.src}
@@ -428,6 +462,11 @@ function CompanyLogoCard({ company, candidates, selection, isSaved, isSaving, ma
                   e.target.parentElement.innerHTML = '<span class="text-[10px] text-gray-300">err</span>'
                 }}
               />
+              {cand.badge && (
+                <span className="absolute bottom-0 left-0 right-0 bg-blue-600/80 text-white text-[8px] text-center leading-tight py-px">
+                  search
+                </span>
+              )}
             </button>
           )
         })}
@@ -449,8 +488,19 @@ function CompanyLogoCard({ company, candidates, selection, isSaved, isSaving, ma
         />
       </div>
 
-      {/* URL input toggle + Google search */}
-      <div className="flex items-center gap-2 mb-2">
+      {/* URL input toggle + Wikipedia + Google search */}
+      <div className="flex items-center gap-2 mb-2 flex-wrap">
+        <button
+          onClick={handleImageFetch}
+          disabled={isFetching}
+          className={`text-xs px-2.5 py-1.5 rounded-lg border font-medium transition-colors ${
+            fetchedImages.length > 0
+              ? 'border-blue-400 bg-blue-50 text-blue-600'
+              : 'border-gray-200 text-gray-600 hover:border-blue-400 hover:bg-blue-50'
+          } disabled:opacity-50`}
+        >
+          {isFetching ? '⏳ Fetching...' : fetchedImages.length > 0 ? `🔍 Fetched (${fetchedImages.length})` : '🔍 Fetch Logo'}
+        </button>
         <button
           onClick={() => setShowUrlInput(!showUrlInput)}
           className={`text-xs px-2 py-1 rounded border transition-colors ${
@@ -465,7 +515,7 @@ function CompanyLogoCard({ company, candidates, selection, isSaved, isSaving, ma
           rel="noopener noreferrer"
           className="text-xs text-blue-500 hover:text-blue-700 hover:underline"
         >
-          Search Google Images
+          Google Images
         </a>
       </div>
 

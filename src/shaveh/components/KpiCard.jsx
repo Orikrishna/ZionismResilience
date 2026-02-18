@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { useTabTheme } from '../ThemeContext'
 
 function useCountUp(target, duration = 1400) {
   const [value, setValue] = useState(0)
@@ -22,6 +23,7 @@ function useCountUp(target, duration = 1400) {
 }
 
 export default function KpiCard({ label, value, suffix, accent }) {
+  const theme = useTabTheme()
   const isPercent = typeof value === 'string' && value.includes('%')
   const numeric = isPercent
     ? parseFloat(value)
@@ -41,7 +43,10 @@ export default function KpiCard({ label, value, suffix, accent }) {
       transition={{ duration: 0.4 }}
       className="bg-sh-card rounded-card-sh shadow-card p-6 flex flex-col gap-1"
     >
-      <div className={`text-4xl font-black ${accent ? 'text-sh-pink' : 'text-sh-text'}`}>
+      <div
+        className={`text-4xl font-black ${accent ? '' : 'text-sh-text'}`}
+        style={accent ? { color: theme.accent } : undefined}
+      >
         {formatted}{suffix && <span className="text-xl font-bold mr-1">{suffix}</span>}
       </div>
       <div className="text-sm text-sh-text-muted">{label}</div>

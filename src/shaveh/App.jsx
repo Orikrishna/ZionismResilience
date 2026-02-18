@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BarChart3, RefreshCw, Building2 } from 'lucide-react'
 import data from './data/companies.json'
+import ThemeContext from './ThemeContext'
 
 // Existing widgets
 import KpiCard from './components/KpiCard'
@@ -21,10 +22,12 @@ import ProcessTracker from './components/ProcessTracker'
 import ReferralChart from './components/ReferralChart'
 import ExtraKpis from './components/ExtraKpis'
 import UndecidedList from './components/UndecidedList'
+import CommunityTimeline from './components/CommunityTimeline'
+import CohortAnalysis from './components/CohortAnalysis'
 
 const BASE = import.meta.env.BASE_URL
 
-function CompanyLogo({ companyId, size = 32, className = '' }) {
+export function CompanyLogo({ companyId, size = 32, className = '' }) {
   const [hidden, setHidden] = useState(false)
   if (hidden) return null
   return (
@@ -109,6 +112,41 @@ export default function App() {
     { label: 'פירוט החברות', id: 'companies', Icon: Building2 },
   ]
 
+  const TAB_THEMES = [
+    {
+      id: 'pink',
+      accent: '#e8969f',
+      light: '#f8dfe2',
+      bg: '#f9f2f3',
+      lightAlpha40: 'rgba(248,223,226,0.4)',
+      lightAlpha50: 'rgba(248,223,226,0.5)',
+      lightAlpha60: 'rgba(248,223,226,0.6)',
+      lightAlpha30: 'rgba(248,223,226,0.3)',
+    },
+    {
+      id: 'blue',
+      accent: '#4263aa',
+      light: '#d6dff2',
+      bg: '#f2f4f9',
+      lightAlpha40: 'rgba(214,223,242,0.4)',
+      lightAlpha50: 'rgba(214,223,242,0.5)',
+      lightAlpha60: 'rgba(214,223,242,0.6)',
+      lightAlpha30: 'rgba(214,223,242,0.3)',
+    },
+    {
+      id: 'green',
+      accent: '#70bdb3',
+      light: '#caece9',
+      bg: '#f2f9f7',
+      lightAlpha40: 'rgba(202,236,233,0.4)',
+      lightAlpha50: 'rgba(202,236,233,0.5)',
+      lightAlpha60: 'rgba(202,236,233,0.6)',
+      lightAlpha30: 'rgba(202,236,233,0.3)',
+    },
+  ]
+
+  const theme = TAB_THEMES[activeTab]
+
   const statusOptions = ['הכל', 'כן', 'לא', 'טרם הוחלט']
 
   // Unique filter options from data
@@ -153,7 +191,7 @@ export default function App() {
         (c.industry && c.industry.toLowerCase().includes(q))
       )
     }
-    return result
+    return result.sort((a, b) => a.name.localeCompare(b.name, 'he'))
   }, [companies, tab3Status, tab3Industry, tab3Size, searchQuery])
 
   // KPIs computed from Tab 1 filtered data
@@ -169,19 +207,57 @@ export default function App() {
   const tab3HasFilters = tab3Status !== 'הכל' || tab3Industry !== 'הכל' || tab3Size !== 'הכל' || searchQuery
 
   return (
-    <div className="min-h-screen bg-sh-bg font-noto" dir="rtl">
+    <motion.div
+      className="min-h-screen font-noto"
+      dir="rtl"
+      animate={{ backgroundColor: theme.bg }}
+      transition={{ duration: 0.4, ease: 'easeInOut' }}
+      style={{
+        '--theme-accent': theme.accent,
+        '--theme-light': theme.light,
+        '--theme-light-40': theme.lightAlpha40,
+        '--theme-light-50': theme.lightAlpha50,
+        '--theme-light-60': theme.lightAlpha60,
+        '--theme-accent-10': theme.accent + '1a',
+      }}
+    >
       {/* Header */}
-      <header className="bg-sh-card shadow-card px-8 py-4 flex items-center justify-between sticky top-0 z-50">
-        <div>
-          <h1 className="text-xl font-bold text-sh-text">דשבורד שווה פיתוח</h1>
-          <p className="text-sm text-sh-text-muted">מיזם להתאמת מוצרים ושירותים לאנשים עם מוגבלות</p>
+      <header dir="rtl" className="bg-sh-card shadow-card px-10 py-5 flex items-center justify-between sticky top-0 z-50">
+        <div className="flex items-center gap-5">
+          <div className="h-16 w-16 bg-sh-pink rounded-xl flex items-center justify-center flex-shrink-0">
+            <svg viewBox="0 0 58 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-11 w-11 text-white">
+              <path d="M12.4961 24.9688V16.7717L16.5302 17.0737V25.2708L12.4961 24.9688ZM20.1345 25.5394V14.566L12.4978 13.9954V10.2363L24.2207 11.1123V25.843L20.1345 25.5377V25.5394Z" fill="currentColor"/>
+              <path d="M28.152 26.1381V15.1647L26.49 15.0413V11.2822L32.2381 11.711V26.4418L28.152 26.1365V26.1381Z" fill="currentColor"/>
+              <path d="M36.0428 26.728V15.7546L34.3809 15.6311V11.8721L40.129 12.3009V27.0316L36.0428 26.7263V26.728Z" fill="currentColor"/>
+              <path d="M53.5615 28.0374L43.0742 27.2532V12.5225L46.8078 12.8011V23.7745L53.6371 24.2851C53.7378 24.2917 53.8637 24.1766 53.8637 24.0748V13.33L57.5973 13.6086V24.3034C57.5956 26.2955 55.6029 28.1909 53.5615 28.0374ZM51.3439 21.8174L49.7306 22.9336L48.1424 21.3269L48.5453 20.0455V12.9329L52.1765 13.2049V20.2174C52.1765 20.9999 51.923 21.4353 51.3439 21.8208V21.8174Z" fill="currentColor"/>
+              <path d="M7.98288 42.8912V32.1464C7.98288 32.0463 7.85865 31.9095 7.75792 31.9028L4.2795 31.6425V42.6159L0.193359 42.3106V27.5798L8.03492 28.1655C10.0259 28.314 12.0673 30.4596 12.0673 32.5034V43.1982L7.9812 42.8929L7.98288 42.8912Z" fill="currentColor"/>
+              <path d="M15.9979 43.4907V32.5173L14.3359 32.3938V28.6348L20.0841 29.0636V43.7943L15.9979 43.489V43.4907Z" fill="currentColor"/>
+              <path d="M31.5266 44.6516V33.6798L28.2513 33.4346V41.1779C28.2513 42.7662 26.6615 44.2879 25.023 44.1661L21.9727 43.9375V40.1785L23.9385 40.3253C24.0392 40.3336 24.1651 40.2168 24.1651 40.1151V33.1276L22.3504 32.9924V29.2334L35.611 30.2245V44.9552L31.5249 44.6499L31.5266 44.6516Z" fill="currentColor"/>
+              <path d="M39.7456 37.6474V34.2922L37.8301 34.1487V30.3896L43.83 30.8385V37.9511L39.7456 37.6458V37.6474Z" fill="currentColor"/>
+              <path d="M53.9356 46.3262L46.0957 45.7405V41.9815L53.6586 42.5471C53.7593 42.5538 53.8852 42.4387 53.8852 42.3369V35.5763C53.8852 35.4762 53.761 35.3394 53.6603 35.3327L50.0559 35.0641V36.9812L51.9211 37.1213V40.5767L46.0974 40.1412V31.0098L53.9389 31.5954C55.93 31.7439 57.9714 33.8895 57.9714 35.9334V42.5922C57.9714 44.5843 55.9787 46.4797 53.9373 46.3262H53.9356Z" fill="currentColor"/>
+              <path d="M58 10.1626V0H0V6.1299L58 10.1626Z" fill="currentColor"/>
+              <path d="M0 45.8379V56.0004H58V49.8689L0 45.8379Z" fill="currentColor"/>
+            </svg>
+          </div>
+          <div className="text-right">
+            <h1 className="text-2xl font-bold text-sh-text">פרויקט שווה פיתוח<span className="mx-2 text-sh-text-muted font-normal">|</span>תמונת מצב</h1>
+            <p className="text-base text-sh-text-muted">מיזם להתאמת מוצרים ושירותים לאנשים עם מוגבלות</p>
+          </div>
         </div>
-        <img src={`${import.meta.env.BASE_URL}zionism2000-logo.jpg`} alt="ציונות 2000" className="h-12 object-contain" />
+        <img src={`${import.meta.env.BASE_URL}zionism2000-logo.jpg`} alt="ציונות 2000" className="h-16 object-contain" />
       </header>
 
       {/* Tab bar */}
       <div className="max-w-7xl mx-auto px-6 mt-6 mb-2">
-        <div className="flex gap-1 bg-sh-pink-light/40 rounded-2xl p-1.5 shadow-sm border border-sh-pink-light/50">
+        <motion.div
+          className="flex gap-1 rounded-2xl p-1.5 shadow-sm"
+          animate={{
+            backgroundColor: theme.lightAlpha40,
+            borderColor: theme.lightAlpha50,
+          }}
+          transition={{ duration: 0.4, ease: 'easeInOut' }}
+          style={{ borderWidth: '1px', borderStyle: 'solid' }}
+        >
           {TABS.map((tab, i) => (
             <button
               key={tab.id}
@@ -192,17 +268,24 @@ export default function App() {
                   : 'text-sh-text-muted hover:text-sh-text hover:bg-sh-card/50'
               }`}
             >
-              <span className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                activeTab === i ? 'bg-sh-pink-light/60' : 'bg-sh-pink-light/30'
-              }`}>
-                <tab.Icon size={16} strokeWidth={2.2} className={activeTab === i ? 'text-sh-pink' : 'text-sh-text-light'} />
+              <span
+                className="w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-300"
+                style={{ backgroundColor: activeTab === i ? theme.lightAlpha60 : theme.lightAlpha30 }}
+              >
+                <tab.Icon
+                  size={16}
+                  strokeWidth={2.2}
+                  className="transition-colors duration-300"
+                  style={{ color: activeTab === i ? theme.accent : '#948c89' }}
+                />
               </span>
               {tab.label}
             </button>
           ))}
-        </div>
+        </motion.div>
       </div>
 
+      <ThemeContext.Provider value={theme}>
       <main className="max-w-7xl mx-auto px-6 py-6 space-y-8">
 
         {/* ══════ Tab 1: ריכוז מידע ══════ */}
@@ -216,7 +299,8 @@ export default function App() {
           {tab1HasFilters && (
             <button
               onClick={() => { setTab1Status('הכל'); setTab1Industry('הכל'); setTab1Size('הכל') }}
-              className="text-sm text-sh-pink underline"
+              className="text-sm underline"
+              style={{ color: theme.accent }}
             >
               נקה הכל
             </button>
@@ -235,12 +319,12 @@ export default function App() {
           <KpiCard label="אחוז המרה" value={`${conversionRate}%`} />
         </div>
 
-        {/* ── Section 2: Funnel + Bottleneck ── */}
+        {/* ── Section 2: Funnel + Referral ── */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2">
             <FunnelChart companies={filteredTab1} />
           </div>
-          <BottleneckCard companies={filteredTab1} />
+          <ReferralChart companies={filteredTab1} />
         </div>
 
         {/* ── Section 3: Donut + Pipeline + Pyramid ── */}
@@ -253,11 +337,11 @@ export default function App() {
         {/* ── Section 4: Extra KPIs ── */}
         <ExtraKpis companies={filteredTab1} />
 
-        {/* ── Section 5: Industry + Size + Referral ── */}
+        {/* ── Section 5: Industry + Size + Bottleneck ── */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <IndustryChart companies={filteredTab1} />
           <CompanySizeChart companies={filteredTab1} />
-          <ReferralChart companies={filteredTab1} />
+          <BottleneckCard companies={filteredTab1} />
         </div>
 
         {/* ── Section 6: Strauss Case Study ── */}
@@ -276,7 +360,8 @@ export default function App() {
           {tab2HasFilters && (
             <button
               onClick={() => { setTab2Status('הכל'); setTab2Industry('הכל'); setTab2Size('הכל') }}
-              className="text-sm text-sh-pink underline"
+              className="text-sm underline"
+              style={{ color: theme.accent }}
             >
               נקה הכל
             </button>
@@ -286,11 +371,17 @@ export default function App() {
           )}
         </div>
 
+        {/* ── Section 6b: Community Timeline + Cohort Analysis ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <CommunityTimeline companies={filteredTab2} />
+          <CohortAnalysis companies={filteredTab2} />
+        </div>
+
         {/* ── Section 7: Process Tracker (23 steps) ── */}
         <ProcessTracker companies={filteredTab2} />
 
         {/* ── Section 8: "They didn't say no" ── */}
-        <UndecidedList companies={filteredTab2} />
+        <UndecidedList companies={filteredTab2} onCompanyClick={setSelectedCompany} />
 
         </>}
 
@@ -315,7 +406,8 @@ export default function App() {
               {tab3HasFilters && (
                 <button
                   onClick={() => { setSearchQuery(''); setTab3Status('הכל'); setTab3Industry('הכל'); setTab3Size('הכל') }}
-                  className="text-sm text-sh-pink underline"
+                  className="text-sm underline"
+              style={{ color: theme.accent }}
                 >
                   נקה הכל
                 </button>
@@ -334,11 +426,14 @@ export default function App() {
                   exit={{ opacity: 0, scale: 0.96 }}
                   transition={{ duration: 0.2 }}
                   onClick={() => setSelectedCompany(c)}
-                  className="border border-sh-pink-light rounded-xl p-4 hover:shadow-card-hover transition-shadow cursor-pointer"
+                  className="border rounded-xl p-4 hover:shadow-card-hover transition-shadow cursor-pointer"
+                  style={{ borderColor: theme.light }}
                 >
                   <div className="flex items-start justify-between mb-1">
                     <div className="flex items-center gap-2 min-w-0">
-                      <CompanyLogo companyId={c.id} size={32} />
+                      <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center">
+                        <CompanyLogo companyId={c.id} size={32} />
+                      </div>
                       <div className="font-bold text-sh-text truncate">{c.name}</div>
                     </div>
                     <span className={`text-xs px-2 py-0.5 rounded-pill font-medium whitespace-nowrap ${STATUS_STYLES[c.status] || 'bg-gray-100 text-sh-text-muted'}`}>
@@ -346,7 +441,7 @@ export default function App() {
                     </span>
                   </div>
                   {/* Industry + Size badges */}
-                  <div className="flex gap-1 flex-wrap mb-2">
+                  <div className="flex gap-1 flex-wrap mb-2 min-h-[22px]">
                     {c.industry && (
                       <span className="text-[10px] px-1.5 py-0.5 rounded bg-sh-bg text-sh-text-light">{c.industry}</span>
                     )}
@@ -375,9 +470,13 @@ export default function App() {
 
         </>}
       </main>
+      </ThemeContext.Provider>
 
       {/* Footer */}
-      <footer className="mt-12 border-t border-sh-pink-light/50 bg-sh-card/60">
+      <footer
+        className="mt-12 bg-sh-card/60"
+        style={{ borderTop: `1px solid ${theme.lightAlpha50}` }}
+      >
         <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
           <div className="text-sm text-sh-text-muted">
             דשבורד שווה פיתוח · ציונות 2000
@@ -414,7 +513,7 @@ export default function App() {
                 ✕
               </button>
               <div className="flex items-center gap-3 mb-1">
-                <CompanyLogo companyId={selectedCompany.id} size={48} />
+                <CompanyLogo companyId={selectedCompany.id} size={80} />
                 <h2 className="text-2xl font-black text-sh-text">{selectedCompany.name}</h2>
               </div>
 
@@ -568,6 +667,6 @@ export default function App() {
           </>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   )
 }
