@@ -22,7 +22,16 @@ function saveSelectionsLocal(sel) {
 
 export default function App() {
   const allCompanies = companies.companies
-  const [selections, setSelections] = useState(loadSelections)
+  const validIds = useMemo(() => new Set(allCompanies.map(c => c.id)), [allCompanies])
+  // Filter localStorage selections to only valid company IDs
+  const [selections, setSelections] = useState(() => {
+    const raw = loadSelections()
+    const filtered = {}
+    for (const [id, val] of Object.entries(raw)) {
+      if (validIds.has(id)) filtered[id] = val
+    }
+    return filtered
+  })
   const [searchQuery, setSearchQuery] = useState('')
   const [filter, setFilter] = useState('all') // all | saved | unsaved | selected
   const [savedLogos, setSavedLogos] = useState({}) // id -> true
@@ -41,7 +50,7 @@ export default function App() {
       })
       .then(data => {
         const map = {}
-        data.saved.forEach(id => { map[id] = true })
+        data.saved.forEach(id => { if (validIds.has(id)) map[id] = true })
         setSavedLogos(map)
       })
       .catch(() => setServerOnline(false))
@@ -164,7 +173,7 @@ export default function App() {
       const resp = await fetch(`${API}/saved-logos`)
       const data = await resp.json()
       const map = {}
-      data.saved.forEach(id => { map[id] = true })
+      data.saved.forEach(id => { if (validIds.has(id)) map[id] = true })
       setSavedLogos(map)
     } catch {}
     alert(`Done: ${saved} saved${failed ? `, ${failed} failed` : ''}.`)
