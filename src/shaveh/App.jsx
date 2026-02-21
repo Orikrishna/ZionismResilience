@@ -441,7 +441,6 @@ export default function App() {
           </>}
 
           {activeTab === 2 && <>
-            <SearchBar value={searchQuery} onChange={setSearchQuery} />
             <FilterDropdown label="סטטוס" value={tab3Status} options={statusOptions} onChange={setTab3Status} />
             <FilterDropdown label="ענף" value={tab3Industry} options={industryOptions} onChange={setTab3Industry} />
             <FilterDropdown label="גודל" value={tab3Size} options={sizeOptions} onChange={setTab3Size} />
@@ -449,6 +448,9 @@ export default function App() {
               <button onClick={() => { setSearchQuery(''); setTab3Status('הכל'); setTab3Industry('הכל'); setTab3Size('הכל') }}
                 className="text-sm underline" style={{ color: theme.accent }}>נקה הכל</button>
             )}
+            <div className="w-56">
+              <SearchBar value={searchQuery} onChange={setSearchQuery} />
+            </div>
           </>}
 
           {/* Action buttons — ms-auto in RTL pushes to physical left */}
