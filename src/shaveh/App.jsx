@@ -364,23 +364,6 @@ export default function App() {
           </div>
         </div>
         <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2 no-print">
-            <button
-              onClick={() => setShowReportModal(true)}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium text-sh-pink border border-sh-pink-light bg-sh-pink-light/40 hover:bg-sh-pink hover:text-white transition-colors"
-            >
-              <Mail size={15} />
-              שלח דו"ח
-            </button>
-            <button
-              onClick={handleDownloadPdf}
-              disabled={pdfDownloading}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium text-sh-text-muted border border-sh-pink-light bg-sh-pink-light/20 hover:bg-sh-pink-light hover:text-sh-text transition-colors disabled:opacity-60"
-            >
-              <FileDown size={15} />
-              {pdfDownloading ? 'מייצר...' : 'יצוא PDF'}
-            </button>
-          </div>
           <img src={`${import.meta.env.BASE_URL}zionism2000-logo.jpg`} alt="ציונות 2000" className="h-20 object-contain" />
         </div>
       </header>
@@ -425,29 +408,76 @@ export default function App() {
       </div>
       </div>
 
-      <main className="max-w-7xl mx-auto px-6 py-6 space-y-8">
+      {/* ── Shared action + filter bar (all tabs) ── */}
+      <div className="no-print max-w-7xl mx-auto px-6 pt-3 pb-1">
+        <div className="flex items-center gap-2">
+
+          {/* Action buttons — pinned to the left */}
+          <div className="flex items-center gap-2 ms-auto">
+            <button
+              onClick={() => setShowReportModal(true)}
+              className="flex items-center gap-2 px-3 py-1.5 rounded-xl text-sm font-medium text-sh-pink border border-sh-pink-light bg-sh-pink-light/40 hover:bg-sh-pink hover:text-white transition-colors"
+            >
+              <Mail size={14} />
+              שלח דו"ח
+            </button>
+            <button
+              onClick={handleDownloadPdf}
+              disabled={pdfDownloading}
+              className="flex items-center gap-2 px-3 py-1.5 rounded-xl text-sm font-medium text-sh-text-muted border border-sh-pink-light bg-sh-pink-light/20 hover:bg-sh-pink-light hover:text-sh-text transition-colors disabled:opacity-60"
+            >
+              <FileDown size={14} />
+              {pdfDownloading ? 'מייצר...' : 'יצוא PDF'}
+            </button>
+          </div>
+
+          {/* Per-tab filters — right side (RTL) */}
+          {activeTab === 0 && <>
+            <FilterDropdown label="סטטוס" value={tab1Status} options={statusOptions} onChange={setTab1Status} />
+            <FilterDropdown label="ענף" value={tab1Industry} options={industryOptions} onChange={setTab1Industry} />
+            <FilterDropdown label="גודל" value={tab1Size} options={sizeOptions} onChange={setTab1Size} />
+            {tab1HasFilters && (
+              <button onClick={() => { setTab1Status('הכל'); setTab1Industry('הכל'); setTab1Size('הכל') }}
+                className="text-sm underline" style={{ color: theme.accent }}>נקה הכל</button>
+            )}
+            {tab1HasFilters && (
+              <span className="text-xs text-sh-text-light">{filteredTab1.length} מתוך {companies.length}</span>
+            )}
+          </>}
+
+          {activeTab === 1 && <>
+            <FilterDropdown label="סטטוס" value={tab2Status} options={statusOptions} onChange={setTab2Status} />
+            <FilterDropdown label="ענף" value={tab2Industry} options={industryOptions} onChange={setTab2Industry} />
+            <FilterDropdown label="גודל" value={tab2Size} options={sizeOptions} onChange={setTab2Size} />
+            {tab2HasFilters && (
+              <button onClick={() => { setTab2Status('הכל'); setTab2Industry('הכל'); setTab2Size('הכל') }}
+                className="text-sm underline" style={{ color: theme.accent }}>נקה הכל</button>
+            )}
+            {tab2HasFilters && (
+              <span className="text-xs text-sh-text-light">{filteredTab2.length} מתוך {companies.length}</span>
+            )}
+          </>}
+
+          {activeTab === 2 && <>
+            <SearchBar value={searchQuery} onChange={setSearchQuery} />
+            <FilterDropdown label="סטטוס" value={tab3Status} options={statusOptions} onChange={setTab3Status} />
+            <FilterDropdown label="ענף" value={tab3Industry} options={industryOptions} onChange={setTab3Industry} />
+            <FilterDropdown label="גודל" value={tab3Size} options={sizeOptions} onChange={setTab3Size} />
+            {tab3HasFilters && (
+              <button onClick={() => { setSearchQuery(''); setTab3Status('הכל'); setTab3Industry('הכל'); setTab3Size('הכל') }}
+                className="text-sm underline" style={{ color: theme.accent }}>נקה הכל</button>
+            )}
+          </>}
+
+        </div>
+      </div>
+
+      <main className="max-w-7xl mx-auto px-6 py-4 space-y-8">
 
         {/* ══════ Tab 1: ריכוז מידע ══════ */}
         <div className={`space-y-8 ${activeTab === 0 ? '' : 'hidden print-show'}`}>
 
-        {/* Tab 1 filters */}
-        <div className="no-print flex items-center gap-2 flex-wrap">
-          <FilterDropdown label="סטטוס" value={tab1Status} options={statusOptions} onChange={setTab1Status} />
-          <FilterDropdown label="ענף" value={tab1Industry} options={industryOptions} onChange={setTab1Industry} />
-          <FilterDropdown label="גודל" value={tab1Size} options={sizeOptions} onChange={setTab1Size} />
-          {tab1HasFilters && (
-            <button
-              onClick={() => { setTab1Status('הכל'); setTab1Industry('הכל'); setTab1Size('הכל') }}
-              className="text-sm underline"
-              style={{ color: theme.accent }}
-            >
-              נקה הכל
-            </button>
-          )}
-          {tab1HasFilters && (
-            <span className="text-xs text-sh-text-light mr-auto">{filteredTab1.length} מתוך {companies.length} חברות</span>
-          )}
-        </div>
+        {/* Tab 1 filters — removed (now in shared bar above) */}
 
         {/* ── Section 1: KPI Cards ── */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -491,25 +521,6 @@ export default function App() {
         {/* ══════ Tab 2: שלבי התהליך ══════ */}
         <div className={`space-y-8 ${activeTab === 1 ? 'print-page-break' : 'hidden print-show print-page-break'}`}>
 
-        {/* Tab 2 filters */}
-        <div className="no-print flex items-center gap-2 flex-wrap">
-          <FilterDropdown label="סטטוס" value={tab2Status} options={statusOptions} onChange={setTab2Status} />
-          <FilterDropdown label="ענף" value={tab2Industry} options={industryOptions} onChange={setTab2Industry} />
-          <FilterDropdown label="גודל" value={tab2Size} options={sizeOptions} onChange={setTab2Size} />
-          {tab2HasFilters && (
-            <button
-              onClick={() => { setTab2Status('הכל'); setTab2Industry('הכל'); setTab2Size('הכל') }}
-              className="text-sm underline"
-              style={{ color: theme.accent }}
-            >
-              נקה הכל
-            </button>
-          )}
-          {tab2HasFilters && (
-            <span className="text-xs text-sh-text-light mr-auto">{filteredTab2.length} מתוך {companies.length} חברות</span>
-          )}
-        </div>
-
         {/* ── Section 6b: Community Timeline + Cohort Analysis ── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <CommunityTimeline companies={filteredTab2} />
@@ -532,27 +543,6 @@ export default function App() {
           <h2 className="text-lg font-bold text-sh-text mb-4">
             חברות ({filteredTab3.length}{filteredTab3.length !== companies.length ? ` מתוך ${companies.length}` : ''})
           </h2>
-
-          {/* Filters bar */}
-          <div className="flex flex-col sm:flex-row gap-3 mb-4 items-start sm:items-center flex-wrap">
-            <div className="flex-1 min-w-[200px]">
-              <SearchBar value={searchQuery} onChange={setSearchQuery} />
-            </div>
-            <div className="flex gap-2 items-center flex-wrap">
-              <FilterDropdown label="סטטוס" value={tab3Status} options={statusOptions} onChange={setTab3Status} />
-              <FilterDropdown label="ענף" value={tab3Industry} options={industryOptions} onChange={setTab3Industry} />
-              <FilterDropdown label="גודל" value={tab3Size} options={sizeOptions} onChange={setTab3Size} />
-              {tab3HasFilters && (
-                <button
-                  onClick={() => { setSearchQuery(''); setTab3Status('הכל'); setTab3Industry('הכל'); setTab3Size('הכל') }}
-                  className="text-sm underline"
-              style={{ color: theme.accent }}
-                >
-                  נקה הכל
-                </button>
-              )}
-            </div>
-          </div>
 
           <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             <AnimatePresence>
