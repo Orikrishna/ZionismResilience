@@ -410,28 +410,10 @@ export default function App() {
 
       {/* ── Shared action + filter bar (all tabs) ── */}
       <div className="no-print max-w-7xl mx-auto px-6 pt-3 pb-1">
-        <div className="flex items-center gap-2">
+        {/* RTL: filters flow from the right naturally, buttons pushed to physical left with ms-auto */}
+        <div className="flex items-center gap-2" dir="rtl">
 
-          {/* Action buttons — pinned to the left */}
-          <div className="flex items-center gap-2 ms-auto">
-            <button
-              onClick={() => setShowReportModal(true)}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-xl text-sm font-medium text-sh-pink border border-sh-pink-light bg-sh-pink-light/40 hover:bg-sh-pink hover:text-white transition-colors"
-            >
-              <Mail size={14} />
-              שלח דו"ח
-            </button>
-            <button
-              onClick={handleDownloadPdf}
-              disabled={pdfDownloading}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-xl text-sm font-medium text-sh-text-muted border border-sh-pink-light bg-sh-pink-light/20 hover:bg-sh-pink-light hover:text-sh-text transition-colors disabled:opacity-60"
-            >
-              <FileDown size={14} />
-              {pdfDownloading ? 'מייצר...' : 'יצוא PDF'}
-            </button>
-          </div>
-
-          {/* Per-tab filters — right side (RTL) */}
+          {/* Per-tab filters — RTL start = right edge */}
           {activeTab === 0 && <>
             <FilterDropdown label="סטטוס" value={tab1Status} options={statusOptions} onChange={setTab1Status} />
             <FilterDropdown label="ענף" value={tab1Industry} options={industryOptions} onChange={setTab1Industry} />
@@ -468,6 +450,25 @@ export default function App() {
                 className="text-sm underline" style={{ color: theme.accent }}>נקה הכל</button>
             )}
           </>}
+
+          {/* Action buttons — ms-auto in RTL pushes to physical left */}
+          <div className="flex items-center gap-2 ms-auto">
+            <button
+              onClick={() => setShowReportModal(true)}
+              className="flex items-center gap-2 px-3 py-1.5 rounded-xl text-sm font-medium text-sh-pink border border-sh-pink-light bg-sh-pink-light/40 hover:bg-sh-pink hover:text-white transition-colors"
+            >
+              <Mail size={14} />
+              שלח דו"ח
+            </button>
+            <button
+              onClick={handleDownloadPdf}
+              disabled={pdfDownloading}
+              className="flex items-center gap-2 px-3 py-1.5 rounded-xl text-sm font-medium text-sh-text-muted border border-sh-pink-light bg-sh-pink-light/20 hover:bg-sh-pink-light hover:text-sh-text transition-colors disabled:opacity-60"
+            >
+              <FileDown size={14} />
+              {pdfDownloading ? 'מייצר...' : 'יצוא PDF'}
+            </button>
+          </div>
 
         </div>
       </div>
