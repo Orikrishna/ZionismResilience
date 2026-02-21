@@ -91,7 +91,11 @@ export default function SendReportModal({ companies, onClose }) {
     setStatus('sending')
     try {
       const reportData = buildReportData(companies)
-      const res = await fetch('http://localhost:3457/send-email', {
+      const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+      const sendUrl = isLocal
+        ? 'http://localhost:3457/send-email'
+        : 'https://dashboard-six-silk-20.vercel.app/api/send-email'
+      const res = await fetch(sendUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ to: to.trim(), replyTo: replyTo.trim() || undefined, subject, bodyHtml, reportData, companies }),
@@ -100,7 +104,10 @@ export default function SendReportModal({ companies, onClose }) {
       if (!res.ok) throw new Error(data.error || 'שגיאה בשליחה')
       setStatus('success')
     } catch (err) {
-      setErrorMsg(err.message.includes('fetch') ? 'השרת המקומי לא פועל. הפעל: npm run companies-server' : err.message)
+      const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+      setErrorMsg(err.message.includes('fetch')
+        ? isLocal ? 'השרת המקומי לא פועל. הפעל: npm run companies-server' : 'שגיאת רשת — נסה שוב'
+        : err.message)
       setStatus('error')
     }
   }, [to, replyTo, subject, bodyHtml, companies])
