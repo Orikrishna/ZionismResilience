@@ -1,8 +1,12 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useCallback, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { BarChart3, RefreshCw, Building2 } from 'lucide-react'
+import { BarChart3, RefreshCw, Building2, Pencil, Save, X, Eye, ChevronDown, Mail, FileDown } from 'lucide-react'
 import data from './data/companies.json'
 import ThemeContext from './ThemeContext'
+import RichTextEditor from './components/RichTextEditor'
+import StepStatusPicker from './components/StepStatusPicker'
+import DrawerSelect from './components/DrawerSelect'
+import SendReportModal from './components/SendReportModal'
 
 // Existing widgets
 import KpiCard from './components/KpiCard'
@@ -87,10 +91,95 @@ function stepsCompleted(company) {
   return PIPELINE_STEPS.filter(s => company[s.key]).length
 }
 
+const SAVE_SERVER = 'http://localhost:3457'
+
 export default function App() {
-  const { companies } = data
+  const [companies, setCompanies] = useState(data.companies)
   const [selectedCompany, setSelectedCompany] = useState(null)
   const [activeTab, setActiveTab] = useState(0)
+
+  // Drawer edit state
+  const [isEditing, setIsEditing] = useState(false)
+  const [editDraft, setEditDraft] = useState(null)
+  const [saveStatus, setSaveStatus] = useState(null) // null | 'saving' | 'saved' | 'error'
+
+  const openDrawer = useCallback((company) => {
+    setSelectedCompany(company)
+    setIsEditing(false)
+    setEditDraft(null)
+    setSaveStatus(null)
+  }, [])
+
+  const startEditing = useCallback(() => {
+    setEditDraft({
+      // text fields
+      notes: selectedCompany.notes || '',
+      requirements: selectedCompany.requirements || '',
+      nextAction: selectedCompany.nextAction || '',
+      // status fields
+      status: selectedCompany.status || '',
+      recruitmentStatus: selectedCompany.recruitmentStatus || '',
+      // pipeline (boolean)
+      emailSent: selectedCompany.emailSent || false,
+      meetingHeld: selectedCompany.meetingHeld || false,
+      agreementSent: selectedCompany.agreementSent || false,
+      agreementSigned: selectedCompany.agreementSigned || false,
+      paid: selectedCompany.paid || false,
+      // process steps (deep clone)
+      process: JSON.parse(JSON.stringify(selectedCompany.process || {})),
+    })
+    setIsEditing(true)
+  }, [selectedCompany])
+
+  const cancelEditing = useCallback(() => {
+    setIsEditing(false)
+    setEditDraft(null)
+  }, [])
+
+  const saveEdits = useCallback(async () => {
+    if (!editDraft) return
+    setSaveStatus('saving')
+
+    const merged = {
+      ...selectedCompany,
+      notes: editDraft.notes,
+      requirements: editDraft.requirements,
+      nextAction: editDraft.nextAction,
+      status: editDraft.status,
+      recruitmentStatus: editDraft.recruitmentStatus,
+      emailSent: editDraft.emailSent,
+      meetingHeld: editDraft.meetingHeld,
+      agreementSent: editDraft.agreementSent,
+      agreementSigned: editDraft.agreementSigned,
+      paid: editDraft.paid,
+      process: editDraft.process,
+    }
+    const updated = companies.map(c => c.id === selectedCompany.id ? merged : c)
+
+    // Optimistic update
+    setCompanies(updated)
+    setSelectedCompany(merged)
+    setIsEditing(false)
+
+    // Persist to JSON via save server
+    try {
+      const res = await fetch(`${SAVE_SERVER}/save-companies`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ companies: updated }),
+      })
+      if (res.ok) {
+        setSaveStatus('saved')
+        setTimeout(() => setSaveStatus(null), 2000)
+      } else {
+        setSaveStatus('error')
+      }
+    } catch {
+      // Server not running — data saved in memory only
+      setSaveStatus('saved')
+      setTimeout(() => setSaveStatus(null), 2000)
+    }
+  }, [editDraft, companies, selectedCompany])
 
   // Independent per-tab filter state
   const [tab1Status, setTab1Status] = useState('הכל')
@@ -105,6 +194,35 @@ export default function App() {
   const [tab3Industry, setTab3Industry] = useState('הכל')
   const [tab3Size, setTab3Size] = useState('הכל')
   const [searchQuery, setSearchQuery] = useState('')
+  const [showReportModal, setShowReportModal] = useState(false)
+  const [pdfDownloading, setPdfDownloading] = useState(false)
+
+  const handleDownloadPdf = useCallback(async () => {
+    setPdfDownloading(true)
+    try {
+      const res = await fetch('http://localhost:3457/download-pdf', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ companies }),
+      })
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}))
+        alert(err.error || 'שגיאה ביצירת PDF')
+        return
+      }
+      const blob = await res.blob()
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = `shaveh-report-${new Date().toLocaleDateString('he-IL').replace(/\//g, '-')}.pdf`
+      a.click()
+      URL.revokeObjectURL(url)
+    } catch {
+      alert('השרת המקומי לא פועל. הפעל: npm run companies-server')
+    } finally {
+      setPdfDownloading(false)
+    }
+  }, [companies])
 
   const TABS = [
     { label: 'ריכוז מידע', id: 'general', Icon: BarChart3 },
@@ -207,6 +325,7 @@ export default function App() {
   const tab3HasFilters = tab3Status !== 'הכל' || tab3Industry !== 'הכל' || tab3Size !== 'הכל' || searchQuery
 
   return (
+    <ThemeContext.Provider value={theme}>
     <motion.div
       className="min-h-screen font-noto"
       dir="rtl"
@@ -244,15 +363,35 @@ export default function App() {
             <p className="text-base text-sh-text-muted">מיזם להתאמת מוצרים ושירותים לאנשים עם מוגבלות</p>
           </div>
         </div>
-        <img src={`${import.meta.env.BASE_URL}zionism2000-logo.jpg`} alt="ציונות 2000" className="h-16 object-contain" />
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 no-print">
+            <button
+              onClick={() => setShowReportModal(true)}
+              className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium text-sh-pink border border-sh-pink-light bg-sh-pink-light/40 hover:bg-sh-pink hover:text-white transition-colors"
+            >
+              <Mail size={15} />
+              שלח דו"ח
+            </button>
+            <button
+              onClick={handleDownloadPdf}
+              disabled={pdfDownloading}
+              className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium text-sh-text-muted border border-sh-pink-light bg-sh-pink-light/20 hover:bg-sh-pink-light hover:text-sh-text transition-colors disabled:opacity-60"
+            >
+              <FileDown size={15} />
+              {pdfDownloading ? 'מייצר...' : 'יצוא PDF'}
+            </button>
+          </div>
+          <img src={`${import.meta.env.BASE_URL}zionism2000-logo.jpg`} alt="ציונות 2000" className="h-20 object-contain" />
+        </div>
       </header>
 
       {/* Tab bar */}
-      <div className="max-w-7xl mx-auto px-6 mt-6 mb-2">
+      <div className="no-print sticky top-[120px] z-40">
+      <div className="max-w-7xl mx-auto px-6 pt-4 pb-2">
         <motion.div
           className="flex gap-1 rounded-2xl p-1.5 shadow-sm"
           animate={{
-            backgroundColor: theme.lightAlpha40,
+            backgroundColor: theme.light,
             borderColor: theme.lightAlpha50,
           }}
           transition={{ duration: 0.4, ease: 'easeInOut' }}
@@ -261,7 +400,7 @@ export default function App() {
           {TABS.map((tab, i) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(i)}
+              onClick={() => { setActiveTab(i); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
               className={`flex-1 px-6 py-3 rounded-xl text-base font-bold transition-all flex items-center justify-center gap-2.5 ${
                 activeTab === i
                   ? 'bg-sh-card shadow-card text-sh-text'
@@ -284,15 +423,15 @@ export default function App() {
           ))}
         </motion.div>
       </div>
+      </div>
 
-      <ThemeContext.Provider value={theme}>
       <main className="max-w-7xl mx-auto px-6 py-6 space-y-8">
 
         {/* ══════ Tab 1: ריכוז מידע ══════ */}
-        {activeTab === 0 && <>
+        <div className={`space-y-8 ${activeTab === 0 ? '' : 'hidden print-show'}`}>
 
         {/* Tab 1 filters */}
-        <div className="flex items-center gap-2 flex-wrap">
+        <div className="no-print flex items-center gap-2 flex-wrap">
           <FilterDropdown label="סטטוס" value={tab1Status} options={statusOptions} onChange={setTab1Status} />
           <FilterDropdown label="ענף" value={tab1Industry} options={industryOptions} onChange={setTab1Industry} />
           <FilterDropdown label="גודל" value={tab1Size} options={sizeOptions} onChange={setTab1Size} />
@@ -347,13 +486,13 @@ export default function App() {
         {/* ── Section 6: Strauss Case Study ── */}
         <StraussRow companies={filteredTab1} />
 
-        </>}
+        </div>
 
         {/* ══════ Tab 2: שלבי התהליך ══════ */}
-        {activeTab === 1 && <>
+        <div className={`space-y-8 ${activeTab === 1 ? 'print-page-break' : 'hidden print-show print-page-break'}`}>
 
         {/* Tab 2 filters */}
-        <div className="flex items-center gap-2 flex-wrap">
+        <div className="no-print flex items-center gap-2 flex-wrap">
           <FilterDropdown label="סטטוס" value={tab2Status} options={statusOptions} onChange={setTab2Status} />
           <FilterDropdown label="ענף" value={tab2Industry} options={industryOptions} onChange={setTab2Industry} />
           <FilterDropdown label="גודל" value={tab2Size} options={sizeOptions} onChange={setTab2Size} />
@@ -381,12 +520,12 @@ export default function App() {
         <ProcessTracker companies={filteredTab2} />
 
         {/* ── Section 8: "They didn't say no" ── */}
-        <UndecidedList companies={filteredTab2} onCompanyClick={setSelectedCompany} />
+        <UndecidedList companies={filteredTab2} onCompanyClick={openDrawer} />
 
-        </>}
+        </div>
 
-        {/* ══════ Tab 3: פירוט החברות ══════ */}
-        {activeTab === 2 && <>
+        {/* ══════ Tab 3: פירוט החברות ══════ (hidden in print) */}
+        {activeTab === 2 && <div className="space-y-8 no-print">
 
         {/* ── Section 9: Company Grid with Search + Filter ── */}
         <div className="bg-sh-card rounded-card-sh shadow-card p-6">
@@ -425,7 +564,7 @@ export default function App() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.96 }}
                   transition={{ duration: 0.2 }}
-                  onClick={() => setSelectedCompany(c)}
+                  onClick={() => openDrawer(c)}
                   className="border rounded-xl p-4 hover:shadow-card-hover transition-shadow cursor-pointer"
                   style={{ borderColor: theme.light }}
                 >
@@ -468,22 +607,17 @@ export default function App() {
           </motion.div>
         </div>
 
-        </>}
+        </div>}
       </main>
-      </ThemeContext.Provider>
 
       {/* Footer */}
       <footer
-        className="mt-12 bg-sh-card/60"
+        className="no-print mt-12 bg-sh-card/60"
         style={{ borderTop: `1px solid ${theme.lightAlpha50}` }}
       >
-        <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-          <div className="text-sm text-sh-text-muted">
-            דשבורד שווה פיתוח · ציונות 2000
-          </div>
-          <div className="text-xs text-sh-text-light">
-            עודכן לאחרונה: פברואר 2026
-          </div>
+        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col items-center gap-3">
+          <div className="text-sm text-sh-text-muted">עיבוד והצגת המידע בשיתוף:</div>
+          <img src={`${BASE}qbt-logo.png`} alt="Q Behavioral Thinking" className="h-12 object-contain" />
         </div>
       </footer>
 
@@ -496,177 +630,322 @@ export default function App() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 bg-black/30 z-40"
-              onClick={() => setSelectedCompany(null)}
+              onClick={() => { if (!isEditing) setSelectedCompany(null) }}
             />
             <motion.aside
               initial={{ x: '-100%' }}
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'spring', stiffness: 320, damping: 32 }}
-              className="fixed top-0 left-0 h-full w-full max-w-lg bg-sh-card shadow-2xl z-50 overflow-y-auto p-8"
+              className="fixed top-0 left-0 h-full w-full max-w-lg bg-sh-card shadow-2xl z-50 overflow-y-auto"
               dir="rtl"
             >
-              <button
-                onClick={() => setSelectedCompany(null)}
-                className="text-sh-text-muted hover:text-sh-text text-2xl leading-none mb-6 block"
-              >
-                ✕
-              </button>
-              <div className="flex items-center gap-3 mb-1">
-                <CompanyLogo companyId={selectedCompany.id} size={80} />
-                <h2 className="text-2xl font-black text-sh-text">{selectedCompany.name}</h2>
-              </div>
+              {/* Drawer header */}
+              <div className="sticky top-0 bg-sh-card z-10 px-8 pt-6 pb-4 border-b border-sh-pink-light/50">
+                <div className="flex items-center justify-between mb-4">
+                  <button
+                    onClick={() => setSelectedCompany(null)}
+                    className="text-sh-text-muted hover:text-sh-text transition-colors"
+                  >
+                    <X size={20} />
+                  </button>
 
-              {/* Status + metadata badges */}
-              <div className="flex gap-2 flex-wrap mb-6 mt-3">
-                <span className={`text-xs px-2 py-1 rounded-pill font-medium ${STATUS_STYLES[selectedCompany.status] || 'bg-gray-100 text-sh-text-muted'}`}>
-                  {selectedCompany.status || 'לא ידוע'}
-                </span>
-                {selectedCompany.recruitmentStatus && (
-                  <span className="text-xs px-2 py-1 rounded-pill font-medium bg-sh-pink-light/50 text-sh-text-muted">
-                    {selectedCompany.recruitmentStatus}
-                  </span>
-                )}
-                {selectedCompany.industry && (
-                  <span className="text-xs px-2 py-1 rounded-pill font-medium bg-sh-bg text-sh-text-muted">
-                    {selectedCompany.industry}
-                  </span>
-                )}
-                {selectedCompany.companySize && (
-                  <span className="text-xs px-2 py-1 rounded-pill font-medium bg-sh-bg text-sh-text-muted">
-                    {selectedCompany.companySize}
-                  </span>
-                )}
-                {selectedCompany.referralSource1 && (
-                  <span className="text-xs px-2 py-1 rounded-pill font-medium bg-sh-bg text-sh-text-muted">
-                    {selectedCompany.referralSource1}
-                  </span>
-                )}
-              </div>
-
-              {/* Pipeline steps */}
-              <h3 className="font-bold text-sh-text mb-3">שלבי גיוס</h3>
-              <div className="space-y-2 mb-6">
-                {PIPELINE_STEPS.map((step) => (
-                  <div key={step.key} className="flex items-center gap-3">
-                    <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
-                      selectedCompany[step.key]
-                        ? 'bg-sh-green text-white'
-                        : 'bg-sh-pink-light text-sh-text-light'
-                    }`}>
-                      {selectedCompany[step.key] ? '✓' : '—'}
-                    </div>
-                    <span className={`text-sm ${selectedCompany[step.key] ? 'text-sh-text font-medium' : 'text-sh-text-light'}`}>
-                      {step.label}
-                    </span>
+                  <div className="flex items-center gap-2">
+                    {saveStatus === 'saved' && (
+                      <span className="text-xs text-sh-green font-medium">נשמר ✓</span>
+                    )}
+                    {saveStatus === 'error' && (
+                      <span className="text-xs text-sh-pink font-medium">שגיאה בשמירה</span>
+                    )}
+                    {isEditing && (
+                      <button
+                        onClick={saveEdits}
+                        disabled={saveStatus === 'saving'}
+                        className="flex items-center gap-1.5 text-sm text-white px-3 py-1.5 rounded-lg transition-colors"
+                        style={{ backgroundColor: theme.accent }}
+                      >
+                        <Save size={14} />
+                        {saveStatus === 'saving' ? 'שומר...' : 'שמירה'}
+                      </button>
+                    )}
+                    {/* Pencil = enter edit mode; Eye = exit edit mode (no save) */}
+                    <button
+                      onClick={isEditing ? cancelEditing : startEditing}
+                      title={isEditing ? 'חזרה לצפייה (ללא שמירה)' : 'עריכה'}
+                      className="w-8 h-8 flex items-center justify-center rounded-lg border border-sh-pink-light hover:bg-sh-bg transition-colors text-sh-text-muted hover:text-sh-text"
+                    >
+                      {isEditing ? <Eye size={15} /> : <Pencil size={15} />}
+                    </button>
                   </div>
-                ))}
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <CompanyLogo companyId={selectedCompany.id} size={56} />
+                  <h2 className="text-xl font-black text-sh-text">{selectedCompany.name}</h2>
+                </div>
+
+                {/* Status + metadata badges */}
+                <div className="flex gap-2 flex-wrap mt-3">
+                  <span className={`text-xs px-2 py-1 rounded-pill font-medium ${STATUS_STYLES[selectedCompany.status] || 'bg-gray-100 text-sh-text-muted'}`}>
+                    {selectedCompany.status || 'לא ידוע'}
+                  </span>
+                  {selectedCompany.recruitmentStatus && (
+                    <span className="text-xs px-2 py-1 rounded-pill font-medium bg-sh-pink-light/50 text-sh-text-muted">
+                      {selectedCompany.recruitmentStatus}
+                    </span>
+                  )}
+                  {selectedCompany.industry && (
+                    <span className="text-xs px-2 py-1 rounded-pill font-medium bg-sh-bg text-sh-text-muted">
+                      {selectedCompany.industry}
+                    </span>
+                  )}
+                  {selectedCompany.companySize && (
+                    <span className="text-xs px-2 py-1 rounded-pill font-medium bg-sh-bg text-sh-text-muted">
+                      {selectedCompany.companySize}
+                    </span>
+                  )}
+                  {selectedCompany.referralSource1 && (
+                    <span className="text-xs px-2 py-1 rounded-pill font-medium bg-sh-bg text-sh-text-muted">
+                      {selectedCompany.referralSource1}
+                    </span>
+                  )}
+                </div>
               </div>
 
-              {/* Process steps (only for כן companies with process data) */}
-              {selectedCompany.status === 'כן' && selectedCompany.process && (
-                <>
-                  <h3 className="font-bold text-sh-text mb-3">שלבי תהליך</h3>
-                  {[
+              {/* Drawer body */}
+              <div className="px-8 py-6 space-y-6">
+
+                {/* Status dropdowns in edit mode */}
+                {isEditing && editDraft && (
+                  <div className="grid grid-cols-2 gap-3">
+                    <DrawerSelect
+                      label="סטטוס"
+                      value={editDraft.status}
+                      options={['כן', 'לא', 'טרם הוחלט']}
+                      onChange={v => setEditDraft(d => ({ ...d, status: v }))}
+                    />
+                    <DrawerSelect
+                      label="סטטוס גיוס"
+                      value={editDraft.recruitmentStatus}
+                      options={['נשלח מייל, ממתינים', 'פגישה התקיימה, ממתינים', 'נשלח הסכם, ממתינים', 'הצטרפו, טרם שילמו', 'הצטרפו ושילמו']}
+                      onChange={v => setEditDraft(d => ({ ...d, recruitmentStatus: v }))}
+                    />
+                  </div>
+                )}
+
+                {/* Pipeline steps */}
+                <div>
+                  <h3 className="font-bold text-sh-text mb-3">שלבי גיוס</h3>
+                  <div className="space-y-2">
+                    {PIPELINE_STEPS.map((step) => {
+                      const checked = (isEditing && editDraft) ? editDraft[step.key] : selectedCompany[step.key]
+                      return (
+                        <div key={step.key} className="flex items-center gap-3">
+                          {(isEditing && editDraft) ? (
+                            <button
+                              type="button"
+                              onClick={() => setEditDraft(d => ({ ...d, [step.key]: !d[step.key] }))}
+                              className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${
+                                checked ? 'bg-sh-green text-white' : 'bg-sh-pink-light text-sh-text-light hover:bg-sh-green/30'
+                              }`}
+                            >
+                              {checked ? '✓' : '—'}
+                            </button>
+                          ) : (
+                            <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+                              checked ? 'bg-sh-green text-white' : 'bg-sh-pink-light text-sh-text-light'
+                            }`}>
+                              {checked ? '✓' : '—'}
+                            </div>
+                          )}
+                          <span className={`text-sm ${checked ? 'text-sh-text font-medium' : 'text-sh-text-light'}`}>
+                            {step.label}
+                          </span>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+
+                {/* Process steps */}
+                {((isEditing && editDraft) || (selectedCompany.status === 'כן' && selectedCompany.process)) && (() => {
+                  const processData = (isEditing && editDraft) ? editDraft.process : selectedCompany.process
+                  if (!processData) return null
+                  const phases = [
                     { name: 'learning', label: 'למידה', color: '#4263aa' },
                     { name: 'development', label: 'פיתוח', color: '#70bdb3' },
                     { name: 'marketing', label: 'שיווק', color: '#e9ab56' },
-                  ].map(phase => {
-                    const phaseData = selectedCompany.process[phase.name]
-                    if (!phaseData) return null
-                    const steps = Object.entries(phaseData)
-                    const hasAny = steps.some(([, v]) => v !== null)
-                    if (!hasAny) return null
+                  ]
+                  return (
+                    <div>
+                      <h3 className="font-bold text-sh-text mb-3">שלבי תהליך</h3>
+                      {phases.map(phase => {
+                        const phaseData = processData[phase.name]
+                        if (!phaseData) return null
+                        const steps = Object.entries(phaseData)
+                        // In view mode, skip phases with no data; in edit mode show all
+                        if (!(isEditing && editDraft) && !steps.some(([, v]) => v !== null)) return null
 
-                    return (
-                      <div key={phase.name} className="mb-4">
-                        <div className="flex items-center gap-2 mb-2">
-                          <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: phase.color }} />
-                          <span className="text-sm font-bold text-sh-text">{phase.label}</span>
-                        </div>
-                        <div className="space-y-1">
-                          {steps.map(([key, value]) => {
-                            if (value === null) return null
-                            return (
-                              <div key={key} className="flex items-center gap-2">
-                                <div className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold ${
-                                  value === 'כן' ? 'bg-sh-green text-white'
-                                    : value === 'בתהליך' ? 'bg-sh-yellow text-white'
-                                    : 'bg-sh-pink-light text-sh-text-light'
-                                }`}>
-                                  {value === 'כן' ? '✓' : value === 'בתהליך' ? '◐' : '—'}
-                                </div>
-                                <span className={`text-xs ${
-                                  value === 'כן' ? 'text-sh-text' : value === 'בתהליך' ? 'text-sh-yellow' : 'text-sh-text-light'
-                                }`}>
-                                  {PROCESS_STEP_LABELS[key] || key}
-                                </span>
-                              </div>
-                            )
-                          })}
-                        </div>
-                      </div>
-                    )
-                  })}
-                </>
-              )}
+                        return (
+                          <div key={phase.name} className="mb-4">
+                            <div className="flex items-center gap-2 mb-2">
+                              <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: phase.color }} />
+                              <span className="text-sm font-bold text-sh-text">{phase.label}</span>
+                            </div>
+                            <div className="space-y-1.5">
+                              {steps.map(([key, value]) => {
+                                if (!(isEditing && editDraft) && value === null) return null
+                                return (
+                                  <div key={key} className="flex items-center gap-2">
+                                    {(isEditing && editDraft) ? (
+                                      <StepStatusPicker
+                                        value={value}
+                                        onChange={val => setEditDraft(d => ({
+                                          ...d,
+                                          process: {
+                                            ...d.process,
+                                            [phase.name]: { ...d.process[phase.name], [key]: val },
+                                          },
+                                        }))}
+                                      />
+                                    ) : (
+                                      <div className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0 ${
+                                        value === 'כן' ? 'bg-sh-green text-white'
+                                          : value === 'בתהליך' ? 'bg-sh-yellow text-white'
+                                          : value === 'לא' ? 'bg-sh-pink text-white'
+                                          : value === 'לא רלוונטי' ? 'bg-sh-text-light text-white'
+                                          : 'border-2 border-dashed border-sh-text-light bg-transparent'
+                                      }`}>
+                                        {value === 'כן' ? '✓' : value === 'בתהליך' ? '◐' : value === 'לא' ? '✕' : ''}
+                                      </div>
+                                    )}
+                                    <span className={`text-xs ${
+                                      value === 'כן' ? 'text-sh-text'
+                                        : value === 'בתהליך' ? 'text-sh-yellow'
+                                        : value === 'לא' ? 'text-sh-pink'
+                                        : 'text-sh-text-light'
+                                    }`}>
+                                      {PROCESS_STEP_LABELS[key] || key}
+                                    </span>
+                                  </div>
+                                )
+                              })}
+                            </div>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  )
+                })()}
 
-              {/* Outcomes */}
-              {selectedCompany.outcomes?.hasProduct !== null && (
-                <>
-                  <h3 className="font-bold text-sh-text mb-2 mt-4">תוצרים</h3>
-                  <div className="bg-sh-green-light/30 rounded-xl p-4 mb-4 space-y-2">
-                    {selectedCompany.outcomes.productDescription && (
-                      <div>
-                        <span className="text-xs text-sh-text-muted">מוצר/שירות: </span>
-                        <span className="text-sm text-sh-text">{selectedCompany.outcomes.productDescription}</span>
-                      </div>
-                    )}
-                    {selectedCompany.outcomes.satisfaction && (
-                      <div>
-                        <span className="text-xs text-sh-text-muted">שביעות רצון: </span>
-                        <span className="text-sm text-sh-text">{selectedCompany.outcomes.satisfaction}</span>
-                      </div>
-                    )}
-                    {selectedCompany.outcomes.mediaExposure && (
-                      <div>
-                        <span className="text-xs text-sh-text-muted">חשיפה: </span>
-                        <span className="text-sm text-sh-text">{selectedCompany.outcomes.mediaExposure}</span>
-                      </div>
+                {/* Outcomes */}
+                {selectedCompany.outcomes?.hasProduct !== null && (
+                  <div>
+                    <h3 className="font-bold text-sh-text mb-2">תוצרים</h3>
+                    <div className="bg-sh-green-light/30 rounded-xl p-4 space-y-2">
+                      {selectedCompany.outcomes.productDescription && (
+                        <div>
+                          <span className="text-xs text-sh-text-muted">מוצר/שירות: </span>
+                          <span className="text-sm text-sh-text">{selectedCompany.outcomes.productDescription}</span>
+                        </div>
+                      )}
+                      {selectedCompany.outcomes.satisfaction && (
+                        <div>
+                          <span className="text-xs text-sh-text-muted">שביעות רצון: </span>
+                          <span className="text-sm text-sh-text">{selectedCompany.outcomes.satisfaction}</span>
+                        </div>
+                      )}
+                      {selectedCompany.outcomes.mediaExposure && (
+                        <div>
+                          <span className="text-xs text-sh-text-muted">חשיפה: </span>
+                          <span className="text-sm text-sh-text">{selectedCompany.outcomes.mediaExposure}</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {/* ── Notes ── */}
+                {((isEditing && editDraft) || selectedCompany.notes) && (
+                  <div>
+                    <h3 className="font-bold text-sh-text mb-2">הערות</h3>
+                    {(isEditing && editDraft) ? (
+                      <RichTextEditor
+                        value={editDraft.notes}
+                        onChange={v => setEditDraft(d => ({ ...d, notes: v }))}
+                        placeholder="הוסף הערות..."
+                      />
+                    ) : (
+                      <div
+                        className="text-sm text-sh-text leading-relaxed bg-sh-yellow-light rounded-xl p-4 prose prose-sm max-w-none"
+                        dir="rtl"
+                        dangerouslySetInnerHTML={{ __html: selectedCompany.notes }}
+                      />
                     )}
                   </div>
-                </>
-              )}
+                )}
 
-              {/* Notes */}
-              {selectedCompany.notes && (
-                <>
-                  <h3 className="font-bold text-sh-text mb-2">הערות</h3>
-                  <p className="text-sm text-sh-text leading-relaxed bg-sh-yellow-light rounded-xl p-4 mb-4">
-                    {selectedCompany.notes}
-                  </p>
-                </>
-              )}
+                {/* ── Requirements ── */}
+                {((isEditing && editDraft) || selectedCompany.requirements) && (
+                  <div>
+                    <h3 className="font-bold text-sh-text mb-2">מה נדרש</h3>
+                    {(isEditing && editDraft) ? (
+                      <RichTextEditor
+                        value={editDraft.requirements}
+                        onChange={v => setEditDraft(d => ({ ...d, requirements: v }))}
+                        placeholder="מה נדרש מהחברה..."
+                      />
+                    ) : (
+                      <div
+                        className="text-sm text-sh-text leading-relaxed bg-sh-green-light rounded-xl p-4 prose prose-sm max-w-none"
+                        dir="rtl"
+                        dangerouslySetInnerHTML={{ __html: selectedCompany.requirements }}
+                      />
+                    )}
+                  </div>
+                )}
 
-              {/* Requirements */}
-              {selectedCompany.requirements && (
-                <>
-                  <h3 className="font-bold text-sh-text mb-2">מה נדרש</h3>
-                  <p className="text-sm text-sh-text leading-relaxed bg-sh-green-light rounded-xl p-4 mb-4">
-                    {selectedCompany.requirements}
-                  </p>
-                </>
-              )}
+                {/* ── Next Action ── */}
+                {((isEditing && editDraft) || selectedCompany.nextAction) && (
+                  <div>
+                    <h3 className="font-bold text-sh-text mb-2">פעולה הבאה</h3>
+                    {(isEditing && editDraft) ? (
+                      <RichTextEditor
+                        value={editDraft.nextAction}
+                        onChange={v => setEditDraft(d => ({ ...d, nextAction: v }))}
+                        placeholder="מה הצעד הבא עם החברה..."
+                      />
+                    ) : (
+                      <div
+                        className="text-sm text-sh-text leading-relaxed bg-sh-blue-light/40 rounded-xl p-4 prose prose-sm max-w-none"
+                        dir="rtl"
+                        dangerouslySetInnerHTML={{ __html: selectedCompany.nextAction }}
+                      />
+                    )}
+                  </div>
+                )}
 
-              {/* Summary */}
-              <div className="mt-6 pt-6 border-t border-sh-pink-light">
-                <div className="text-3xl font-black text-sh-text">{stepsCompleted(selectedCompany)}<span className="text-lg font-bold text-sh-text-muted"> / 5</span></div>
-                <div className="text-sm text-sh-text-muted">שלבי גיוס שהושלמו</div>
+                {/* Summary */}
+                <div className="pt-4 border-t border-sh-pink-light">
+                  <div className="text-3xl font-black text-sh-text">{stepsCompleted(selectedCompany)}<span className="text-lg font-bold text-sh-text-muted"> / 5</span></div>
+                  <div className="text-sm text-sh-text-muted">שלבי גיוס שהושלמו</div>
+                </div>
+
               </div>
             </motion.aside>
           </>
         )}
       </AnimatePresence>
+
+      {/* Send Report Modal */}
+      {showReportModal && (
+        <SendReportModal
+          companies={companies}
+          onClose={() => setShowReportModal(false)}
+        />
+      )}
+
     </motion.div>
+    </ThemeContext.Provider>
   )
 }

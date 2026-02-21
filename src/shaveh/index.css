@@ -50,6 +50,50 @@ body {
   text-anchor: start !important;
 }
 
+/* ── Print / PDF export ──────────────────────────────────────────────────── */
+@media print {
+  /* Page setup: A4 landscape for wide dashboards */
+  @page {
+    size: A4 landscape;
+    margin: 12mm 14mm;
+  }
+
+  /* Hide all interactive UI chrome */
+  .no-print { display: none !important; }
+
+  /* Show content that is normally hidden (inactive tabs) */
+  .print-show { display: block !important; }
+
+  /* Remove sticky positioning so headers don't repeat */
+  header, [class*="sticky"] { position: static !important; box-shadow: none !important; }
+
+  /* Kill animations */
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+
+  /* Remove backgrounds that waste ink / look bad in print */
+  body { background: #fff !important; }
+  .min-h-screen { min-height: unset !important; }
+
+  /* Keep colors — Chrome/Safari print with background graphics enabled will show them */
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+
+  /* Section breaks between the two tab sections */
+  .print-page-break { page-break-before: always; break-before: page; }
+
+  /* Don't break inside cards / chart blocks */
+  [class*="rounded"], [class*="shadow"], [class*="card"] {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Ensure full width */
+  .max-w-7xl { max-width: 100% !important; }
+
+  /* Hide drawer overlay */
+  .fixed.inset-0, aside { display: none !important; }
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 6px;
