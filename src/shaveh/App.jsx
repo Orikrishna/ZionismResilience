@@ -199,8 +199,12 @@ export default function App() {
 
   const handleDownloadPdf = useCallback(async () => {
     setPdfDownloading(true)
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    const url = isLocal
+      ? 'http://localhost:3457/download-pdf'
+      : 'https://dashboard-six-silk-20.vercel.app/api/download-pdf'
     try {
-      const res = await fetch('http://localhost:3457/download-pdf', {
+      const res = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ companies }),
@@ -211,14 +215,14 @@ export default function App() {
         return
       }
       const blob = await res.blob()
-      const url = URL.createObjectURL(blob)
+      const objUrl = URL.createObjectURL(blob)
       const a = document.createElement('a')
-      a.href = url
+      a.href = objUrl
       a.download = `shaveh-report-${new Date().toLocaleDateString('he-IL').replace(/\//g, '-')}.pdf`
       a.click()
-      URL.revokeObjectURL(url)
+      URL.revokeObjectURL(objUrl)
     } catch {
-      alert('השרת המקומי לא פועל. הפעל: npm run companies-server')
+      alert(isLocal ? 'השרת המקומי לא פועל. הפעל: npm run companies-server' : 'שגיאת רשת — נסה שוב')
     } finally {
       setPdfDownloading(false)
     }
