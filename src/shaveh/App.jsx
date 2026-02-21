@@ -409,7 +409,7 @@ export default function App() {
       </div>
 
       {/* ── Shared action + filter bar (all tabs) ── */}
-      <div className="no-print max-w-7xl mx-auto px-6 pt-3 pb-1">
+      <div className="no-print max-w-7xl mx-auto px-6 py-3">
         {/* RTL: filters flow from the right naturally, buttons pushed to physical left with ms-auto */}
         <div className="flex items-center gap-2" dir="rtl">
 
@@ -473,10 +473,10 @@ export default function App() {
         </div>
       </div>
 
-      <main className="max-w-7xl mx-auto px-6 py-4 space-y-8">
+      <main className="max-w-7xl mx-auto px-6 pb-8">
 
         {/* ══════ Tab 1: ריכוז מידע ══════ */}
-        <div className={`space-y-8 ${activeTab === 0 ? '' : 'hidden print-show'}`}>
+        <div className={`space-y-8 pt-0 ${activeTab === 0 ? '' : 'hidden print-show'}`}>
 
         {/* Tab 1 filters — removed (now in shared bar above) */}
 
@@ -520,7 +520,7 @@ export default function App() {
         </div>
 
         {/* ══════ Tab 2: שלבי התהליך ══════ */}
-        <div className={`space-y-8 ${activeTab === 1 ? 'print-page-break' : 'hidden print-show print-page-break'}`}>
+        <div className={`space-y-8 pt-0 ${activeTab === 1 ? 'print-page-break' : 'hidden print-show print-page-break'}`}>
 
         {/* ── Section 6b: Community Timeline + Cohort Analysis ── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -537,7 +537,7 @@ export default function App() {
         </div>
 
         {/* ══════ Tab 3: פירוט החברות ══════ (hidden in print) */}
-        {activeTab === 2 && <div className="space-y-8 no-print">
+        {activeTab === 2 && <div className="space-y-8 pt-0 no-print">
 
         {/* ── Section 9: Company Grid with Search + Filter ── */}
         <div className="bg-sh-card rounded-card-sh shadow-card p-6">
