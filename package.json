@@ -12,6 +12,7 @@
     "companies-server": "node scripts/companies-save-server.mjs"
   },
   "dependencies": {
+    "@sparticuz/chromium-min": "^143.0.4",
     "@tiptap/extension-underline": "^3.20.0",
     "@tiptap/pm": "^3.20.0",
     "@tiptap/react": "^3.20.0",

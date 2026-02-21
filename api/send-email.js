@@ -1,5 +1,12 @@
 // Vercel serverless function — sends the Shaveh status report email via Resend
-// No PDF attachment (Puppeteer not available on Vercel free tier).
+// Generates a PDF attachment using @sparticuz/chromium-min + puppeteer-core.
+
+import chromium from '@sparticuz/chromium-min'
+import puppeteer from 'puppeteer-core'
+
+// Hosted Chromium binary for Vercel (stable release)
+const CHROMIUM_URL =
+  'https://github.com/Sparticuz/chromium/releases/download/v131.0.1/chromium-v131.0.1-pack.tar'
 
 const C = {
   pink:    '#e8969f',
@@ -91,6 +98,30 @@ function buildEmailHTML(bodyHtml, d) {
 </body></html>`
 }
 
+async function generatePdfBuffer(reportData, bodyHtml) {
+  const html = buildEmailHTML(bodyHtml, reportData)
+  const browser = await puppeteer.launch({
+    args: chromium.args,
+    defaultViewport: chromium.defaultViewport,
+    executablePath: await chromium.executablePath(CHROMIUM_URL),
+    headless: chromium.headless,
+  })
+  try {
+    const page = await browser.newPage()
+    await page.setContent(html, { waitUntil: 'networkidle0' })
+    const rawPdf = await page.pdf({
+      format: 'A4',
+      printBackground: true,
+      margin: { top: '10mm', bottom: '10mm', left: '10mm', right: '10mm' },
+    })
+    return Buffer.isBuffer(rawPdf) ? rawPdf : Buffer.from(rawPdf)
+  } finally {
+    await browser.close()
+  }
+}
+
+export const maxDuration = 60
+
 export default async function handler(req, res) {
   // CORS — allow GitHub Pages origin
   res.setHeader('Access-Control-Allow-Origin', 'https://orikrishna.github.io')
@@ -132,6 +163,17 @@ export default async function handler(req, res) {
   }
   if (replyTo && replyTo.trim()) payload.reply_to = replyTo.trim()
 
+  // Generate PDF — if it fails, email sends without attachment
+  try {
+    const pdfBuf = await generatePdfBuffer(reportData, bodyHtml || '')
+    payload.attachments = [{
+      filename: `דוח-שווה-${reportData.date}.pdf`,
+      content: pdfBuf.toString('base64'),
+    }]
+  } catch (err) {
+    console.error('PDF generation failed (sending without attachment):', err.message)
+  }
+
   const response = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {
@@ -147,5 +189,5 @@ export default async function handler(req, res) {
     return
   }
 
-  res.status(200).json({ ok: true, id: result.id })
+  res.status(200).json({ ok: true, id: result.id, hasPdf: !!payload.attachments })
 }
