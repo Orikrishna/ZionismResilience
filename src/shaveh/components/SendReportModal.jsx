@@ -64,7 +64,7 @@ function Field({ label, children }) {
   )
 }
 
-const INPUT_CLS = 'w-full text-sm border border-sh-pink-light rounded-xl px-3 py-2.5 bg-white text-sh-text focus:outline-none focus:border-sh-pink transition-colors placeholder:text-sh-text-light'
+const INPUT_CLS = 'w-full text-sm border border-sh-yellow-light rounded-xl px-3 py-2.5 bg-white text-sh-text focus:outline-none focus:border-sh-yellow transition-colors placeholder:text-sh-text-light'
 
 // ── SendReportModal ───────────────────────────────────────────────────────────
 export default function SendReportModal({ companies, onClose }) {
@@ -129,10 +129,10 @@ export default function SendReportModal({ companies, onClose }) {
           onClick={e => e.stopPropagation()}
         >
           {/* Modal header */}
-          <div className="flex items-center justify-between px-6 pt-5 pb-4 border-b border-sh-pink-light/50">
+          <div className="flex items-center justify-between px-6 pt-5 pb-4 border-b border-sh-yellow-light/50">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-sh-pink-light flex items-center justify-center">
-                <Mail size={15} className="text-sh-pink" />
+              <div className="w-8 h-8 rounded-lg bg-sh-yellow-light flex items-center justify-center">
+                <Mail size={15} className="text-sh-yellow" />
               </div>
               <div>
                 <div className="text-sm font-bold text-sh-text">שליחת דו"ח מצב</div>
@@ -159,7 +159,7 @@ export default function SendReportModal({ companies, onClose }) {
               </div>
               <button
                 onClick={onClose}
-                className="mt-2 px-5 py-2 rounded-xl text-sm font-medium bg-sh-pink-light text-sh-pink hover:bg-sh-pink hover:text-white transition-colors"
+                className="mt-2 px-5 py-2 rounded-xl text-sm font-medium bg-sh-yellow-light text-sh-yellow hover:bg-sh-yellow hover:text-white transition-colors"
               >
                 סגור
               </button>
@@ -251,7 +251,7 @@ export default function SendReportModal({ companies, onClose }) {
                   onClick={handleSend}
                   disabled={status === 'sending'}
                   className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-colors disabled:opacity-60"
-                  style={{ backgroundColor: '#e8969f' }}
+                  style={{ backgroundColor: '#e9ab56' }}
                 >
                   <Send size={14} />
                   {status === 'sending' ? 'שולח...' : 'שלח דו"ח'}

@@ -79,7 +79,7 @@ export default function RichTextEditor({ value, onChange, placeholder }) {
     editorProps: {
       attributes: {
         dir: 'rtl',
-        class: 'outline-none min-h-[80px] text-sm text-sh-text leading-relaxed px-3 py-2',
+        class: 'outline-none min-h-[104px] text-sm text-sh-text leading-relaxed px-3 py-2',
       },
     },
     onUpdate({ editor }) {

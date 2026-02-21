@@ -457,7 +457,7 @@ export default function App() {
           <div className="flex items-center gap-2 ms-auto">
             <button
               onClick={() => setShowReportModal(true)}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-xl text-sm font-medium text-sh-pink border border-sh-pink-light bg-sh-pink-light/40 hover:bg-sh-pink hover:text-white transition-colors"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-xl text-sm font-medium text-sh-text-muted border border-sh-yellow-light bg-sh-yellow-light/60 hover:bg-sh-yellow-light hover:text-sh-text transition-colors"
             >
               <Mail size={14} />
               שלח דו"ח
@@ -465,7 +465,7 @@ export default function App() {
             <button
               onClick={handleDownloadPdf}
               disabled={pdfDownloading}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-xl text-sm font-medium text-sh-text-muted border border-sh-pink-light bg-sh-pink-light/20 hover:bg-sh-pink-light hover:text-sh-text transition-colors disabled:opacity-60"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-xl text-sm font-medium text-sh-text-muted border border-sh-yellow-light bg-sh-yellow-light/60 hover:bg-sh-yellow-light hover:text-sh-text transition-colors disabled:opacity-60"
             >
               <FileDown size={14} />
               {pdfDownloading ? 'מייצר...' : 'יצוא PDF'}
