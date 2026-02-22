@@ -14,8 +14,10 @@
 
 import { useState, useEffect } from 'react'
 
-// SHA-256 of "welcome81"
-const HASH = '0e878c789535075344221c2523e979fc9dc91ae166f1501aeb973345a27fbc97'
+const USERS = {
+  guest: '0e878c789535075344221c2523e979fc9dc91ae166f1501aeb973345a27fbc97', // SHA-256 of "welcome81"
+  admin: '423e037e370d5b2f43c09f5de1f01dbaef7c3d81f62c649eaa432eb26c6f3904', // SHA-256 of "winit16"
+}
 const SESSION_KEY = 'shaveh_session'
 const TTL_MS = 7 * 24 * 60 * 60 * 1000 // 7 days
 
@@ -28,15 +30,16 @@ function isSessionValid() {
   try {
     const raw = localStorage.getItem(SESSION_KEY)
     if (!raw) return false
-    const { expiry } = JSON.parse(raw)
-    return Date.now() < expiry
+    const { expiry, role } = JSON.parse(raw)
+    if (Date.now() >= expiry) return false
+    return role || 'guest'
   } catch {
     return false
   }
 }
 
-function saveSession() {
-  localStorage.setItem(SESSION_KEY, JSON.stringify({ expiry: Date.now() + TTL_MS }))
+function saveSession(role) {
+  localStorage.setItem(SESSION_KEY, JSON.stringify({ expiry: Date.now() + TTL_MS, role }))
 }
 
 export function logout() {
@@ -45,7 +48,7 @@ export function logout() {
 }
 
 export default function LoginGate({ children }) {
-  const [authed, setAuthed] = useState(isSessionValid)
+  const [authed, setAuthed] = useState(isSessionValid) // false | 'guest' | 'admin'
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError]     = useState('')
@@ -53,22 +56,23 @@ export default function LoginGate({ children }) {
 
   // Re-check on focus (in case session expired in another tab)
   useEffect(() => {
-    const onFocus = () => { if (!isSessionValid()) setAuthed(false) }
+    const onFocus = () => { const role = isSessionValid(); if (!role) setAuthed(false) }
     window.addEventListener('focus', onFocus)
     return () => window.removeEventListener('focus', onFocus)
   }, [])
 
-  if (authed) return children
+  if (authed) return children(authed)
 
   async function handleSubmit(e) {
     e.preventDefault()
     setError('')
     setLoading(true)
     try {
+      const key = username.toLowerCase()
       const hashed = await sha256(password)
-      if (username.toLowerCase() === 'guest' && hashed === HASH) {
-        saveSession()
-        setAuthed(true)
+      if (USERS[key] && hashed === USERS[key]) {
+        saveSession(key)
+        setAuthed(key)
       } else {
         setError('שם משתמש או סיסמה שגויים')
       }

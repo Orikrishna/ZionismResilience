@@ -41,10 +41,10 @@ export default function KpiCard({ label, value, suffix, accent }) {
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="bg-sh-card rounded-card-sh shadow-card p-6 flex flex-col gap-1"
+      className="bg-sh-card rounded-card-sh shadow-card p-4 sm:p-6 flex flex-col gap-1"
     >
       <div
-        className={`text-4xl font-black ${accent ? '' : 'text-sh-text'}`}
+        className={`text-2xl sm:text-4xl font-black ${accent ? '' : 'text-sh-text'}`}
         style={accent ? { color: theme.accent } : undefined}
       >
         {formatted}{suffix && <span className="text-xl font-bold mr-1">{suffix}</span>}

@@ -7,7 +7,7 @@ import LoginGate from './components/LoginGate.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <LoginGate>
-      <App />
+      {(role) => <App role={role} />}
     </LoginGate>
   </StrictMode>,
 )

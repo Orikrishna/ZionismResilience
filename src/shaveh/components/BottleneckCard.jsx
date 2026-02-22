@@ -37,7 +37,7 @@ export default function BottleneckCard({ companies }) {
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: 0.2 }}
-      className="bg-sh-card rounded-card-sh shadow-card p-6 border-2 border-sh-pink"
+      className="bg-sh-card rounded-card-sh shadow-card p-4 sm:p-6 border-2 border-sh-pink"
     >
       <div className="flex items-center gap-2 mb-3">
         <span className="text-2xl">🔍</span>

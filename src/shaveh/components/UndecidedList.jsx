@@ -41,7 +41,7 @@ export default function UndecidedList({ companies, onCompanyClick }) {
   const totalUndecided = companies.filter(c => c.status === 'טרם הוחלט').length
 
   return (
-    <div className="bg-sh-card rounded-card-sh shadow-card p-6">
+    <div className="bg-sh-card rounded-card-sh shadow-card p-4 sm:p-6">
       <h2 className="text-lg font-bold text-sh-text mb-1">הם עוד לא אמרו לא</h2>
       <p className="text-sm text-sh-text-muted mb-6">
         {totalUndecided} חברות בסטטוס "טרם הוחלט" לפי רמת חום

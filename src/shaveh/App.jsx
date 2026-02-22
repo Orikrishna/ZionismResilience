@@ -7,6 +7,7 @@ import RichTextEditor from './components/RichTextEditor'
 import StepStatusPicker from './components/StepStatusPicker'
 import DrawerSelect from './components/DrawerSelect'
 import SendReportModal from './components/SendReportModal'
+import { logout } from './components/LoginGate'
 
 // Existing widgets
 import KpiCard from './components/KpiCard'
@@ -93,7 +94,7 @@ function stepsCompleted(company) {
 
 const SAVE_SERVER = 'http://localhost:3457'
 
-export default function App() {
+export default function App({ role = 'guest' }) {
   const [companies, setCompanies] = useState(data.companies)
   const [selectedCompany, setSelectedCompany] = useState(null)
   const [activeTab, setActiveTab] = useState(0)
@@ -345,10 +346,10 @@ export default function App() {
       }}
     >
       {/* Header */}
-      <header dir="rtl" className="bg-sh-card shadow-card px-10 py-5 flex items-center justify-between sticky top-0 z-50">
-        <div className="flex items-center gap-5">
-          <div className="h-16 w-16 bg-sh-pink rounded-xl flex items-center justify-center flex-shrink-0">
-            <svg viewBox="0 0 58 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-11 w-11 text-white">
+      <header dir="rtl" className="bg-sh-card shadow-card px-4 sm:px-10 py-3 sm:py-5 flex flex-wrap sm:flex-nowrap items-center justify-between sticky top-0 z-50">
+        <div className="flex items-center gap-3 sm:gap-5 min-w-0">
+          <div className="h-8 w-8 sm:h-16 sm:w-16 bg-sh-pink rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+            <svg viewBox="0 0 58 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-11 sm:w-11 text-white">
               <path d="M12.4961 24.9688V16.7717L16.5302 17.0737V25.2708L12.4961 24.9688ZM20.1345 25.5394V14.566L12.4978 13.9954V10.2363L24.2207 11.1123V25.843L20.1345 25.5377V25.5394Z" fill="currentColor"/>
               <path d="M28.152 26.1381V15.1647L26.49 15.0413V11.2822L32.2381 11.711V26.4418L28.152 26.1365V26.1381Z" fill="currentColor"/>
               <path d="M36.0428 26.728V15.7546L34.3809 15.6311V11.8721L40.129 12.3009V27.0316L36.0428 26.7263V26.728Z" fill="currentColor"/>
@@ -362,19 +363,20 @@ export default function App() {
               <path d="M0 45.8379V56.0004H58V49.8689L0 45.8379Z" fill="currentColor"/>
             </svg>
           </div>
-          <div className="text-right">
-            <h1 className="text-2xl font-bold text-sh-text">פרויקט שווה פיתוח<span className="mx-2 text-sh-text-muted font-normal">|</span>תמונת מצב</h1>
-            <p className="text-base text-sh-text-muted">מיזם להתאמת מוצרים ושירותים לאנשים עם מוגבלות</p>
+          <div className="text-right min-w-0">
+            <h1 className="text-sm sm:text-2xl font-bold text-sh-text sm:truncate">פרויקט שווה פיתוח<span className="hidden sm:inline mx-2 text-sh-text-muted font-normal">|</span><br className="sm:hidden" /><span className="text-lg sm:text-2xl">תמונת מצב</span></h1>
+            <p className="hidden sm:block text-base text-sh-text-muted truncate">מיזם להתאמת מוצרים ושירותים לאנשים עם מוגבלות</p>
           </div>
         </div>
-        <div className="flex items-center gap-4">
-          <img src={`${import.meta.env.BASE_URL}zionism2000-logo.jpg`} alt="ציונות 2000" className="h-20 object-contain" />
+        <div className="flex items-center gap-4 flex-shrink-0">
+          <img src={`${import.meta.env.BASE_URL}zionism2000-logo.jpg`} alt="ציונות 2000" className="h-8 sm:h-20 object-contain" />
         </div>
+        <p className="sm:hidden w-full text-xs text-sh-text-muted text-center mt-1">מיזם להתאמת מוצרים ושירותים לאנשים עם מוגבלות</p>
       </header>
 
       {/* Tab bar */}
-      <div className="no-print sticky top-[120px] z-40">
-      <div className="max-w-7xl mx-auto px-6 pt-4 pb-2">
+      <div className="no-print sticky top-[64px] sm:top-[120px] z-40">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 pt-3 sm:pt-4 pb-2">
         <motion.div
           className="flex gap-1 rounded-2xl p-1.5 shadow-sm"
           animate={{
@@ -388,14 +390,14 @@ export default function App() {
             <button
               key={tab.id}
               onClick={() => { setActiveTab(i); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
-              className={`flex-1 px-6 py-3 rounded-xl text-base font-bold transition-all flex items-center justify-center gap-2.5 ${
+              className={`flex-1 px-2 sm:px-6 py-2 sm:py-3 rounded-xl text-xs sm:text-base font-bold transition-all flex items-center justify-center gap-1.5 sm:gap-2.5 ${
                 activeTab === i
                   ? 'bg-sh-card shadow-card text-sh-text'
                   : 'text-sh-text-muted hover:text-sh-text hover:bg-sh-card/50'
               }`}
             >
               <span
-                className="w-8 h-8 rounded-full flex items-center justify-center transition-colors duration-300"
+                className="w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-colors duration-300"
                 style={{ backgroundColor: activeTab === i ? theme.lightAlpha60 : theme.lightAlpha30 }}
               >
                 <tab.Icon
@@ -413,9 +415,9 @@ export default function App() {
       </div>
 
       {/* ── Shared action + filter bar (all tabs) ── */}
-      <div className="no-print max-w-7xl mx-auto px-6 py-3">
+      <div className="no-print max-w-7xl mx-auto px-3 sm:px-6 py-3">
         {/* RTL: filters flow from the right naturally, buttons pushed to physical left with ms-auto */}
-        <div className="flex items-center gap-2" dir="rtl">
+        <div className="flex flex-wrap items-center gap-2" dir="rtl">
 
           {/* Per-tab filters — RTL start = right edge */}
           {activeTab === 0 && <>
@@ -452,7 +454,7 @@ export default function App() {
               <button onClick={() => { setSearchQuery(''); setTab3Status('הכל'); setTab3Industry('הכל'); setTab3Size('הכל') }}
                 className="text-sm underline" style={{ color: theme.accent }}>נקה הכל</button>
             )}
-            <div className="w-56">
+            <div className="w-full sm:w-56">
               <SearchBar value={searchQuery} onChange={setSearchQuery} />
             </div>
           </>}
@@ -479,7 +481,7 @@ export default function App() {
         </div>
       </div>
 
-      <main className="max-w-7xl mx-auto px-6 pb-8">
+      <main className="max-w-7xl mx-auto px-3 sm:px-6 pb-8">
 
         {/* ══════ Tab 1: ריכוז מידע ══════ */}
         <div className={`space-y-8 pt-0 ${activeTab === 0 ? '' : 'hidden print-show'}`}>
@@ -546,7 +548,7 @@ export default function App() {
         {activeTab === 2 && <div className="space-y-8 pt-0 no-print">
 
         {/* ── Section 9: Company Grid with Search + Filter ── */}
-        <div className="bg-sh-card rounded-card-sh shadow-card p-6">
+        <div className="bg-sh-card rounded-card-sh shadow-card p-4 sm:p-6">
           <h2 className="text-lg font-bold text-sh-text mb-4">
             חברות ({filteredTab3.length}{filteredTab3.length !== companies.length ? ` מתוך ${companies.length}` : ''})
           </h2>
@@ -612,7 +614,7 @@ export default function App() {
         className="no-print mt-12 bg-sh-card/60"
         style={{ borderTop: `1px solid ${theme.lightAlpha50}` }}
       >
-        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col items-center gap-3">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-6 flex flex-col items-center gap-3">
           <div className="text-sm text-sh-text-muted">עיבוד והצגת המידע בשיתוף:</div>
           <img src={`${BASE}qbt-logo.png`} alt="Q Behavioral Thinking" className="h-12 object-contain" />
         </div>
@@ -638,7 +640,7 @@ export default function App() {
               dir="rtl"
             >
               {/* Drawer header */}
-              <div className="sticky top-0 bg-sh-card z-10 px-8 pt-6 pb-4 border-b border-sh-pink-light/50">
+              <div className="sticky top-0 bg-sh-card z-10 px-4 sm:px-8 pt-6 pb-4 border-b border-sh-pink-light/50">
                 <div className="flex items-center justify-between mb-4">
                   <button
                     onClick={() => setSelectedCompany(null)}
@@ -667,9 +669,13 @@ export default function App() {
                     )}
                     {/* Pencil = enter edit mode; Eye = exit edit mode (no save) */}
                     <button
-                      onClick={isEditing ? cancelEditing : startEditing}
-                      title={isEditing ? 'חזרה לצפייה (ללא שמירה)' : 'עריכה'}
-                      className="w-8 h-8 flex items-center justify-center rounded-lg border border-sh-pink-light hover:bg-sh-bg transition-colors text-sh-text-muted hover:text-sh-text"
+                      onClick={role === 'admin' ? (isEditing ? cancelEditing : startEditing) : undefined}
+                      disabled={role !== 'admin' && !isEditing}
+                      title={role !== 'admin' ? 'צפייה בלבד' : isEditing ? 'חזרה לצפייה (ללא שמירה)' : 'עריכה'}
+                      className={`w-8 h-8 flex items-center justify-center rounded-lg border transition-colors
+                        ${role !== 'admin' && !isEditing
+                          ? 'border-sh-border text-sh-text-muted opacity-40 cursor-not-allowed'
+                          : 'border-sh-pink-light hover:bg-sh-bg text-sh-text-muted hover:text-sh-text'}`}
                     >
                       {isEditing ? <Eye size={15} /> : <Pencil size={15} />}
                     </button>
@@ -710,7 +716,7 @@ export default function App() {
               </div>
 
               {/* Drawer body */}
-              <div className="px-8 py-6 space-y-6">
+              <div className="px-4 sm:px-8 py-6 space-y-6">
 
                 {/* Status dropdowns in edit mode */}
                 {isEditing && editDraft && (
@@ -941,6 +947,14 @@ export default function App() {
           onClose={() => setShowReportModal(false)}
         />
       )}
+
+      {/* Logout — bottom-left, unobtrusive */}
+      <button
+        onClick={logout}
+        className="no-print fixed bottom-4 left-4 z-50 text-xs text-sh-text-muted/50 hover:text-sh-text-muted transition-colors"
+      >
+        התנתק
+      </button>
 
     </motion.div>
     </ThemeContext.Provider>

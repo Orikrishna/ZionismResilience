@@ -17,7 +17,7 @@ export default function EngagementPyramid({ companies }) {
   const maxCount = Math.max(...data.map(d => d.count), 1)
 
   return (
-    <div className="bg-sh-card rounded-card-sh shadow-card p-6">
+    <div className="bg-sh-card rounded-card-sh shadow-card p-4 sm:p-6">
       <h2 className="text-lg font-bold text-sh-text mb-1">פירמידת מעורבות</h2>
       <p className="text-sm text-sh-text-muted mb-6">חלוקת כל החברות לפי עומק מעורבות</p>
 

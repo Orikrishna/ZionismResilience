@@ -72,7 +72,7 @@ export default function ProcessTracker({ companies }) {
   })
 
   return (
-    <div className="bg-sh-card rounded-card-sh shadow-card p-6">
+    <div className="bg-sh-card rounded-card-sh shadow-card p-4 sm:p-6">
       <h2 className="text-lg font-bold text-sh-text mb-1">מעקב שלבי תהליך</h2>
       <p className="text-sm text-sh-text-muted mb-6">
         התקדמות {yesCompanies.length} חברות פעילות ב-23 שלבי התהליך
@@ -98,7 +98,7 @@ export default function ProcessTracker({ companies }) {
                     transition={{ duration: 0.3, delay: (pi * 0.1) + (si * 0.03) }}
                     className="flex items-center gap-2"
                   >
-                    <div className="w-32 text-xs text-sh-text-muted text-left flex-shrink-0 truncate" title={step.label}>
+                    <div className="w-20 sm:w-32 text-[10px] sm:text-xs text-sh-text-muted text-left flex-shrink-0 truncate" title={step.label}>
                       {step.label}
                     </div>
                     <div className="flex-1 h-5 bg-sh-bg rounded-md overflow-hidden flex">
@@ -115,7 +115,7 @@ export default function ProcessTracker({ companies }) {
                         />
                       )}
                     </div>
-                    <div className="w-16 text-xs text-sh-text-muted text-left flex-shrink-0">
+                    <div className="w-10 sm:w-16 text-[10px] sm:text-xs text-sh-text-muted text-left flex-shrink-0">
                       {step.yes}/{step.total}
                     </div>
                   </motion.div>

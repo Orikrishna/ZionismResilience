@@ -70,7 +70,7 @@ export default function StatusDonut({ companies }) {
   }
 
   return (
-    <div className="bg-sh-card rounded-card-sh shadow-card p-6">
+    <div className="bg-sh-card rounded-card-sh shadow-card p-4 sm:p-6">
       <h2 className="text-lg font-bold text-sh-text mb-1">סטטוס חברות</h2>
       <p className="text-sm text-sh-text-muted mb-2">חלוקה לפי סטטוס הצטרפות</p>
       <ReactApexChart type="donut" series={series} options={options} height={300} />

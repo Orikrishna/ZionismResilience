@@ -44,7 +44,7 @@ export default function StraussRow({ companies }) {
   const paidCount = straussCompanies.filter(c => c.paid).length
 
   return (
-    <div className="bg-sh-card rounded-card-sh shadow-card p-6">
+    <div className="bg-sh-card rounded-card-sh shadow-card p-4 sm:p-6">
       <div className="flex items-center justify-between mb-4">
         <div>
           <h2 className="text-lg font-bold text-sh-text">שטראוס - Case Study</h2>

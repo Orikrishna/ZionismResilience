@@ -34,7 +34,7 @@ export default function FilterDropdown({ label, value, options, onChange }) {
     <div className="relative" ref={ref}>
       <button
         onClick={() => setOpen(!open)}
-        className={`flex items-center gap-2 text-sm rounded-pill px-4 py-2 border transition-all ${
+        className={`flex items-center gap-1 sm:gap-2 text-xs sm:text-sm rounded-pill px-2 sm:px-4 py-1.5 sm:py-2 border transition-all ${
           isFiltered
             ? 'text-sh-text font-medium'
             : 'bg-sh-card text-sh-text-muted'

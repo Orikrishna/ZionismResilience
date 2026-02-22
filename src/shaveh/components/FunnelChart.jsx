@@ -16,7 +16,7 @@ export default function FunnelChart({ companies }) {
   const maxCount = counts[0] || 1
 
   return (
-    <div className="bg-sh-card rounded-card-sh shadow-card p-6">
+    <div className="bg-sh-card rounded-card-sh shadow-card p-4 sm:p-6">
       <h2 className="text-lg font-bold text-sh-text mb-1">משפך גיוס</h2>
       <p className="text-sm text-sh-text-muted mb-6">מ-{total} חברות בליווי</p>
 

@@ -81,7 +81,7 @@ export default function CommunityTimeline({ companies }) {
   }
 
   return (
-    <div className="bg-sh-card rounded-card-sh shadow-card p-6">
+    <div className="bg-sh-card rounded-card-sh shadow-card p-4 sm:p-6">
       <h2 className="text-lg font-bold text-sh-text mb-1">קהילת העסקים</h2>
       <p className="text-sm text-sh-text-muted mb-2">
         השתתפות {yesCompanies.length} חברות פעילות במפגשים לאורך זמן

@@ -71,7 +71,7 @@ export default function ReferralChart({ companies }) {
   }
 
   return (
-    <div className="bg-sh-card rounded-card-sh shadow-card p-6">
+    <div className="bg-sh-card rounded-card-sh shadow-card p-4 sm:p-6">
       <h2 className="text-lg font-bold text-sh-text mb-1">ערוצי פנייה</h2>
       <p className="text-sm text-sh-text-muted mb-2">כיצד הגיעו אלינו החברות</p>
       <ReactApexChart type="donut" series={values} options={options} height={300} />

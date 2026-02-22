@@ -136,7 +136,7 @@ export default function CohortAnalysis({ companies }) {
   }
 
   return (
-    <div className="bg-sh-card rounded-card-sh shadow-card p-6">
+    <div className="bg-sh-card rounded-card-sh shadow-card p-4 sm:p-6">
       <h2 className="text-lg font-bold text-sh-text mb-1">התקדמות לפי מחזור</h2>
       <p className="text-sm text-sh-text-muted mb-2">
         אחוז השלמת שלבים לפי שנת הצטרפות ({yesCompanies.length} חברות)
