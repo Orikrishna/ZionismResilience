@@ -368,8 +368,11 @@ export default function App({ role = 'guest' }) {
             <p className="hidden sm:block text-base text-sh-text-muted truncate">מיזם להתאמת מוצרים ושירותים לאנשים עם מוגבלות</p>
           </div>
         </div>
-        <div className="flex items-center gap-4 flex-shrink-0">
-          <img src={`${import.meta.env.BASE_URL}zionism2000-logo.jpg`} alt="ציונות 2000" className="h-8 sm:h-20 object-contain" />
+        {/* Partner logos — desktop only (shown in footer on mobile) */}
+        <div dir="ltr" className="hidden sm:flex items-center gap-3 lg:gap-5 flex-shrink-0">
+          <img src={`${BASE}logo-2000.png`}   alt="ציונות 2000" className="h-12 lg:h-16 object-contain" />
+          <img src={`${BASE}logo-shaveh.png`} alt="שווה פיתוח"  className="h-20 lg:h-24 object-contain" />
+          <img src={`${BASE}logo-joint.png`}  alt="הגנ׳וינט"     className="h-6 lg:h-8 object-contain" />
         </div>
         <p className="sm:hidden w-full text-xs text-sh-text-muted text-center mt-1">מיזם להתאמת מוצרים ושירותים לאנשים עם מוגבלות</p>
       </header>
@@ -617,6 +620,12 @@ export default function App({ role = 'guest' }) {
         <div className="max-w-7xl mx-auto px-3 sm:px-6 py-6 flex flex-col items-center gap-3">
           <div className="text-sm text-sh-text-muted">עיבוד והצגת המידע בשיתוף:</div>
           <img src={`${BASE}qbt-logo.png`} alt="Q Behavioral Thinking" className="h-12 object-contain" />
+          {/* Partner logos — mobile only */}
+          <div className="sm:hidden flex flex-col items-center gap-4 w-full pt-4 mt-1 border-t border-sh-border/40">
+            <img src={`${BASE}logo-2000.png`}   alt="ציונות 2000" className="h-10 object-contain" />
+            <img src={`${BASE}logo-shaveh.png`} alt="שווה פיתוח"  className="h-10 object-contain" />
+            <img src={`${BASE}logo-joint.png`}  alt="הגנ׳וינט"     className="h-10 object-contain" />
+          </div>
         </div>
       </footer>
 
