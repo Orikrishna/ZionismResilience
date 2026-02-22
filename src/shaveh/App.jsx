@@ -372,7 +372,7 @@ export default function App({ role = 'guest' }) {
         <div dir="ltr" className="hidden sm:flex items-center gap-3 lg:gap-5 flex-shrink-0">
           <img src={`${BASE}logo-2000.png`}   alt="ציונות 2000" className="h-12 lg:h-16 object-contain" />
           <img src={`${BASE}logo-shaveh.png`} alt="שווה פיתוח"  className="h-20 lg:h-24 object-contain" />
-          <img src={`${BASE}logo-joint.png`}  alt="הגנ׳וינט"     className="h-6 lg:h-8 object-contain" />
+          <img src={`${BASE}logo-joint.png`}  alt="הגנ׳וינט"     className="h-6 lg:h-8 object-contain mt-[10px]" />
         </div>
         <p className="sm:hidden w-full text-xs text-sh-text-muted text-center mt-1">מיזם להתאמת מוצרים ושירותים לאנשים עם מוגבלות</p>
       </header>
@@ -623,8 +623,8 @@ export default function App({ role = 'guest' }) {
           {/* Partner logos — mobile only */}
           <div className="sm:hidden flex flex-col items-center gap-4 w-full pt-4 mt-1 border-t border-sh-border/40">
             <img src={`${BASE}logo-2000.png`}   alt="ציונות 2000" className="h-10 object-contain" />
-            <img src={`${BASE}logo-shaveh.png`} alt="שווה פיתוח"  className="h-10 object-contain" />
-            <img src={`${BASE}logo-joint.png`}  alt="הגנ׳וינט"     className="h-10 object-contain" />
+            <img src={`${BASE}logo-shaveh.png`} alt="שווה פיתוח"  className="h-16 object-contain" />
+            <img src={`${BASE}logo-joint.png`}  alt="הגנ׳וינט"     className="h-5 object-contain" />
           </div>
         </div>
       </footer>
