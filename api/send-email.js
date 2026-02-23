@@ -47,7 +47,7 @@ function buildEmailHTML(bodyHtml, d) {
 <table width="100%" cellpadding="0" cellspacing="0"><tr><td style="padding:20px 10px;">
 <table width="600" cellpadding="0" cellspacing="0" align="center" style="max-width:600px;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
   <tr><td style="background:linear-gradient(135deg,${C.pink} 0%,${C.pinkDark} 100%);padding:24px 28px;">
-    <div style="font-size:18px;font-weight:900;color:#fff;margin-bottom:3px;">פרויקט שווה פיתוח</div>
+    <div style="font-size:18px;font-weight:900;color:#fff;margin-bottom:3px;">מיזם שווה פיתוח</div>
     <div style="font-size:12px;color:rgba(255,255,255,0.85);">דו"ח מצב | ${d.date}</div>
   </td></tr>
   <tr><td style="padding:24px 28px;background:${C.card};">

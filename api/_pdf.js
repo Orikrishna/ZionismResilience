@@ -98,7 +98,7 @@ const siteHeader = `
     <div class="site-header-left">
       <div class="site-header-icon">${QSVG}</div>
       <div>
-        <div class="site-header-title">פרויקט שווה פיתוח | תמונת מצב</div>
+        <div class="site-header-title">מיזם שווה פיתוח | תמונת מצב</div>
         <div class="site-header-sub">מיזם להתאמת מוצרים ושירותים לאנשים עם מוגבלות</div>
       </div>
     </div>
