@@ -117,7 +117,7 @@ export default function LoginGate({ children }) {
               <path d="M0 45.8379V56.0004H58V49.8689L0 45.8379Z" fill="white"/>
             </svg>
           </div>
-          <div style={{ fontSize: 17, fontWeight: 900, color: '#2d1f22' }}>פרויקט שווה פיתוח</div>
+          <div style={{ fontSize: 17, fontWeight: 900, color: '#2d1f22' }}>מיזם שווה פיתוח</div>
           <div style={{ fontSize: 11, color: '#9c7a82', marginTop: 3 }}>אנא התחבר כדי להמשיך</div>
         </div>
 
