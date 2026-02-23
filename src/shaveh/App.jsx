@@ -364,7 +364,7 @@ export default function App({ role = 'guest' }) {
             </svg>
           </div>
           <div className="text-right min-w-0">
-            <h1 className="text-sm sm:text-2xl font-bold text-sh-text sm:truncate">פרויקט שווה פיתוח<span className="hidden sm:inline mx-2 text-sh-text-muted font-normal">|</span><br className="sm:hidden" /><span className="text-lg sm:text-2xl">תמונת מצב</span></h1>
+            <h1 className="text-sm sm:text-2xl font-bold text-sh-text sm:truncate">מיזם שווה פיתוח<span className="hidden sm:inline mx-2 text-sh-text-muted font-normal">|</span><br className="sm:hidden" /><span className="text-lg sm:text-2xl">תמונת מצב</span></h1>
             <p className="hidden sm:block text-base text-sh-text-muted truncate">מיזם להתאמת מוצרים ושירותים לאנשים עם מוגבלות</p>
           </div>
         </div>
