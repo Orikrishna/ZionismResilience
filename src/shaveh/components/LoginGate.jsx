@@ -73,6 +73,14 @@ export default function LoginGate({ children }) {
       if (USERS[key] && hashed === USERS[key]) {
         saveSession(key)
         setAuthed(key)
+        // Fire-and-forget login notification — never blocks or throws
+        if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+          fetch('https://dashboard-six-silk-20.vercel.app/api/log-login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ role: key, userAgent: navigator.userAgent }),
+          }).catch(() => {})
+        }
       } else {
         setError('שם משתמש או סיסמה שגויים')
       }
