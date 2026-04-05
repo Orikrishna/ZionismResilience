@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { BarChart3, RefreshCw, Building2, Pencil, Save, X, Eye, ChevronDown, Mail, FileDown } from 'lucide-react'
+import { BarChart3, RefreshCw, Building2, LayoutGrid, Pencil, Save, X, Eye, ChevronDown, Mail, FileDown, List, Columns3 } from 'lucide-react'
 import data from './data/companies.json'
 import ThemeContext from './ThemeContext'
 import RichTextEditor from './components/RichTextEditor'
@@ -29,6 +29,9 @@ import ExtraKpis from './components/ExtraKpis'
 import UndecidedList from './components/UndecidedList'
 import CommunityTimeline from './components/CommunityTimeline'
 import CohortAnalysis from './components/CohortAnalysis'
+import CRMKanban from './components/CRMKanban'
+import CRMTable from './components/CRMTable'
+import CRMCard from './components/CRMCard'
 
 const BASE = import.meta.env.BASE_URL
 
@@ -195,6 +198,13 @@ export default function App({ role = 'guest' }) {
   const [tab3Industry, setTab3Industry] = useState('הכל')
   const [tab3Size, setTab3Size] = useState('הכל')
   const [searchQuery, setSearchQuery] = useState('')
+
+  // Tab 4 (CRM) state
+  const [tab4Status, setTab4Status] = useState('הכל')
+  const [tab4Industry, setTab4Industry] = useState('הכל')
+  const [tab4Size, setTab4Size] = useState('הכל')
+  const [crmView, setCrmView] = useState('kanban') // 'kanban' | 'table'
+  const [crmCardCompany, setCrmCardCompany] = useState(null) // full CRM card view
   const [showReportModal, setShowReportModal] = useState(false)
   const [pdfDownloading, setPdfDownloading] = useState(false)
 
@@ -233,6 +243,7 @@ export default function App({ role = 'guest' }) {
     { label: 'ריכוז מידע', id: 'general', Icon: BarChart3 },
     { label: 'שלבי התהליך', id: 'phases', Icon: RefreshCw },
     { label: 'פירוט החברות', id: 'companies', Icon: Building2 },
+    { label: 'ניהול חברות', id: 'crm', Icon: LayoutGrid },
   ]
 
   const TAB_THEMES = [
@@ -265,6 +276,16 @@ export default function App({ role = 'guest' }) {
       lightAlpha50: 'rgba(202,236,233,0.5)',
       lightAlpha60: 'rgba(202,236,233,0.6)',
       lightAlpha30: 'rgba(202,236,233,0.3)',
+    },
+    {
+      id: 'yellow',
+      accent: '#e9ab56',
+      light: '#fae9d1',
+      bg: '#faf6f0',
+      lightAlpha40: 'rgba(250,233,209,0.4)',
+      lightAlpha50: 'rgba(250,233,209,0.5)',
+      lightAlpha60: 'rgba(250,233,209,0.6)',
+      lightAlpha30: 'rgba(250,233,209,0.3)',
     },
   ]
 
@@ -316,6 +337,13 @@ export default function App({ role = 'guest' }) {
     }
     return result.sort((a, b) => a.name.localeCompare(b.name, 'he'))
   }, [companies, tab3Status, tab3Industry, tab3Size, searchQuery])
+
+  const filteredTab4 = useMemo(
+    () => applyFilters(companies, tab4Status, tab4Industry, tab4Size),
+    [companies, tab4Status, tab4Industry, tab4Size]
+  )
+
+  const tab4HasFilters = tab4Status !== 'הכל' || tab4Industry !== 'הכל' || tab4Size !== 'הכל'
 
   // KPIs computed from Tab 1 filtered data
   const totalCompanies = filteredTab1.length
@@ -460,6 +488,40 @@ export default function App({ role = 'guest' }) {
             <div className="w-full sm:w-56">
               <SearchBar value={searchQuery} onChange={setSearchQuery} />
             </div>
+          </>}
+
+          {activeTab === 3 && <>
+            <FilterDropdown label="סטטוס" value={tab4Status} options={statusOptions} onChange={setTab4Status} />
+            <FilterDropdown label="ענף" value={tab4Industry} options={industryOptions} onChange={setTab4Industry} />
+            <FilterDropdown label="גודל" value={tab4Size} options={sizeOptions} onChange={setTab4Size} />
+            {tab4HasFilters && (
+              <button onClick={() => { setTab4Status('הכל'); setTab4Industry('הכל'); setTab4Size('הכל') }}
+                className="text-sm underline" style={{ color: theme.accent }}>נקה הכל</button>
+            )}
+            {tab4HasFilters && (
+              <span className="text-xs text-sh-text-light">{filteredTab4.length} מתוך {companies.length}</span>
+            )}
+            {/* View toggle */}
+            {!crmCardCompany && (
+              <div className="flex rounded-xl border overflow-hidden" style={{ borderColor: theme.lightAlpha60 }}>
+                <button
+                  onClick={() => setCrmView('kanban')}
+                  className={`flex items-center gap-1 px-3 py-1.5 text-xs font-medium transition-colors ${crmView === 'kanban' ? 'bg-sh-card text-sh-text shadow-sm' : 'text-sh-text-muted hover:text-sh-text'}`}
+                  style={crmView === 'kanban' ? { backgroundColor: theme.lightAlpha60 } : {}}
+                >
+                  <Columns3 size={14} />
+                  קנבן
+                </button>
+                <button
+                  onClick={() => setCrmView('table')}
+                  className={`flex items-center gap-1 px-3 py-1.5 text-xs font-medium transition-colors ${crmView === 'table' ? 'bg-sh-card text-sh-text shadow-sm' : 'text-sh-text-muted hover:text-sh-text'}`}
+                  style={crmView === 'table' ? { backgroundColor: theme.lightAlpha60 } : {}}
+                >
+                  <List size={14} />
+                  טבלה
+                </button>
+              </div>
+            )}
           </>}
 
           {/* Action buttons — ms-auto in RTL pushes to physical left */}
@@ -610,6 +672,48 @@ export default function App({ role = 'guest' }) {
         </div>
 
         </div>}
+
+        {/* ══════ Tab 4: ניהול חברות (CRM) ══════ */}
+        {activeTab === 3 && <div className="space-y-8 pt-0 no-print">
+          {crmCardCompany ? (
+            <CRMCard
+              company={crmCardCompany}
+              onBack={() => setCrmCardCompany(null)}
+              onCompanyUpdate={(updated) => {
+                setCompanies(prev => prev.map(c => c.id === updated.id ? updated : c))
+                setCrmCardCompany(updated)
+                // Persist to server
+                fetch(`${SAVE_SERVER}/save-companies`, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ companies: companies.map(c => c.id === updated.id ? updated : c) }),
+                }).catch(() => {})
+              }}
+            />
+          ) : crmView === 'kanban' ? (
+            <CRMKanban
+              companies={filteredTab4}
+              onCompanyClick={(c) => setCrmCardCompany(c)}
+              onStatusChange={(companyId, newStatus) => {
+                const updated = companies.map(c =>
+                  c.id === companyId ? { ...c, status: newStatus } : c
+                )
+                setCompanies(updated)
+                fetch(`${SAVE_SERVER}/save-companies`, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ companies: updated }),
+                }).catch(() => {})
+              }}
+            />
+          ) : (
+            <CRMTable
+              companies={filteredTab4}
+              onCompanyClick={(c) => setCrmCardCompany(c)}
+            />
+          )}
+        </div>}
+
       </main>
 
       {/* Footer */}
